@@ -1,183 +1,277 @@
-// ============================================================
-// apip.js — Servidor Node.js nativo para AnimaBox
-// Maneja GET, POST, PUT, DELETE multifuncional vía "accion"
-// ============================================================
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 
-const PUERTO = 3000;
+const puerto = 3000;
 
-// Rutas absolutas a los JSON (evita problemas de cwd)
+// Rutas
 const RUTA_PELICULAS = path.join(__dirname, "Peliculas.json");
 const RUTA_COMENTARIOS = path.join(__dirname, "Comentarios.json");
 
-// ---- Utilidades ----
-// Lee un JSON del disco de forma síncrona y segura
+
 function leerJson(ruta) {
   try {
     return JSON.parse(fs.readFileSync(ruta, "utf8"));
   } catch (err) {
-    console.error("Error leyendo", ruta, err.message);
+    console.log("Error leyendo " + ruta + ": " + err.message);
     return null;
   }
 }
 
-// Escribe un JSON en disco (sobrescribe)
-function escribirJson(ruta, datos) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile(ruta, JSON.stringify(datos, null, 2), "utf8", (err) => {
-      if (err) reject(err);
-      else resolve();
-    });
-  });
-}
-
-// Responde JSON con el código indicado
 function responderJson(response, codigo, objeto) {
   response.statusCode = codigo;
   response.setHeader("Content-Type", "application/json; charset=utf-8");
   response.end(JSON.stringify(objeto));
 }
 
-// Acumula el body de la request y devuelve el objeto parseado
-function leerBody(request) {
-  return new Promise((resolve, reject) => {
-    let info = "";
-    request.on("data", (chunk) => { info += chunk; });
-    request.on("end", () => {
-      try { resolve(info ? JSON.parse(info) : {}); }
-      catch (err) { reject(err); }
-    });
-    request.on("error", reject);
-  });
-}
+// Server
+const servidor = http.createServer((request, response) => {
 
-// ---- Servidor ----
-const servidor = http.createServer(async (request, response) => {
-  // CORS abierto (igual que en clase)
+  // Reglas CORS 
   response.setHeader("Access-Control-Allow-Origin", "*");
   response.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
   response.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
-  // Preflight
-  if (request.method === "OPTIONS") {
-    response.writeHead(204);
-    return response.end();
-  }
+  switch (request.method) { 
 
-  try {
-    // ========================================================
     // GET — devuelve películas o comentarios según la ruta
-    // ========================================================
-    if (request.method === "GET") {
-      const url = new URL(request.url, `http://localhost:${PUERTO}`);
+  
+    case "GET": {
+      var url = new URL(request.url, "http://localhost:" + puerto);
 
       if (url.pathname === "/api/peliculas") {
-        const peliculas = leerJson(RUTA_PELICULAS);
+        var peliculas = leerJson(RUTA_PELICULAS);
+        if (peliculas === null) {
+          return responderJson(response, 500, { mensaje: "Error leyendo Peliculas.json" });
+        }
         return responderJson(response, 200, peliculas);
       }
 
       if (url.pathname === "/api/comentarios") {
-        const comentarios = leerJson(RUTA_COMENTARIOS);
+        var comentarios = leerJson(RUTA_COMENTARIOS);
+        if (comentarios === null) {
+          return responderJson(response, 500, { mensaje: "Error leyendo Comentarios.json" });
+        }
         return responderJson(response, 200, comentarios);
       }
 
       return responderJson(response, 404, { mensaje: "Ruta no encontrada" });
     }
 
-    // ========================================================
-    // POST — multifuncional según "accion"
-    //   accion: "crearComentario"
-    // ========================================================
-    if (request.method === "POST") {
-      const body = await leerBody(request);
+    // POST
+    case "POST": {
+      var informacion = "";
+      request.on("data", info => {
+        informacion += info;
+      });
+      request.on("end", () => {
 
-      if (body.accion === "crearComentario") {
-        const comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
-        const nuevoId = comentarios.arreglo.length
-          ? Math.max(...comentarios.arreglo.map(c => c.id)) + 1
-          : 1;
+        var body;
+        try {
+          body = JSON.parse(informacion);
+        } catch (err) {
+          return responderJson(response, 400, { mensaje: "JSON inválido en el body" });
+        }
 
-        const nuevoComentario = {
-          id: nuevoId,
-          peliculaId: Number(body.peliculaId),
-          usuario: String(body.usuario || "Invitado").trim().slice(0, 40),
-          texto: String(body.texto || "").trim().slice(0, 500),
-          calificacion: Number(body.calificacion) || 0,
-          likes: 0
-        };
+        if (body.accion === "crearComentario") {
 
-        comentarios.arreglo.push(nuevoComentario);
-        await escribirJson(RUTA_COMENTARIOS, comentarios);
-        return responderJson(response, 201, { mensaje: "Comentario creado", comentario: nuevoComentario });
-      }
+          var comentarios = leerJson(RUTA_COMENTARIOS);
+          if (comentarios === null) {
+            comentarios = { arreglo: [] };
+          }
 
-      return responderJson(response, 400, { mensaje: "Acción POST no reconocida" });
+          var nuevoId = 1;
+          if (comentarios.arreglo.length > 0) {
+            var maxId = 0;
+            for (var i = 0; i < comentarios.arreglo.length; i++) {
+              if (comentarios.arreglo[i].id > maxId) {
+                maxId = comentarios.arreglo[i].id;
+              }
+            }
+            nuevoId = maxId + 1;
+          }
+
+          var nuevoComentario = {
+            id: nuevoId,
+            peliculaId: Number(body.peliculaId),
+            usuario: String(body.usuario || "Invitado").trim().slice(0, 40),
+            texto: String(body.texto || "").trim().slice(0, 500),
+            calificacion: Number(body.calificacion) || 0,
+            likes: 0
+          };
+
+          comentarios.arreglo.push(nuevoComentario);
+
+          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
+            if (err) {
+              console.log(err);
+              return responderJson(response, 500, { mensaje: "Error guardando comentario" });
+            }
+            return responderJson(response, 201, {
+              mensaje: "Comentario creado",
+              comentario: nuevoComentario
+            });
+          });
+
+        } else {
+          return responderJson(response, 400, { mensaje: "Acción POST no reconocida" });
+        }
+      });
+      break;
     }
 
-    // ========================================================
-    // PUT — multifuncional según "accion"
-    //   accion: "editarComentario" | "darLike"
-    // ========================================================
-    if (request.method === "PUT") {
-      const body = await leerBody(request);
-      const comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
+    // PUT
+    case "PUT": {
+      var informacion = "";
+      request.on("data", info => {
+        informacion += info;
+      });
+      request.on("end", () => {
 
-      if (body.accion === "editarComentario") {
-        const idx = comentarios.arreglo.findIndex(c => c.id === Number(body.id));
-        if (idx === -1) return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
+        var body;
+        try {
+          body = JSON.parse(informacion);
+        } catch (err) {
+          return responderJson(response, 400, { mensaje: "JSON inválido en el body" });
+        }
 
-        comentarios.arreglo[idx].texto = String(body.texto || "").trim().slice(0, 500);
-        comentarios.arreglo[idx].calificacion = Number(body.calificacion) || 0;
-        await escribirJson(RUTA_COMENTARIOS, comentarios);
-        return responderJson(response, 200, { mensaje: "Comentario editado", comentario: comentarios.arreglo[idx] });
-      }
+        var comentarios = leerJson(RUTA_COMENTARIOS);
+        if (comentarios === null) {
+          comentarios = { arreglo: [] };
+        }
 
-      if (body.accion === "darLike") {
-        const idx = comentarios.arreglo.findIndex(c => c.id === Number(body.id));
-        if (idx === -1) return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
+        // PUT Editar Comentario
+        if (body.accion === "editarComentario") {
 
-        comentarios.arreglo[idx].likes = (comentarios.arreglo[idx].likes || 0) + 1;
-        await escribirJson(RUTA_COMENTARIOS, comentarios);
-        return responderJson(response, 200, { mensaje: "Like registrado", likes: comentarios.arreglo[idx].likes });
-      }
+          var indiceEncontrado = -1;
+          for (var i = 0; i < comentarios.arreglo.length; i++) {
+            if (comentarios.arreglo[i].id == body.id) {
+              indiceEncontrado = i;
+              break;
+            }
+          }
 
-      return responderJson(response, 400, { mensaje: "Acción PUT no reconocida" });
+          if (indiceEncontrado === -1) {
+            return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
+          }
+
+          comentarios.arreglo[indiceEncontrado].texto = String(body.texto || "").trim().slice(0, 500);
+          comentarios.arreglo[indiceEncontrado].calificacion = Number(body.calificacion) || 0;
+
+          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
+            if (err) {
+              console.log(err);
+              return responderJson(response, 500, { mensaje: "Error guardando comentario" });
+            }
+            return responderJson(response, 200, {
+              mensaje: "Comentario editado",
+              comentario: comentarios.arreglo[indiceEncontrado]
+            });
+          });
+
+        // PUT darLike
+        } else if (body.accion === "darLike") {
+
+          var indiceEncontrado = -1;
+          for (var i = 0; i < comentarios.arreglo.length; i++) {
+            if (comentarios.arreglo[i].id == body.id) {
+              indiceEncontrado = i;
+              break;
+            }
+          }
+
+          if (indiceEncontrado === -1) {
+            return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
+          }
+
+          if (!comentarios.arreglo[indiceEncontrado].likes) {
+            comentarios.arreglo[indiceEncontrado].likes = 0;
+          }
+          comentarios.arreglo[indiceEncontrado].likes = comentarios.arreglo[indiceEncontrado].likes + 1;
+
+          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
+            if (err) {
+              console.log(err);
+              return responderJson(response, 500, { mensaje: "Error guardando like" });
+            }
+            return responderJson(response, 200, {
+              mensaje: "Like registrado",
+              likes: comentarios.arreglo[indiceEncontrado].likes
+            });
+          });
+
+        } else {
+          return responderJson(response, 400, { mensaje: "Acción PUT no reconocida" });
+        }
+      });
+      break;
     }
 
-    // ========================================================
-    // DELETE — multifuncional según "accion"
-    //   accion: "eliminarComentario"
-    // ========================================================
-    if (request.method === "DELETE") {
-      const body = await leerBody(request);
-      const comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
+    // DELETE: Eliminar comentario
+    case "DELETE": {
+      var informacion = "";
+      request.on("data", info => {
+        informacion += info;
+      });
+      request.on("end", () => {
 
-      if (body.accion === "eliminarComentario") {
-        const idx = comentarios.arreglo.findIndex(c => c.id === Number(body.id));
-        if (idx === -1) return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
+        var body;
+        try {
+          body = JSON.parse(informacion);
+        } catch (err) {
+          return responderJson(response, 400, { mensaje: "JSON inválido en el body" });
+        }
 
-        comentarios.arreglo.splice(idx, 1);
-        await escribirJson(RUTA_COMENTARIOS, comentarios);
-        return responderJson(response, 200, { mensaje: "Comentario eliminado" });
-      }
+        if (body.accion === "eliminarComentario") {
 
-      return responderJson(response, 400, { mensaje: "Acción DELETE no reconocida" });
+          var comentarios = leerJson(RUTA_COMENTARIOS);
+          if (comentarios === null) {
+            comentarios = { arreglo: [] };
+          }
+
+          var indiceEncontrado = -1;
+          for (var i = 0; i < comentarios.arreglo.length; i++) {
+            if (comentarios.arreglo[i].id == body.id) {
+              indiceEncontrado = i;
+              break;
+            }
+          }
+
+          if (indiceEncontrado === -1) {
+            return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
+          }
+
+          comentarios.arreglo.splice(indiceEncontrado, 1);
+
+          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
+            if (err) {
+              console.log(err);
+              return responderJson(response, 500, { mensaje: "Error eliminando comentario" });
+            }
+            return responderJson(response, 200, { mensaje: "Comentario eliminado" });
+          });
+
+        } else {
+          return responderJson(response, 400, { mensaje: "Acción DELETE no reconocida" });
+        }
+      });
+      break;
     }
 
-    responderJson(response, 405, { mensaje: "Método no permitido" });
-  } catch (err) {
-    console.error("Error en servidor:", err);
-    responderJson(response, 500, { mensaje: "Error interno del servidor", detalle: err.message });
+    case "OPTIONS": {
+      response.writeHead(204);
+      response.end();
+      break;
+    }
+
+    // Cualqueir otro metodo
+    default: {
+      responderJson(response, 405, { mensaje: "Método no permitido" });
+    }
   }
 });
 
-servidor.listen(PUERTO, () => {
-  console.log(`Servidor AnimaBox escuchando en http://localhost:${PUERTO}`);
-  console.log(`  GET    /api/peliculas`);
-  console.log(`  GET    /api/comentarios`);
-  console.log(`  POST   /api/accion  (accion: crearComentario)`);
-  console.log(`  PUT    /api/accion  (accion: editarComentario | darLike)`);
-  console.log(`  DELETE /api/accion  (accion: eliminarComentario)`);
+servidor.listen(puerto, () => {
+  console.log("Servidor AnimaBox a la escucha en http://localhost:" + puerto);
+ 
 });

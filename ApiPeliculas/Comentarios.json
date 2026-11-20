@@ -1,3 +1,20 @@
 {
-  "arreglo": []
+  "arreglo": [
+    {
+      "id": 1,
+      "peliculaId": 143,
+      "usuario": "Ashby",
+      "texto": "asDASda",
+      "calificacion": 4,
+      "likes": 0
+    },
+    {
+      "id": 2,
+      "peliculaId": 82,
+      "usuario": "Hilary",
+      "texto": "Asdaafsa",
+      "calificacion": 3,
+      "likes": 0
+    }
+  ]
 }

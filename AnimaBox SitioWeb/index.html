@@ -1,111 +1,123 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AnimaBox | Catálogo de anime</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimaBox | Catálogo de anime</title>
+    <!-- Tipografias del proyecto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
-  <!-- Fuentes: Archivo Black (logo/títulos) + Montserrat (cuerpo) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome (botones de todo el proyecto) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <link rel="stylesheet" href="estilos/style.css">
-  <script src="scripts/script.js" defer></script>
+    <!-- Font Awesome (Usado para los botones y simbolos en el proyecto) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Hoja de estilo -->
+    <link rel="stylesheet" href="estilos/style.css">
 </head>
+
 <body>
+    <!--  HEADER  -->
+    <header class="encabezado">
+        <a href="#" class="logo" id="logoInicio">AnimaBox</a>
+        <button class="boton-nav activo" id="pestanaCatalogo" type="button">
+            <i class="fa-solid fa-house"></i> Inicio
+        </button>
+        <nav class="navegacion">
+            <!-- Barra de busqueda -->
+            <div class="buscador">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" id="entradaBusqueda" placeholder="Buscar por título, director o estudio..."
+                    aria-label="Buscar película">
+            </div>
+            <button class="boton-nav" id="pestanaColeccion" type="button">
+                <i class="fa-solid fa-bookmark"></i> Mi colección <span id="contadorColeccion">0</span>
+            </button>
+        </nav>
+    </header>
 
-  <!-- ============ HEADER ============ -->
-  <header class="encabezado">
-    <!-- Logo: solo texto, clickeable como botón de inicio -->
-    <a href="#" class="logo" id="logoInicio">AnimaBox</a>
-
-    <!-- Búsqueda movida al header (tiempo real: nombre, director, estudio) -->
-    <div class="buscador">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <input type="search" id="entradaBusqueda" placeholder="Buscar por título, director o estudio..." aria-label="Buscar película">
-    </div>
-
-    <!-- Botón de inicio (aunque el logo también lo hace) + colección -->
-    <nav class="navegacion">
-      <button class="boton-nav activo" id="pestanaCatalogo" type="button">
-        <i class="fa-solid fa-house"></i> Inicio
-      </button>
-      <button class="boton-nav" id="pestanaColeccion" type="button">
-        <i class="fa-solid fa-bookmark"></i> Mi colección <span id="contadorColeccion">0</span>
-      </button>
-    </nav>
-  </header>
-
-  <!-- ============ SLIDER (debajo del header, fuera de él) ============ -->
-  <section class="slider" id="slider" aria-label="Películas destacadas">
-    <button class="slider-flecha" id="flechaIzquierda" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
-    <div class="slider-contenido" id="sliderContenido"><!-- Slides clonados por JS --></div>
-    <button class="slider-flecha" id="flechaDerecha" aria-label="Siguiente"><i class="fa-solid fa-chevron-right"></i></button>
-    <div class="slider-puntos" id="sliderPuntos"></div>
-  </section>
-
-  <!-- ============ CONTENIDO PRINCIPAL ============ -->
-  <main class="contenedor-principal">
-
-    <!-- Filtros: 4 selects (mantenidos de la plantilla) -->
-    <section class="barra-filtros" aria-label="Filtros">
-      <select id="filtroEstudio"><option value="">Todos los estudios</option></select>
-      <select id="filtroAnio"><option value="">Todos los años</option></select>
-      <select id="filtroGenero"><option value="">Todos los géneros</option></select>
-      <select id="filtroDirector"><option value="">Todos los directores</option></select>
-      <button id="limpiarFiltros" class="boton-limpiar" type="button">
-        <i class="fa-solid fa-broom"></i> Limpiar
-      </button>
+    <!--  Slider  -->
+    <section class="slider" id="slider" aria-label="Películas destacadas">
+        <button class="slider-flecha" id="flechaIzquierda" aria-label="Anterior"><i
+                class="fa-solid fa-chevron-left"></i></button>
+        <div class="slider-contenido" id="sliderContenido"><!-- Slides clonados por JS --></div>
+        <button class="slider-flecha" id="flechaDerecha" aria-label="Siguiente"><i
+                class="fa-solid fa-chevron-right"></i></button>
+        <div class="slider-puntos" id="sliderPuntos"></div>
     </section>
 
-    <!-- Encabezado del catálogo -->
-    <div class="encabezado-catalogo">
-      <h2 id="tituloLista">Todas las películas</h2>
-      <span id="contadorResultados" aria-live="polite">Cargando...</span>
-    </div>
+    <!-- Main principal -->
+    <main class="contenedor-principal">
 
-    <!-- Mensajes de error / vacío -->
-    <div id="mensajeError" class="mensaje error oculto"></div>
-    <div id="mensajeVacio" class="mensaje oculto">No se encontraron películas con esos filtros.</div>
+        <!-- Filtro (por estudio, años, generos y directores) -->
+        <section class="barra-filtros" aria-label="Filtros">
+            <select id="filtroEstudio">
+                <option value="">Todos los estudios</option>
+            </select>
+            <select id="filtroAnio">
+                <option value="">Todos los años</option>
+            </select>
+            <select id="filtroGenero">
+                <option value="">Todos los géneros</option>
+            </select>
+            <select id="filtroDirector">
+                <option value="">Todos los directores</option>
+            </select>
+            <button id="limpiarFiltros" class="boton-limpiar" type="button">
+                <i class="fa-solid fa-broom"></i> Limpiar
+            </button>
+        </section>
 
-    <!-- Grid de películas: 5 por fila -->
-    <section id="listaPeliculas" class="grid-peliculas" aria-live="polite"></section>
-  </main>
-
-  <!-- ============ PLANTILLA DE TARJETA (oculta, se clona) ============ -->
-  <div id="plantillaTarjeta" class="tarjeta-pelicula oculto" aria-hidden="true">
-    <div class="tarjeta-poster">
-      <img class="tarjeta-imagen" src="" alt="" loading="lazy">
-      <!-- Overlay hover: año, director, géneros, 3 botones -->
-      <div class="tarjeta-overlay">
-        <p class="overlay-anio"></p>
-        <p class="overlay-director"></p>
-        <p class="overlay-generos"></p>
-        <div class="overlay-acciones">
-          <button class="accion-icono" data-accion="catalogo" title="Agregar al catálogo">
-            <i class="fa-regular fa-bookmark"></i>
-          </button>
-          <button class="accion-icono" data-accion="favorito" title="Marcar favorito">
-            <i class="fa-regular fa-heart"></i>
-          </button>
-          <button class="accion-icono" data-accion="visto" title="Marcar como visto">
-            <i class="fa-regular fa-eye"></i>
-          </button>
+        <div class="encabezado-catalogo">
+            <h2 id="tituloLista">Todas las películas</h2>
+            <span id="contadorResultados" aria-live="polite">Cargando...</span>
         </div>
-      </div>
-    </div>
-    <h3 class="tarjeta-titulo"></h3>
-  </div>
 
-  <!-- ============ MODAL DE DETALLES ============ -->
-  <dialog id="modalDetalles" class="modal-detalles">
-    <button id="cerrarModal" class="cerrar-modal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
-    <div id="contenidoModal"></div>
-  </dialog>
+        <!-- Mensajes de error porsi  -->
+        <div id="mensajeError" class="mensaje error oculto"></div>
+        <div id="mensajeVacio" class="mensaje oculto">No se encontraron películas con esos filtros.</div>
+
+        <!-- Section de peliculas -->
+        <section id="listaPeliculas" class="grid-peliculas" aria-live="polite"></section>
+    </main>
+
+    <!--  Plantilla principal  -->
+    <div id="plantillaTarjeta" class="tarjeta-pelicula oculto" aria-hidden="true">
+        <div class="tarjeta-poster">
+            <img class="tarjeta-imagen" src="" alt="" loading="lazy">
+            <!-- Overlay hover: año, director, géneros, 3 botones -->
+            <div class="tarjeta-overlay">
+                <p class="overlay-anio"></p>
+                <p class="overlay-director"></p>
+                <p class="overlay-generos"></p>
+                <div class="overlay-acciones">
+                    <button class="accion-icono" data-accion="catalogo" title="Agregar al catálogo">
+                        <i class="fa-regular fa-bookmark"></i>
+                    </button>
+                    <button class="accion-icono" data-accion="favorito" title="Marcar favorito">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <button class="accion-icono" data-accion="visto" title="Marcar como visto">
+                        <i class="fa-regular fa-eye"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <h3 class="tarjeta-titulo"></h3>
+    </div>
+
+    <!--  Modal de detalles  -->
+    <dialog id="modalDetalles" class="modal-detalles">
+        <button id="cerrarModal" class="cerrar-modal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+        <div id="contenidoModal"></div>
+    </dialog>
 
 </body>
+
+<!--  Modal de detalles  -->
+<script src="scripts/funcionalidades.js" ></script>
+<script src="scripts/script.js" ></script>
+
 </html>

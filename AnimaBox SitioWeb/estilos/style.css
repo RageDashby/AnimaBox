@@ -1,6 +1,4 @@
-/* ==========================================================
-   VARIABLES — paleta tomada de la plantilla
-   ========================================================== */
+/* Variables de plantilla */
 :root {
   --fondo: #35202f;
   --panel: #432c3b;
@@ -11,7 +9,7 @@
   --linea: rgba(241, 169, 189, .24);
   --rosa-header: #fbe5e4;
   --vino: #7a2e3f;
-  --overlay-franja: rgba(0, 0, 0, .15); /* franja central translúcida del wireframe */
+  --overlay-franja: rgba(0, 0, 0, .50); 
 }
 
 * { box-sizing: border-box; }
@@ -20,37 +18,42 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  /* Fondo: reemplaza por tu imagen de cerezos/montaña Fuji */
   background-image: url("../recursos/imgs/fondo.png");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  background-color: var(--fondo); /* fallback si no carga la imagen */
+  /*Por si no encuentra la imagen s esusa el fondo */
+  background-color: var(--fondo); 
   color: var(--texto);
   font-family: "Montserrat", Arial, sans-serif;
   line-height: 1.45;
   min-height: 100vh;
 }
 
-/* Franja central translúcida para legibilidad */
+/* Traslucido para legibilidad */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(90deg, transparent 0%, var(--overlay-franja) 12%, var(--overlay-franja) 88%, transparent 100%);
+  background-color: var(--overlay-franja);
   pointer-events: none;
   z-index: 0;
 }
 
-/* Contenido por encima del overlay */
-header, .slider, .contenedor-principal, dialog { position: relative; z-index: 1; }
+/* Contenido por encima del traslucido */
+header, .slider, .contenedor-principal, dialog { 
+    position: relative; z-index: 1; 
+}
 
-button, input, select, textarea { font: inherit; }
-button, select { cursor: pointer; }
+button, input, select, textarea { 
+    font: inherit; 
+}
 
-/* ==========================================================
-   HEADER
-   ========================================================== */
+button, select { 
+    cursor: pointer; 
+}
+
+/* Header */
 .encabezado {
   height: 72px;
   padding: 0 clamp(16px, 4vw, 64px);
@@ -124,9 +127,7 @@ button, select { cursor: pointer; }
   font-size: 11px;
 }
 
-/* ==========================================================
-   SLIDER
-   ========================================================== */
+/* Slider de imagenes */
 .slider {
   position: relative;
   margin: 24px auto;
@@ -205,9 +206,7 @@ button, select { cursor: pointer; }
 }
 .slider-punto.activo { background: var(--acento); }
 
-/* ==========================================================
-   CONTENEDOR PRINCIPAL
-   ========================================================== */
+/* Contenido principal */
 .contenedor-principal {
   max-width: 1200px;
   margin: 0 auto;
@@ -255,9 +254,7 @@ button, select { cursor: pointer; }
 }
 #contadorResultados { color: var(--texto-suave); font-size: 14px; }
 
-/* ==========================================================
-   GRID DE PELÍCULAS — 5 por fila
-   ========================================================== */
+/* Grid de las pelocilas */
 .grid-peliculas {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -328,9 +325,7 @@ button, select { cursor: pointer; }
   color: var(--texto);
 }
 
-/* ==========================================================
-   MODAL DE DETALLES
-   ========================================================== */
+/* Modal */
 .modal-detalles {
   width: min(900px, 92vw);
   max-height: 90vh;
@@ -359,7 +354,7 @@ button, select { cursor: pointer; }
 
 #contenidoModal { padding: 24px; max-height: 90vh; overflow-y: auto; }
 
-/* Layout del modal (JS lo rellena) */
+/* Layout del modal */
 .modal-layout { display: grid; grid-template-columns: 260px 1fr; gap: 24px; }
 .modal-poster img { width: 100%; border-radius: 10px; }
 .modal-galeria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 10px; }
@@ -419,19 +414,17 @@ button, select { cursor: pointer; }
   font-weight: 700;
 }
 
-/* ==========================================================
-   UTILIDADES Y RESPONSIVE
-   ========================================================== */
+/* Utilidades de mensajes */
 .oculto { display: none !important; }
 .mensaje { padding: 24px; text-align: center; background: var(--panel); border-radius: 12px; }
 .mensaje.error { color: #ffb3b3; }
 
-/* Tablet/laptop: mantiene 5 columnas hasta 900px */
+/* Tablet o laptop disminuye el grid */
 @media (max-width: 900px) {
   .grid-peliculas { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Móvil: 1 columna */
+/* Celular: 1 columna */
 @media (max-width: 600px) {
   .encabezado { flex-wrap: wrap; height: auto; padding: 12px 16px; gap: 12px; }
   .logo { font-size: 22px; }

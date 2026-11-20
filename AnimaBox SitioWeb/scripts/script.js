@@ -1,386 +1,316 @@
-// ============================================================
-// script.js — Lógica frontend de AnimaBox
-// API: http://localhost:3000 (Node nativo en ApiPeliculas/apip.js)
-// ============================================================
 
-const URL_API = "http://localhost:3000";
-const CLAVE_COLECCION = "animabox_coleccion"; // { [peliculaId]: { enColeccion, favorito, visto } }
-let peliculas = [];
-let comentariosCache = {}; // { [peliculaId]: [comentarios] }
-let vistaActual = "catalogo";
-let indiceSlider = 0;
-let intervaloSlider = null;
+var URL_API = "http://localhost:3000";
+var peliculas = [];
 
-// ---------- Utilidades ----------
-const $ = (sel) => document.querySelector(sel);
-const crear = (etiqueta, clase) => {
-  const el = document.createElement(etiqueta);
-  if (clase) el.className = clase;
-  return el;
-};
-const escapar = (v) => String(v ?? "").replace(/[&<>"']/g, c => ({
-  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
-}[c]));
+// Api
 
-// ---------- LocalStorage: colección / favoritos / vistos ----------
-function leerColeccion() {
-  try { return JSON.parse(localStorage.getItem(CLAVE_COLECCION)) || {}; }
-  catch { return {}; }
-}
-function guardarColeccion(obj) {
-  localStorage.setItem(CLAVE_COLECCION, JSON.stringify(obj));
-  actualizarContadorColeccion();
-}
-function actualizarContadorColeccion() {
-  const col = leerColeccion();
-  const total = Object.values(col).filter(f => f.enColeccion).length;
-  $("#contadorColeccion").textContent = total;
+function apiGet(ruta) {
+  return fetch(URL_API + ruta).then(function (recurso) {
+    if (!recurso.ok) throw new Error("GET " + ruta + " → " + recurso.status);
+    return recurso.json();
+  });
 }
 
-// ---------- Llamadas a la API ----------
-async function apiGet(ruta) {
-  const res = await fetch(`${URL_API}${ruta}`);
-  if (!res.ok) throw new Error(`GET ${ruta} → ${res.status}`);
-  return res.json();
-}
-async function apiEnviar(metodo, cuerpo) {
-  const res = await fetch(`${URL_API}/api/accion`, {
+function apiEnviar(metodo, cuerpo) {
+  return fetch(URL_API + "/api/accion", {
     method: metodo,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(cuerpo)
+  }).then(function (recurso) {
+    return recurso.json().then(function (data) {
+      if (!recurso.ok) throw new Error(data.mensaje || "Error " + recurso.status);
+      return data;
+    });
   });
-  const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.mensaje || `Error ${res.status}`);
-  return data;
 }
 
-// ---------- Inicialización ----------
-async function iniciar() {
-  try {
-    const data = await apiGet("/api/peliculas");
-    peliculas = data.peliculas || [];
-    inicializarFiltros();
-    inicializarSlider();
-    renderizarCatalogo();
-    actualizarContadorColeccion();
-    conectarEventos();
-  } catch (err) {
-    console.error(err);
-    $("#mensajeError").classList.remove("oculto");
-    $("#mensajeError").innerHTML = `<strong>No se pudo cargar el catálogo.</strong><br>${escapar(err.message)}<br>Verifica que el servidor Node esté corriendo en <code>${URL_API}</code>.`;
-    $("#contadorResultados").textContent = "Error";
-  }
+// Inicializacion de peliculas
+
+function iniciar() {
+  apiGet("/api/peliculas")
+    .then(function (data) {
+      peliculas = data.peliculas || [];
+      inicializarFiltros(peliculas);
+      inicializarSlider(peliculas);
+      renderizarCatalogo();
+      actualizarContadorColeccion();
+      conectarEventosGlobales();
+      configurarHoverTarjetas();
+      configurarCierreModal();
+    })
+    .catch(function (err) {
+      console.error(err);
+      var mensaje = obtenerElemento("#mensajeError");
+      mensaje.classList.remove("oculto");
+      mensaje.innerHTML =
+        "<strong>No se pudo cargar el catálogo.</strong><br>" +
+        escaparHtml(err.message) +
+        "<br>Verifica que el servidor Node esté corriendo en <code>" + URL_API + "</code>.";
+      obtenerElemento("#contadorResultados").textContent = "Error";
+    });
 }
 
-// ---------- Filtros (4 selects, igual que plantilla) ----------
-function inicializarFiltros() {
-  llenarSelect("#filtroEstudio", peliculas.map(p => p.casa_productora), "Todos los estudios");
-  llenarSelect("#filtroDirector", peliculas.map(p => p.director), "Todos los directores");
-  llenarSelect("#filtroAnio", peliculas.map(p => p.anio_lanzamiento), "Todos los años", true);
-  llenarSelect("#filtroGenero", peliculas.flatMap(p => p.generos || []), "Todos los géneros");
-}
-function llenarSelect(sel, valores, etiqueta, desc = false) {
-  const select = $(sel);
-  const unicos = [...new Set(valores.filter(v => v !== null && v !== undefined && v !== ""))];
-  unicos.sort((a, b) => desc ? Number(b) - Number(a) : String(a).localeCompare(String(b), "es"));
-  select.innerHTML = `<option value="">${etiqueta}</option>` +
-    unicos.map(v => `<option value="${escapar(v)}">${escapar(v)}</option>`).join("");
-}
+// Clonacion de plantilla y llenado 
 
-// ---------- Slider ----------
-function inicializarSlider() {
-  const destacadas = [...peliculas].sort(() => Math.random() - 0.5).slice(0, 5);
-  const cont = $("#sliderContenido");
-  const puntos = $("#sliderPuntos");
-  cont.innerHTML = "";
-  puntos.innerHTML = "";
-
-  destacadas.forEach((p, i) => {
-    const slide = crear("div", "slider-slide" + (i === 0 ? " activo" : ""));
-    slide.style.backgroundImage = `url("${p.imagen_url}")`;
-    slide.innerHTML = `<div class="slider-info"><h2>${escapar(p.nombre)}</h2><p>${escapar(p.director)} · ${escapar(p.anio_lanzamiento)}</p></div>`;
-    slide.addEventListener("click", () => abrirModal(p.id));
-    cont.appendChild(slide);
-
-    const punto = crear("button", "slider-punto" + (i === 0 ? " activo" : ""));
-    punto.addEventListener("click", () => irASlide(i));
-    puntos.appendChild(punto);
-  });
-
-  $("#flechaIzquierda").onclick = () => moverSlider(-1);
-  $("#flechaDerecha").onclick = () => moverSlider(1);
-  iniciarAutoplay();
-}
-function irASlide(i) {
-  const slides = document.querySelectorAll(".slider-slide");
-  const puntos = document.querySelectorAll(".slider-punto");
-  if (!slides.length) return;
-  slides[indiceSlider].classList.remove("activo");
-  puntos[indiceSlider].classList.remove("activo");
-  indiceSlider = (i + slides.length) % slides.length;
-  slides[indiceSlider].classList.add("activo");
-  puntos[indiceSlider].classList.add("activo");
-}
-function moverSlider(dir) { irASlide(indiceSlider + dir); reiniciarAutoplay(); }
-function iniciarAutoplay() {
-  intervaloSlider = setInterval(() => irASlide(indiceSlider + 1), 6000); // 6 seg
-}
-function reiniciarAutoplay() {
-  clearInterval(intervaloSlider);
-  iniciarAutoplay();
-}
-
-// ---------- Render del catálogo (clonación de tarjeta) ----------
 function renderizarCatalogo() {
-  const busqueda = $("#entradaBusqueda").value.trim().toLowerCase();
-  const estudio = $("#filtroEstudio").value;
-  const anio = $("#filtroAnio").value;
-  const genero = $("#filtroGenero").value;
-  const director = $("#filtroDirector").value;
-  const coleccion = leerColeccion();
+  var busqueda = obtenerElemento("#entradaBusqueda").value.trim().toLowerCase();
+  var estudio = obtenerElemento("#filtroEstudio").value;
+  var anio = obtenerElemento("#filtroAnio").value;
+  var genero = obtenerElemento("#filtroGenero").value;
+  var director = obtenerElemento("#filtroDirector").value;
+  var coleccion = leerColeccion();
 
-  // En "Mi colección" solo se muestran las marcadas con enColeccion
-  const visibles = peliculas.filter(p => {
-    if (vistaActual === "coleccion" && !coleccion[p.id]?.enColeccion) return false;
-    const coincideBusqueda = !busqueda ||
-      [p.nombre, p.director, p.casa_productora].some(v =>
-        String(v || "").toLowerCase().includes(busqueda));
-    return coincideBusqueda &&
-      (!estudio || p.casa_productora === estudio) &&
-      (!anio || String(p.anio_lanzamiento) === anio) &&
-      (!genero || (p.generos || []).includes(genero)) &&
-      (!director || p.director === director);
-  }).sort((a, b) => a.nombre.localeCompare(b.nombre, "es"));
+  var visibles = [];
+  for (var i = 0; i < peliculas.length; i++) {
+    var p = peliculas[i];
 
-  $("#tituloLista").textContent = vistaActual === "coleccion" ? "Mi colección" : "Todas las películas";
-  $("#contadorResultados").textContent = `${visibles.length} ${visibles.length === 1 ? "película" : "películas"}`;
-  $("#mensajeVacio").classList.toggle("oculto", visibles.length > 0);
+    if (vistaActual === "coleccion" && !coleccion[p.id]) continue;
+    if (vistaActual === "coleccion" && !coleccion[p.id].enColeccion) continue;
 
-  const contenedor = $("#listaPeliculas");
+    if (busqueda !== "") {
+      var coincide =
+        String(p.nombre || "").toLowerCase().indexOf(busqueda) !== -1 ||
+        String(p.director || "").toLowerCase().indexOf(busqueda) !== -1 ||
+        String(p.casa_productora || "").toLowerCase().indexOf(busqueda) !== -1;
+      if (!coincide) continue;
+    }
+
+    if (estudio !== "" && p.casa_productora !== estudio) continue;
+    if (anio !== "" && String(p.anio_lanzamiento) !== anio) continue;
+    if (director !== "" && p.director !== director) continue;
+
+    if (genero !== "") {
+      var tieneGenero = false;
+      var gs = p.generos || [];
+      for (var k = 0; k < gs.length; k++) {
+        if (gs[k] === genero) { tieneGenero = true; break; }
+      }
+      if (!tieneGenero) continue;
+    }
+
+    visibles.push(p);
+  }
+
+  visibles.sort(function (a, b) { return a.nombre.localeCompare(b.nombre, "es"); });
+
+  obtenerElemento("#tituloLista").textContent =
+    vistaActual === "coleccion" ? "Mi colección" : "Todas las películas";
+  obtenerElemento("#contadorResultados").textContent =
+    visibles.length + " " + (visibles.length === 1 ? "película" : "películas");
+
+  if (visibles.length > 0) {
+    obtenerElemento("#mensajeVacio").classList.add("oculto");
+  } else {
+    obtenerElemento("#mensajeVacio").classList.remove("oculto");
+  }
+
+  var contenedor = obtenerElemento("#listaPeliculas");
   contenedor.innerHTML = "";
-  const plantilla = $("#plantillaTarjeta");
+  var plantilla = obtenerElemento("#plantillaTarjeta");
 
-  visibles.forEach(p => {
-    const tarjeta = plantilla.cloneNode(true);
+  for (var j = 0; j < visibles.length; j++) {
+    var peli = visibles[j];
+    var tarjeta = plantilla.cloneNode(true);
     tarjeta.classList.remove("oculto");
     tarjeta.removeAttribute("aria-hidden");
-    tarjeta.dataset.id = p.id;
+    tarjeta.dataset.id = peli.id;
 
-    const img = tarjeta.querySelector(".tarjeta-imagen");
-    img.src = p.imagen_url;
-    img.alt = `Póster de ${p.nombre}`;
-    img.onerror = () => { img.src = "https://placehold.co/500x750/432c3b/f1a9bd?text=Sin+imagen"; };
+    var img = tarjeta.querySelector(".tarjeta-imagen");
+    img.src = peli.imagen_url;
+    img.alt = "Póster de " + peli.nombre;
+    img.onerror = function () {
+      this.src = "https://placehold.co/500x750/432c3b/f1a9bd?text=Sin+imagen";
+    };
 
-    tarjeta.querySelector(".overlay-anio").textContent = p.anio_lanzamiento;
-    tarjeta.querySelector(".overlay-director").textContent = p.director;
-    tarjeta.querySelector(".overlay-generos").textContent = (p.generos || []).slice(0, 2).join(" · ");
-    tarjeta.querySelector(".tarjeta-titulo").textContent = p.nombre;
+    tarjeta.querySelector(".overlay-anio").textContent = peli.anio_lanzamiento;
+    tarjeta.querySelector(".overlay-director").textContent = peli.director;
+    tarjeta.querySelector(".overlay-generos").textContent =
+      (peli.generos || []).slice(0, 2).join(" · ");
+    tarjeta.querySelector(".tarjeta-titulo").textContent = peli.nombre;
 
-    // Estado de los 3 botones según localStorage
-    const estado = coleccion[p.id] || {};
+    var estado = coleccion[peli.id] || {};
     marcarBoton(tarjeta, "catalogo", estado.enColeccion);
     marcarBoton(tarjeta, "favorito", estado.favorito);
     marcarBoton(tarjeta, "visto", estado.visto);
 
-    // Click en póster → modal
-    tarjeta.querySelector(".tarjeta-poster").addEventListener("click", (e) => {
-      if (e.target.closest(".accion-icono")) return;
-      abrirModal(p.id);
-    });
-
-    // Click en los 3 botones
-    tarjeta.querySelectorAll(".accion-icono").forEach(btn => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
-        alternarFlag(p.id, btn.dataset.accion);
+    // Funcion para abrir modal
+    (function (idPeli) {
+      tarjeta.querySelector(".tarjeta-poster").addEventListener("click", function (evento) {
+        if (evento.target.closest(".accion-icono")) return;
+        abrirModal(idPeli);
       });
-    });
+    })(peli.id);
+
+    // Botones  de guardado, fav y visots
+    var botones = tarjeta.querySelectorAll(".accion-icono");
+    for (var b = 0; b < botones.length; b++) {
+      (function (btn, idPeli) {
+        btn.addEventListener("click", function (evento) {
+          evento.stopPropagation();
+          alternarFlag(idPeli, btn.dataset.accion);
+        });
+      })(botones[b], peli.id);
+    }
 
     contenedor.appendChild(tarjeta);
-  });
+  }
+
+  // Hover
+  configurarHoverTarjetas();
 }
 
-// Marca visualmente el botón según su flag
-function marcarBoton(tarjeta, accion, activo) {
-  const btn = tarjeta.querySelector(`.accion-icono[data-accion="${accion}"]`);
-  if (!btn) return;
-  btn.classList.toggle("activa", !!activo);
-  const icono = btn.querySelector("i");
-  const mapa = {
-    catalogo: ["fa-regular fa-bookmark", "fa-solid fa-bookmark"],
-    favorito: ["fa-regular fa-heart", "fa-solid fa-heart"],
-    visto: ["fa-regular fa-eye", "fa-solid fa-eye"]
-  };
-  icono.className = mapa[accion][activo ? 1 : 0];
-}
-
-// Alterna un flag (catálogo/favorito/visto) en localStorage
-function alternarFlag(peliculaId, accion) {
-  const col = leerColeccion();
-  const id = String(peliculaId);
-  col[id] = col[id] || { enColeccion: false, favorito: false, visto: false };
-
-  if (accion === "catalogo") col[id].enColeccion = !col[id].enColeccion;
-  if (accion === "favorito") { col[id].favorito = !col[id].favorito; if (col[id].favorito) col[id].enColeccion = true; }
-  if (accion === "visto") { col[id].visto = !col[id].visto; if (col[id].visto) col[id].enColeccion = true; }
-
-  // Si ya no está en colección, limpia flags
-  if (!col[id].enColeccion) col[id] = { enColeccion: false, favorito: false, visto: false };
-
-  guardarColeccion(col);
-  renderizarCatalogo();
-}
-
-// ---------- Modal de detalles ----------
+// Modal y comentarios
 async function abrirModal(peliculaId) {
-  const p = peliculas.find(x => x.id === peliculaId);
+  var p = null;
+  for (var i = 0; i < peliculas.length; i++) {
+    if (peliculas[i].id === peliculaId) { p = peliculas[i]; break; }
+  }
   if (!p) return;
-  const coleccion = leerColeccion();
-  const estado = coleccion[p.id] || {};
 
-  // Carga comentarios desde la API
-  let comentarios = [];
+  var coleccion = leerColeccion();
+  var estado = coleccion[p.id] || {};
+
+  // Cargar comentarios desde la api 
+  var comentarios = [];
   try {
-    const data = await apiGet("/api/comentarios");
-    comentarios = (data.arreglo || []).filter(c => c.peliculaId === p.id);
-  } catch (err) { console.warn("No se pudieron cargar comentarios:", err); }
+    var data = await apiGet("/api/comentarios");
+    var todos = data.arreglo || [];
+    for (var k = 0; k < todos.length; k++) {
+      if (todos[k].peliculaId === p.id) comentarios.push(todos[k]);
+    }
+  } catch (err) {
+    console.warn("No se pudieron cargar comentarios:", err);
+  }
 
-  const galeria = (p.galeria || []).slice(0, 3);
-  const estrellas = (n) => "★".repeat(n) + "☆".repeat(5 - n);
+  var galeria = (p.galeria || []).slice(0, 3);
+  var estrellas = function (n) { return "★".repeat(n) + "☆".repeat(5 - n); };
 
-  $("#contenidoModal").innerHTML = `
-    <div class="modal-layout">
-      <div class="modal-poster">
-        <img src="${escapar(p.imagen_url)}" alt="Póster de ${escapar(p.nombre)}">
-        <div class="modal-galeria">
-          ${galeria.map(g => `<img src="${escapar(g)}" alt="Imagen de ${escapar(p.nombre)}">`).join("")}
-        </div>
-      </div>
-      <div class="modal-info">
-        <h2>${escapar(p.nombre)}</h2>
-        <p class="meta">${escapar(p.director)} · ${escapar(p.anio_lanzamiento)} · ${escapar(p.duracion)} min · ${escapar(p.casa_productora)}</p>
-        <p class="sinopsis">${escapar(p.descripcion)}</p>
-        <div class="etiquetas">${(p.generos || []).map(g => `<span class="etiqueta">${escapar(g)}</span>`).join("")}</div>
-        <div class="modal-acciones">
-          <button class="accion-icono ${estado.enColeccion ? "activa" : ""}" data-accion="catalogo" title="Agregar al catálogo"><i class="fa-${estado.enColeccion ? "solid" : "regular"} fa-bookmark"></i></button>
-          <button class="accion-icono ${estado.favorito ? "activa" : ""}" data-accion="favorito" title="Favorito"><i class="fa-${estado.favorito ? "solid" : "regular"} fa-heart"></i></button>
-          <button class="accion-icono ${estado.visto ? "activa" : ""}" data-accion="visto" title="Ya visto"><i class="fa-${estado.visto ? "solid" : "regular"} fa-eye"></i></button>
-        </div>
-        <section class="seccion-comentarios">
-          <h3>Comentarios</h3>
-          <div id="listaComentarios">
-            ${comentarios.length ? comentarios.map(c => `
-              <div class="comentario" data-id="${c.id}">
-                <div class="comentario-cabecera">
-                  <span class="comentario-usuario">${escapar(c.usuario)}</span>
-                  <span class="comentario-estrellas">${estrellas(c.calificacion)}</span>
-                </div>
-                <p class="comentario-texto">${escapar(c.texto)}</p>
-                <div class="comentario-acciones">
-                  <button class="me-gusta" data-accion="like"><i class="fa-regular fa-heart"></i> ${c.likes || 0}</button>
-                  <button data-accion="editar"><i class="fa-solid fa-pen"></i> Editar</button>
-                  <button data-accion="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</button>
-                </div>
-              </div>`).join("") : '<p class="mensaje">Aún no hay comentarios.</p>'}
-          </div>
-          <form class="formulario-comentario" id="formComentario">
-            <input id="comUsuario" placeholder="Tu nombre o alias" maxlength="40" required>
-            <select id="comCalificacion">
-              <option value="5">5 estrellas</option><option value="4">4 estrellas</option>
-              <option value="3">3 estrellas</option><option value="2">2 estrellas</option>
-              <option value="1">1 estrella</option>
-            </select>
-            <textarea id="comTexto" placeholder="Escribe tu comentario..." maxlength="500" required></textarea>
-            <button type="submit">Publicar comentario</button>
-          </form>
-        </section>
-      </div>
-    </div>`;
+  var htmlGaleria = "";
+  for (var g = 0; g < galeria.length; g++) {
+    htmlGaleria += '<img src="' + escaparHtml(galeria[g]) + '" alt="Imagen de ' + escaparHtml(p.nombre) + '">';
+  }
 
-  // Botones de flag dentro del modal
-  $("#contenidoModal").querySelectorAll(".modal-acciones .accion-icono").forEach(btn => {
-    btn.addEventListener("click", () => {
-      alternarFlag(p.id, btn.dataset.accion);
-      abrirModal(p.id); // re-render
-    });
-  });
+  var htmlGeneros = "";
+  var gen = p.generos || [];
+  for (var h = 0; h < gen.length; h++) {
+    htmlGeneros += '<span class="etiqueta">' + escaparHtml(gen[h]) + "</span>";
+  }
 
-  // Formulario POST comentario
-  $("#formComentario").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    try {
-      await apiEnviar("POST", {
-        accion: "crearComentario",
-        peliculaId: p.id,
-        usuario: $("#comUsuario").value.trim(),
-        texto: $("#comTexto").value.trim(),
-        calificacion: Number($("#comCalificacion").value)
+  var htmlComentarios = "";
+  if (comentarios.length === 0) {
+    htmlComentarios = '<p class="mensaje">Aún no hay comentarios.</p>';
+  } else {
+    for (var c = 0; c < comentarios.length; c++) {
+      var com = comentarios[c];
+      htmlComentarios +=
+        '<div class="comentario" data-id="' + com.id + '">' +
+          '<div class="comentario-cabecera">' +
+            '<span class="comentario-usuario">' + escaparHtml(com.usuario) + "</span>" +
+            '<span class="comentario-estrellas">' + estrellas(com.calificacion) + "</span>" +
+          "</div>" +
+          '<p class="comentario-texto">' + escaparHtml(com.texto) + "</p>" +
+          '<div class="comentario-acciones">' +
+            '<button class="me-gusta" data-accion="like"><i class="fa-regular fa-heart"></i> ' + (com.likes || 0) + "</button>" +
+            '<button data-accion="editar"><i class="fa-solid fa-pen"></i> Editar</button>' +
+            '<button data-accion="eliminar"><i class="fa-solid fa-trash"></i> Eliminar</button>' +
+          "</div>" +
+        "</div>";
+    }
+  }
+
+  obtenerElemento("#contenidoModal").innerHTML =
+    '<div class="modal-layout">' +
+      '<div class="modal-poster">' +
+        '<img src="' + escaparHtml(p.imagen_url) + '" alt="Póster de ' + escaparHtml(p.nombre) + '">' +
+        '<div class="modal-galeria">' + htmlGaleria + "</div>" +
+      "</div>" +
+      '<div class="modal-info">' +
+        "<h2>" + escaparHtml(p.nombre) + "</h2>" +
+        '<p class="meta">' +
+          escaparHtml(p.director) + " · " + escaparHtml(p.anio_lanzamiento) + " · " +
+          escaparHtml(p.duracion) + " min · " + escaparHtml(p.casa_productora) +
+        "</p>" +
+        '<p class="sinopsis">' + escaparHtml(p.descripcion) + "</p>" +
+        '<div class="etiquetas">' + htmlGeneros + "</div>" +
+        '<div class="modal-acciones">' +
+          '<button class="accion-icono ' + (estado.enColeccion ? "activa" : "") + '" data-accion="catalogo"><i class="fa-' + (estado.enColeccion ? "solid" : "regular") + ' fa-bookmark"></i></button>' +
+          '<button class="accion-icono ' + (estado.favorito ? "activa" : "") + '" data-accion="favorito"><i class="fa-' + (estado.favorito ? "solid" : "regular") + ' fa-heart"></i></button>' +
+          '<button class="accion-icono ' + (estado.visto ? "activa" : "") + '" data-accion="visto"><i class="fa-' + (estado.visto ? "solid" : "regular") + ' fa-eye"></i></button>' +
+        "</div>" +
+        '<section class="seccion-comentarios">' +
+          "<h3>Comentarios</h3>" +
+          '<div id="listaComentarios">' + htmlComentarios + "</div>" +
+          '<form class="formulario-comentario" id="formComentario">' +
+            '<input id="comUsuario" placeholder="Tu nombre o alias" maxlength="40" required>' +
+            '<select id="comCalificacion">' +
+              '<option value="5">5 estrellas</option><option value="4">4 estrellas</option>' +
+              '<option value="3">3 estrellas</option><option value="2">2 estrellas</option>' +
+              '<option value="1">1 estrella</option>' +
+            "</select>" +
+            '<textarea id="comTexto" placeholder="Escribe tu comentario..." maxlength="500" required></textarea>' +
+            '<button type="submit">Publicar comentario</button>' +
+          "</form>" +
+        "</section>" +
+      "</div>" +
+    "</div>";
+
+  var botonesModal = obtenerElemento("#contenidoModal").querySelectorAll(".modal-acciones .accion-icono");
+  for (var m = 0; m < botonesModal.length; m++) {
+    (function (btn) {
+      btn.addEventListener("click", function () {
+        alternarFlag(p.id, btn.dataset.accion);
+        abrirModal(p.id);
       });
-      abrirModal(p.id);
-    } catch (err) { alert("Error al publicar: " + err.message); }
+    })(botonesModal[m]);
+  }
+
+  // Agregar comentario
+  obtenerElemento("#formComentario").addEventListener("submit", function (evento) {
+    evento.preventDefault();
+    apiEnviar("POST", {
+      accion: "crearComentario",
+      peliculaId: p.id,
+      usuario: obtenerElemento("#comUsuario").value.trim(),
+      texto: obtenerElemento("#comTexto").value.trim(),
+      calificacion: Number(obtenerElemento("#comCalificacion").value)
+    })
+      .then(function () { abrirModal(p.id); })
+      .catch(function (err) { alert("Error al publicar: " + err.message); });
   });
 
-  // Acciones sobre comentarios (like / editar / eliminar)
-  $("#listaComentarios").addEventListener("click", async (e) => {
-    const btn = e.target.closest("button[data-accion]");
+  // Acciones sobre comentarios (darle like, editarlo o eliminarlo)
+  obtenerElemento("#listaComentarios").addEventListener("click", function (evento) {
+    var btn = evento.target.closest("button[data-accion]");
     if (!btn) return;
-    const idComentario = Number(btn.closest(".comentario").dataset.id);
-    const accion = btn.dataset.accion;
-    try {
-      if (accion === "like") {
-        await apiEnviar("PUT", { accion: "darLike", id: idComentario });
-      } else if (accion === "eliminar") {
-        if (!confirm("¿Eliminar este comentario?")) return;
-        await apiEnviar("DELETE", { accion: "eliminarComentario", id: idComentario });
-      } else if (accion === "editar") {
-        const nuevo = prompt("Edita tu comentario:");
-        if (nuevo === null) return;
-        const nuevaCal = prompt("Nueva calificación (1-5):", "5");
-        await apiEnviar("PUT", {
-          accion: "editarComentario", id: idComentario,
-          texto: nuevo, calificacion: Number(nuevaCal) || 5
-        });
-      }
-      abrirModal(p.id);
-    } catch (err) { alert("Error: " + err.message); }
+    var idComentario = Number(btn.closest(".comentario").dataset.id);
+    var accion = btn.dataset.accion;
+
+    if (accion === "like") {
+      apiEnviar("PUT", { accion: "darLike", id: idComentario })
+        .then(function () { abrirModal(p.id); })
+        .catch(function (err) { alert("Error: " + err.message); });
+    } else if (accion === "eliminar") {
+      if (!confirm("¿Eliminar este comentario?")) return;
+      apiEnviar("DELETE", { accion: "eliminarComentario", id: idComentario })
+        .then(function () { abrirModal(p.id); })
+        .catch(function (err) { alert("Error: " + err.message); });
+    } else if (accion === "editar") {
+      var nuevo = prompt("Edita tu comentario:");
+      if (nuevo === null) return;
+      var nuevaCal = prompt("Nueva calificación (1-5):", "5");
+      apiEnviar("PUT", {
+        accion: "editarComentario",
+        id: idComentario,
+        texto: nuevo,
+        calificacion: Number(nuevaCal) || 5
+      })
+        .then(function () { abrirModal(p.id); })
+        .catch(function (err) { alert("Error: " + err.message); });
+    }
   });
 
-  $("#modalDetalles").showModal();
+  mostrarModal(); 
 }
 
-// ---------- Eventos globales ----------
-function conectarEventos() {
-  $("#entradaBusqueda").addEventListener("input", renderizarCatalogo);
-  ["#filtroEstudio", "#filtroAnio", "#filtroGenero", "#filtroDirector"].forEach(sel =>
-    $(sel).addEventListener("change", renderizarCatalogo));
-  $("#limpiarFiltros").addEventListener("click", () => {
-    $("#entradaBusqueda").value = "";
-    ["#filtroEstudio", "#filtroAnio", "#filtroGenero", "#filtroDirector"].forEach(s => $(s).value = "");
-    renderizarCatalogo();
-  });
-  $("#pestanaCatalogo").addEventListener("click", () => {
-    vistaActual = "catalogo";
-    $("#pestanaCatalogo").classList.add("activo");
-    $("#pestanaColeccion").classList.remove("activo");
-    renderizarCatalogo();
-  });
-  $("#pestanaColeccion").addEventListener("click", () => {
-    vistaActual = "coleccion";
-    $("#pestanaColeccion").classList.add("activo");
-    $("#pestanaCatalogo").classList.remove("activo");
-    renderizarCatalogo();
-  });
-  $("#logoInicio").addEventListener("click", (e) => {
-    e.preventDefault();
-    vistaActual = "catalogo";
-    $("#pestanaCatalogo").click();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  $("#cerrarModal").addEventListener("click", () => $("#modalDetalles").close());
-  $("#modalDetalles").addEventListener("click", (e) => {
-    if (e.target === $("#modalDetalles")) $("#modalDetalles").close();
-  });
-}
-
-// Arranque
+//Inciar  
 iniciar();
