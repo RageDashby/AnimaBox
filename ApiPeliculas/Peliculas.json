@@ -1,0 +1,2890 @@
+{
+  "peliculas": [
+    {
+      "id": 1,
+      "nombre": "The Castle of Cagliostro",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1979,
+      "duracion": 100,
+      "descripcion": "Lupin III llega a un pequeño país europeo para investigar una falsificación y ayudar a una princesa.",
+      "generos": [
+        "Aventura",
+        "Comedia",
+        "Acción"
+      ],
+      "casa_productora": "Tokyo Movie Shinsha",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1430-aHneeSPBCeHR.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1430-aHneeSPBCeHR.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1430-aHneeSPBCeHR.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1430-aHneeSPBCeHR.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Nausicaä del Valle del Viento",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1984,
+      "duracion": 116,
+      "descripcion": "En un mundo devastado por una guerra, Nausicaä intenta comprender el bosque tóxico y encontrar una forma de convivencia entre los humanos y la naturaleza.",
+      "generos": [
+        "Aventura",
+        "Ciencia ficción",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "Topcraft (incluida en el catálogo oficial de Studio Ghibli)",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Nausica%C3%A4%20del%20Valle%20del%20Viento",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Nausica%C3%A4%20del%20Valle%20del%20Viento",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Nausica%C3%A4%20del%20Valle%20del%20Viento&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Nausica%C3%A4%20del%20Valle%20del%20Viento&gal=2"
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "El castillo en el cielo",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1986,
+      "duracion": 124,
+      "descripcion": "Sheeta y Pazu emprenden una aventura para encontrar Laputa, una legendaria isla flotante, mientras escapan de quienes desean apoderarse de su poder.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx513-yM7Dlt65N4Rl.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx513-yM7Dlt65N4Rl.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx513-yM7Dlt65N4Rl.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx513-yM7Dlt65N4Rl.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Akira",
+      "director": "Katsuhiro Otomo",
+      "anio_lanzamiento": 1988,
+      "duracion": 124,
+      "descripcion": "En Neo-Tokio, una serie de experimentos y poderes psíquicos desencadena una crisis que amenaza a toda la ciudad.",
+      "generos": [
+        "Ciencia ficción",
+        "Acción",
+        "Cyberpunk"
+      ],
+      "casa_productora": "Tokyo Movie Shinsha",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx47-4CR68arv452h.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx47-4CR68arv452h.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx47-4CR68arv452h.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx47-4CR68arv452h.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "La tumba de las luciérnagas",
+      "director": "Isao Takahata",
+      "anio_lanzamiento": 1988,
+      "duracion": 88,
+      "descripcion": "Durante los últimos meses de la Segunda Guerra Mundial en Japón, dos hermanos intentan salir adelante en medio de la devastación.",
+      "generos": [
+        "Drama",
+        "Histórico",
+        "Bélico"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tumba%20de%20las%20luci%C3%A9rnagas",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tumba%20de%20las%20luci%C3%A9rnagas",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tumba%20de%20las%20luci%C3%A9rnagas&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tumba%20de%20las%20luci%C3%A9rnagas&gal=2"
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Mi vecino Totoro",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1988,
+      "duracion": 86,
+      "descripcion": "Satsuki y Mei se mudan al campo y descubren criaturas mágicas del bosque, entre ellas el enorme y amable Totoro.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx523-fErBvxOHP7IX.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx523-fErBvxOHP7IX.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx523-fErBvxOHP7IX.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx523-fErBvxOHP7IX.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 7,
+      "nombre": "Kiki: Entregas a domicilio",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1989,
+      "duracion": 103,
+      "descripcion": "Kiki, una joven bruja, se muda a una ciudad costera para completar su entrenamiento y comienza un servicio de entregas volando en su escoba.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx512-UwP8X4BR8YoM.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx512-UwP8X4BR8YoM.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx512-UwP8X4BR8YoM.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx512-UwP8X4BR8YoM.png?gal=2"
+      ]
+    },
+    {
+      "id": 8,
+      "nombre": "Recuerdos del ayer",
+      "director": "Isao Takahata",
+      "anio_lanzamiento": 1991,
+      "duracion": 118,
+      "descripcion": "Taeko, una mujer de Tokio, viaja al campo y reflexiona sobre su infancia, sus decisiones y el rumbo que ha tomado su vida.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Slice of life"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1029-Ch9LIVLFnssA.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1029-Ch9LIVLFnssA.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1029-Ch9LIVLFnssA.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1029-Ch9LIVLFnssA.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 9,
+      "nombre": "Porco Rosso",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1992,
+      "duracion": 93,
+      "descripcion": "Un piloto convertido en cerdo antropomórfico trabaja como cazarrecompensas en el mar Adriático durante el periodo de entreguerras.",
+      "generos": [
+        "Aventura",
+        "Comedia",
+        "Fantasía"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx416-oO8Tts2dQtuv.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx416-oO8Tts2dQtuv.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx416-oO8Tts2dQtuv.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx416-oO8Tts2dQtuv.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 10,
+      "nombre": "Puedo escuchar el mar",
+      "director": "Tomomi Mochizuki",
+      "anio_lanzamiento": 1993,
+      "duracion": 72,
+      "descripcion": "En una escuela de Kochi, dos amigos ven cambiar su relación cuando llega una estudiante transferida desde Tokio.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Slice of life"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx743-xbLqrRYuiKUJ.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx743-xbLqrRYuiKUJ.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx743-xbLqrRYuiKUJ.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx743-xbLqrRYuiKUJ.png?gal=2"
+      ]
+    },
+    {
+      "id": 11,
+      "nombre": "Pompoko",
+      "director": "Isao Takahata",
+      "anio_lanzamiento": 1994,
+      "duracion": 119,
+      "descripcion": "Una comunidad de tanukis utiliza sus habilidades de transformación para intentar proteger su bosque de la expansión urbana.",
+      "generos": [
+        "Fantasía",
+        "Comedia",
+        "Drama",
+        "Ecología"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1030-epXaUwnycmQE.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1030-epXaUwnycmQE.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1030-epXaUwnycmQE.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1030-epXaUwnycmQE.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 12,
+      "nombre": "Ghost in the Shell",
+      "director": "Mamoru Oshii",
+      "anio_lanzamiento": 1995,
+      "duracion": 83,
+      "descripcion": "La mayor Motoko Kusanagi investiga a un misterioso hacker conocido como el Titiritero en un futuro donde la tecnología transforma la identidad humana.",
+      "generos": [
+        "Ciencia ficción",
+        "Cyberpunk",
+        "Thriller"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx43-Y6EjeEMM14dj.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx43-Y6EjeEMM14dj.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx43-Y6EjeEMM14dj.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx43-Y6EjeEMM14dj.png?gal=2"
+      ]
+    },
+    {
+      "id": 13,
+      "nombre": "Memories",
+      "director": "Katsuhiro Otomo, Kōji Morimoto y Tensai Okamura",
+      "anio_lanzamiento": 1995,
+      "duracion": 113,
+      "descripcion": "Antología de tres relatos de ciencia ficción que exploran situaciones extraordinarias y los límites de la tecnología.",
+      "generos": [
+        "Ciencia ficción",
+        "Drama",
+        "Antología"
+      ],
+      "casa_productora": "Studio 4°C y Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1462-wHe4bW5b6XRE.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1462-wHe4bW5b6XRE.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1462-wHe4bW5b6XRE.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1462-wHe4bW5b6XRE.png?gal=2"
+      ]
+    },
+    {
+      "id": 14,
+      "nombre": "Susurros del corazón",
+      "director": "Yoshifumi Kondō",
+      "anio_lanzamiento": 1995,
+      "duracion": 111,
+      "descripcion": "Shizuku, una estudiante apasionada por la lectura, conoce a un joven artesano y comienza a descubrir sus propias aspiraciones creativas.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Susurros%20del%20coraz%C3%B3n",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Susurros%20del%20coraz%C3%B3n",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Susurros%20del%20coraz%C3%B3n&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Susurros%20del%20coraz%C3%B3n&gal=2"
+      ]
+    },
+    {
+      "id": 15,
+      "nombre": "La princesa Mononoke",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 1997,
+      "duracion": 133,
+      "descripcion": "Ashitaka llega a una región donde los habitantes de una ciudad minera están en conflicto con los espíritus del bosque, entre ellos San.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164-ySuGzCWVw2cL.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164-ySuGzCWVw2cL.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164-ySuGzCWVw2cL.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164-ySuGzCWVw2cL.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 16,
+      "nombre": "Perfect Blue",
+      "director": "Satoshi Kon",
+      "anio_lanzamiento": 1997,
+      "duracion": 81,
+      "descripcion": "Una cantante que comienza una carrera como actriz pierde la certeza sobre su identidad cuando sucesos inquietantes alteran su vida.",
+      "generos": [
+        "Thriller psicológico",
+        "Drama",
+        "Misterio"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx437-69NMlXKFeuse.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx437-69NMlXKFeuse.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx437-69NMlXKFeuse.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx437-69NMlXKFeuse.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 17,
+      "nombre": "The End of Evangelion",
+      "director": "Hideaki Anno y Kazuya Tsurumaki",
+      "anio_lanzamiento": 1997,
+      "duracion": 87,
+      "descripcion": "La historia ofrece una conclusión cinematográfica a Neon Genesis Evangelion y sigue el destino de NERV y sus pilotos.",
+      "generos": [
+        "Ciencia ficción",
+        "Drama",
+        "Mecha"
+      ],
+      "casa_productora": "Gainax y Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx32-5JYsv0wc122I.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx32-5JYsv0wc122I.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx32-5JYsv0wc122I.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx32-5JYsv0wc122I.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 18,
+      "nombre": "Jin-Roh: The Wolf Brigade",
+      "director": "Hiroyuki Okiura",
+      "anio_lanzamiento": 1999,
+      "duracion": 102,
+      "descripcion": "En una versión alternativa del Japón de posguerra, un miembro de una unidad especial cuestiona su deber y sus convicciones.",
+      "generos": [
+        "Drama",
+        "Thriller",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx570-xyP4IO7i3ua2.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx570-xyP4IO7i3ua2.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx570-xyP4IO7i3ua2.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx570-xyP4IO7i3ua2.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 19,
+      "nombre": "Mis vecinos los Yamada",
+      "director": "Isao Takahata",
+      "anio_lanzamiento": 1999,
+      "duracion": 104,
+      "descripcion": "A través de episodios cotidianos y humorísticos, la película retrata las experiencias y relaciones de una familia japonesa.",
+      "generos": [
+        "Comedia",
+        "Familiar",
+        "Slice of life"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx415-6DDsl72NV0cv.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx415-6DDsl72NV0cv.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx415-6DDsl72NV0cv.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx415-6DDsl72NV0cv.png?gal=2"
+      ]
+    },
+    {
+      "id": 20,
+      "nombre": "El viaje de Chihiro",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 2001,
+      "duracion": 125,
+      "descripcion": "Chihiro queda atrapada en un mundo sobrenatural y debe trabajar en una casa de baños para espíritus mientras busca la forma de regresar con sus padres.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199-sWefXJvXkDOb.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199-sWefXJvXkDOb.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199-sWefXJvXkDOb.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx199-sWefXJvXkDOb.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 21,
+      "nombre": "Metropolis",
+      "director": "Rintaro",
+      "anio_lanzamiento": 2001,
+      "duracion": 107,
+      "descripcion": "En una ciudad futurista, un detective y su sobrino descubren los secretos de una poderosa figura artificial.",
+      "generos": [
+        "Ciencia ficción",
+        "Drama",
+        "Aventura"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx522-4Sp8QlrufkG5.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx522-4Sp8QlrufkG5.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx522-4Sp8QlrufkG5.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx522-4Sp8QlrufkG5.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 22,
+      "nombre": "Millennium Actress",
+      "director": "Satoshi Kon",
+      "anio_lanzamiento": 2001,
+      "duracion": 87,
+      "descripcion": "Un documental sobre una actriz retirada se convierte en un recorrido por sus recuerdos, películas y búsqueda de un amor del pasado.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Misterio"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1033-d5p1pbd5qa4L.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1033-d5p1pbd5qa4L.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1033-d5p1pbd5qa4L.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1033-d5p1pbd5qa4L.png?gal=2"
+      ]
+    },
+    {
+      "id": 23,
+      "nombre": "Haru en el reino de los gatos",
+      "director": "Hiroyuki Morita",
+      "anio_lanzamiento": 2002,
+      "duracion": 75,
+      "descripcion": "Después de salvar a un gato, Haru es llevada a un reino felino donde recibe una propuesta que podría cambiar su vida.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Comedia"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx597-Prw5pUyYwcFO.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx597-Prw5pUyYwcFO.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx597-Prw5pUyYwcFO.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx597-Prw5pUyYwcFO.png?gal=2"
+      ]
+    },
+    {
+      "id": 24,
+      "nombre": "Tokyo Godfathers",
+      "director": "Satoshi Kon",
+      "anio_lanzamiento": 2003,
+      "duracion": 92,
+      "descripcion": "Tres personas sin hogar encuentran a un bebé abandonado en Nochebuena y emprenden una búsqueda para localizar a su familia.",
+      "generos": [
+        "Drama",
+        "Comedia",
+        "Aventura"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx759-XSKBju6xutdR.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx759-XSKBju6xutdR.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx759-XSKBju6xutdR.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx759-XSKBju6xutdR.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 25,
+      "nombre": "El increíble castillo vagabundo",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 2004,
+      "duracion": 119,
+      "descripcion": "Sophie recibe una maldición que la convierte en anciana y busca ayuda en el castillo ambulante del mago Howl.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Romance"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20incre%C3%ADble%20castillo%20vagabund",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20incre%C3%ADble%20castillo%20vagabund",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20incre%C3%ADble%20castillo%20vagabund&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20incre%C3%ADble%20castillo%20vagabund&gal=2"
+      ]
+    },
+    {
+      "id": 26,
+      "nombre": "Ghost in the Shell 2: Innocence",
+      "director": "Mamoru Oshii",
+      "anio_lanzamiento": 2004,
+      "duracion": 100,
+      "descripcion": "Batou investiga una serie de crímenes relacionados con androides y se enfrenta a preguntas sobre la conciencia y la humanidad.",
+      "generos": [
+        "Ciencia ficción",
+        "Cyberpunk",
+        "Misterio"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx468-rfiX1uY8bsPp.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx468-rfiX1uY8bsPp.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx468-rfiX1uY8bsPp.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx468-rfiX1uY8bsPp.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 27,
+      "nombre": "Steamboy",
+      "director": "Katsuhiro Otomo",
+      "anio_lanzamiento": 2004,
+      "duracion": 126,
+      "descripcion": "Un joven inventor recibe una misteriosa esfera de vapor y queda atrapado en una disputa tecnológica durante la Inglaterra victoriana.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Sunrise",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx565-XWjoGw6sOoqo.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx565-XWjoGw6sOoqo.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx565-XWjoGw6sOoqo.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx565-XWjoGw6sOoqo.png?gal=2"
+      ]
+    },
+    {
+      "id": 28,
+      "nombre": "Cuentos de Terramar",
+      "director": "Gorō Miyazaki",
+      "anio_lanzamiento": 2006,
+      "duracion": 115,
+      "descripcion": "En un mundo donde el equilibrio se ha alterado, el príncipe Arren y el mago Ged emprenden un viaje para enfrentar una amenaza creciente.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1829-DqhBRfDU7n6D.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1829-DqhBRfDU7n6D.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1829-DqhBRfDU7n6D.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1829-DqhBRfDU7n6D.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 29,
+      "nombre": "Paprika",
+      "director": "Satoshi Kon",
+      "anio_lanzamiento": 2006,
+      "duracion": 90,
+      "descripcion": "Una psicóloga utiliza un dispositivo experimental que permite entrar en los sueños, hasta que la tecnología cae en manos equivocadas.",
+      "generos": [
+        "Ciencia ficción",
+        "Fantasía",
+        "Thriller"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1943-jMCEYL1Ixmgc.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1943-jMCEYL1Ixmgc.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1943-jMCEYL1Ixmgc.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1943-jMCEYL1Ixmgc.png?gal=2"
+      ]
+    },
+    {
+      "id": 30,
+      "nombre": "The Girl Who Leapt Through Time",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2006,
+      "duracion": 98,
+      "descripcion": "Una estudiante descubre que puede realizar saltos temporales y debe aprender a asumir las consecuencias de sus decisiones.",
+      "generos": [
+        "Ciencia ficción",
+        "Romance",
+        "Drama"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2236-tH5fWFkHyVGg.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2236-tH5fWFkHyVGg.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2236-tH5fWFkHyVGg.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2236-tH5fWFkHyVGg.png?gal=2"
+      ]
+    },
+    {
+      "id": 31,
+      "nombre": "5 centímetros por segundo",
+      "director": "Makoto Shinkai",
+      "anio_lanzamiento": 2007,
+      "duracion": 63,
+      "descripcion": "Tres historias conectadas siguen la relación de Takaki y Akari a través del paso del tiempo y la distancia.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Slice of life"
+      ],
+      "casa_productora": "CoMix Wave Films",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=5%20cent%C3%ADmetros%20por%20segundo",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=5%20cent%C3%ADmetros%20por%20segundo",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=5%20cent%C3%ADmetros%20por%20segundo&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=5%20cent%C3%ADmetros%20por%20segundo&gal=2"
+      ]
+    },
+    {
+      "id": 32,
+      "nombre": "Evangelion: 1.0 You Are (Not) Alone",
+      "director": "Hideaki Anno",
+      "anio_lanzamiento": 2007,
+      "duracion": 98,
+      "descripcion": "Shinji Ikari llega a Tokio-3 y es reclutado para pilotar un Evangelion, una unidad creada para combatir misteriosos seres llamados Ángeles.",
+      "generos": [
+        "Ciencia ficción",
+        "Acción",
+        "Drama",
+        "Mecha"
+      ],
+      "casa_productora": "Studio Khara",
+      "imagen_url": "https://es.web.img2.acsta.net/medias/nmedia/18/90/12/43/20081903.jpg",
+      "galeria": [
+        "https://es.web.img2.acsta.net/medias/nmedia/18/90/12/43/20081903.jpg",
+        "https://es.web.img2.acsta.net/medias/nmedia/18/90/12/43/20081903.jpg?gal=1",
+        "https://es.web.img2.acsta.net/medias/nmedia/18/90/12/43/20081903.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 33,
+      "nombre": "Sword of the Stranger",
+      "director": "Masahiro Ando",
+      "anio_lanzamiento": 2007,
+      "duracion": 103,
+      "descripcion": "Un ronin sin nombre protege a un niño perseguido por un grupo de guerreros extranjeros.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Histórico"
+      ],
+      "casa_productora": "BONES",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Sword%20of%20the%20Stranger",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Sword%20of%20the%20Stranger",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Sword%20of%20the%20Stranger&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Sword%20of%20the%20Stranger&gal=2"
+      ]
+    },
+    {
+      "id": 34,
+      "nombre": "Ponyo y el secreto de la sirenita",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 2008,
+      "duracion": 101,
+      "descripcion": "Ponyo, una pequeña criatura marina, desea convertirse en humana después de conocer a un niño llamado Sōsuke.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Ponyo%20y%20el%20secreto%20de%20la%20siren",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Ponyo%20y%20el%20secreto%20de%20la%20siren",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Ponyo%20y%20el%20secreto%20de%20la%20siren&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Ponyo%20y%20el%20secreto%20de%20la%20siren&gal=2"
+      ]
+    },
+    {
+      "id": 35,
+      "nombre": "The Sky Crawlers",
+      "director": "Mamoru Oshii",
+      "anio_lanzamiento": 2008,
+      "duracion": 122,
+      "descripcion": "Jóvenes pilotos participan en una guerra aérea interminable y comienzan a cuestionar la naturaleza de sus vidas.",
+      "generos": [
+        "Ciencia ficción",
+        "Drama",
+        "Acción"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Sky%20Crawlers",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Sky%20Crawlers",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Sky%20Crawlers&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Sky%20Crawlers&gal=2"
+      ]
+    },
+    {
+      "id": 36,
+      "nombre": "Evangelion: 2.0 You Can (Not) Advance",
+      "director": "Hideaki Anno",
+      "anio_lanzamiento": 2009,
+      "duracion": 108,
+      "descripcion": "Shinji y los demás pilotos afrontan nuevas amenazas mientras sus relaciones y el destino de la humanidad se vuelven cada vez más complejos.",
+      "generos": [
+        "Ciencia ficción",
+        "Acción",
+        "Drama",
+        "Mecha"
+      ],
+      "casa_productora": "Studio Khara",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Evangelion%3A%202.0%20You%20Can%20(Not)%20",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Evangelion%3A%202.0%20You%20Can%20(Not)%20",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Evangelion%3A%202.0%20You%20Can%20(Not)%20&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Evangelion%3A%202.0%20You%20Can%20(Not)%20&gal=2"
+      ]
+    },
+    {
+      "id": 37,
+      "nombre": "One Piece Film: Strong World",
+      "director": "Munehisa Sakai",
+      "anio_lanzamiento": 2009,
+      "duracion": 115,
+      "descripcion": "Los Sombrero de Paja se enfrentan al legendario pirata Shiki, quien amenaza a sus amigos y a varias islas.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Fantasía"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Film%3A%20Strong%20World",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Film%3A%20Strong%20World",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Film%3A%20Strong%20World&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Film%3A%20Strong%20World&gal=2"
+      ]
+    },
+    {
+      "id": 38,
+      "nombre": "Redline",
+      "director": "Takeshi Koike",
+      "anio_lanzamiento": 2009,
+      "duracion": 102,
+      "descripcion": "Un piloto participa en la carrera ilegal más peligrosa y espectacular de la galaxia.",
+      "generos": [
+        "Acción",
+        "Ciencia ficción",
+        "Deportes"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6675-NF4tFzAxSjkj.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6675-NF4tFzAxSjkj.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6675-NF4tFzAxSjkj.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx6675-NF4tFzAxSjkj.png?gal=2"
+      ]
+    },
+    {
+      "id": 39,
+      "nombre": "Summer Wars",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2009,
+      "duracion": 114,
+      "descripcion": "Un joven ayuda a una familia a detener una inteligencia artificial que amenaza el mundo virtual y la vida cotidiana.",
+      "generos": [
+        "Ciencia ficción",
+        "Aventura",
+        "Comedia"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5681-3DmxUVn3grD0.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5681-3DmxUVn3grD0.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5681-3DmxUVn3grD0.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5681-3DmxUVn3grD0.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 40,
+      "nombre": "Arrietty y el mundo de los diminutos",
+      "director": "Hiromasa Yonebayashi",
+      "anio_lanzamiento": 2010,
+      "duracion": 94,
+      "descripcion": "Arrietty pertenece a una familia de seres diminutos que toma prestados pequeños objetos de los humanos para sobrevivir.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7711-IDDzqp6d3tQz.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7711-IDDzqp6d3tQz.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7711-IDDzqp6d3tQz.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7711-IDDzqp6d3tQz.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 41,
+      "nombre": "The Disappearance of Haruhi Suzumiya",
+      "director": "Tatsuya Ishihara y Yasuhiro Takemoto",
+      "anio_lanzamiento": 2010,
+      "duracion": 162,
+      "descripcion": "Kyon despierta en una realidad donde sus compañeros no recuerdan a Haruhi y debe descubrir qué ocurrió.",
+      "generos": [
+        "Ciencia ficción",
+        "Misterio",
+        "Drama"
+      ],
+      "casa_productora": "Kyoto Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7311-9Mfc1YRHwCCW.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7311-9Mfc1YRHwCCW.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7311-9Mfc1YRHwCCW.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx7311-9Mfc1YRHwCCW.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 42,
+      "nombre": "K-ON! The Movie",
+      "director": "Naoko Yamada",
+      "anio_lanzamiento": 2011,
+      "duracion": 110,
+      "descripcion": "Las integrantes del club de música ligera viajan a Londres para celebrar su graduación y vivir una última aventura juntas.",
+      "generos": [
+        "Comedia",
+        "Música",
+        "Escolar"
+      ],
+      "casa_productora": "Kyoto Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9617-Z2RA1TIkcNEg.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9617-Z2RA1TIkcNEg.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9617-Z2RA1TIkcNEg.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9617-Z2RA1TIkcNEg.png?gal=2"
+      ]
+    },
+    {
+      "id": 43,
+      "nombre": "La colina de las amapolas",
+      "director": "Gorō Miyazaki",
+      "anio_lanzamiento": 2011,
+      "duracion": 91,
+      "descripcion": "En el Yokohama de 1963, Umi y Shun colaboran para salvar el antiguo edificio de un club escolar mientras descubren secretos familiares.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Histórico"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10029-R7iZdjWuzeYq.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10029-R7iZdjWuzeYq.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10029-R7iZdjWuzeYq.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10029-R7iZdjWuzeYq.png?gal=2"
+      ]
+    },
+    {
+      "id": 44,
+      "nombre": "Los niños lobo",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2012,
+      "duracion": 117,
+      "descripcion": "Hana cría a sus dos hijos, que pueden transformarse en lobos, y busca un lugar donde puedan crecer siendo ellos mismos.",
+      "generos": [
+        "Drama",
+        "Fantasía",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Chizu",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Los%20ni%C3%B1os%20lobo",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Los%20ni%C3%B1os%20lobo",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Los%20ni%C3%B1os%20lobo&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Los%20ni%C3%B1os%20lobo&gal=2"
+      ]
+    },
+    {
+      "id": 45,
+      "nombre": "One Piece Film: Z",
+      "director": "Tatsuya Nagamine",
+      "anio_lanzamiento": 2012,
+      "duracion": 108,
+      "descripcion": "Luffy y su tripulación se enfrentan a un antiguo almirante de la Marina que amenaza el equilibrio del mundo.",
+      "generos": [
+        "Acción",
+        "Aventura"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12859-uQFENDPzMWz6.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12859-uQFENDPzMWz6.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12859-uQFENDPzMWz6.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12859-uQFENDPzMWz6.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 46,
+      "nombre": "Dragon Ball Z: Battle of Gods",
+      "director": "Masahiro Hosoda",
+      "anio_lanzamiento": 2013,
+      "duracion": 85,
+      "descripcion": "Goku conoce a Bills, el Dios de la Destrucción, cuya llegada pone a prueba el poder de los guerreros Z.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Comedia"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/14837.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/14837.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/14837.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/14837.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 47,
+      "nombre": "El cuento de la princesa Kaguya",
+      "director": "Isao Takahata",
+      "anio_lanzamiento": 2013,
+      "duracion": 137,
+      "descripcion": "Una diminuta niña encontrada dentro de un tallo de bambú crece rápidamente y debe enfrentarse a las expectativas de la vida en la corte.",
+      "generos": [
+        "Fantasía",
+        "Drama",
+        "Histórico"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/16664-Wakrc8rbBkor.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/16664-Wakrc8rbBkor.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/16664-Wakrc8rbBkor.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/16664-Wakrc8rbBkor.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 48,
+      "nombre": "El jardín de las palabras",
+      "director": "Makoto Shinkai",
+      "anio_lanzamiento": 2013,
+      "duracion": 46,
+      "descripcion": "Un estudiante que sueña con diseñar zapatos conoce a una mujer en un jardín durante los días lluviosos de Tokio.",
+      "generos": [
+        "Drama",
+        "Romance"
+      ],
+      "casa_productora": "CoMix Wave Films",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20jard%C3%ADn%20de%20las%20palabras",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20jard%C3%ADn%20de%20las%20palabras",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20jard%C3%ADn%20de%20las%20palabras&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20jard%C3%ADn%20de%20las%20palabras&gal=2"
+      ]
+    },
+    {
+      "id": 49,
+      "nombre": "Hal",
+      "director": "Ryōtarō Makihara",
+      "anio_lanzamiento": 2013,
+      "duracion": 60,
+      "descripcion": "En un futuro cercano, un androide llamado Q01 es enviado para ayudar a una joven que atraviesa un periodo de duelo.",
+      "generos": [
+        "Ciencia ficción",
+        "Romance",
+        "Drama"
+      ],
+      "casa_productora": "WIT Studio",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16528-OJw9bSijOh68.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16528-OJw9bSijOh68.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16528-OJw9bSijOh68.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16528-OJw9bSijOh68.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 50,
+      "nombre": "Patema Inverted",
+      "director": "Yasuhiro Yoshiura",
+      "anio_lanzamiento": 2013,
+      "duracion": 99,
+      "descripcion": "Una joven de un mundo subterráneo llega a una sociedad donde las leyes de la gravedad parecen funcionar al revés.",
+      "generos": [
+        "Ciencia ficción",
+        "Aventura",
+        "Romance"
+      ],
+      "casa_productora": "Purple Cow Studio Japan",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12477-KtZm8BuvrPYo.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12477-KtZm8BuvrPYo.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12477-KtZm8BuvrPYo.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx12477-KtZm8BuvrPYo.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 51,
+      "nombre": "Se levanta el viento",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 2013,
+      "duracion": 126,
+      "descripcion": "La historia ficticia inspirada en la vida del ingeniero Jirō Horikoshi sigue su sueño de diseñar aviones en el Japón del siglo XX.",
+      "generos": [
+        "Drama",
+        "Histórico",
+        "Romance",
+        "Biográfico"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16662-HUI8irtoTdOJ.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16662-HUI8irtoTdOJ.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16662-HUI8irtoTdOJ.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx16662-HUI8irtoTdOJ.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 52,
+      "nombre": "El recuerdo de Marnie",
+      "director": "Hiromasa Yonebayashi",
+      "anio_lanzamiento": 2014,
+      "duracion": 103,
+      "descripcion": "Anna, una niña reservada, conoce a una misteriosa joven llamada Marnie durante una estancia en una localidad costera.",
+      "generos": [
+        "Drama",
+        "Misterio",
+        "Fantasía"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20555-QGbWQC3Kfpok.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20555-QGbWQC3Kfpok.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20555-QGbWQC3Kfpok.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20555-QGbWQC3Kfpok.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 53,
+      "nombre": "Tamako Love Story",
+      "director": "Naoko Yamada",
+      "anio_lanzamiento": 2014,
+      "duracion": 83,
+      "descripcion": "Tamako comienza a pensar en su futuro cuando su amigo Mochizō le confiesa sus sentimientos antes de graduarse.",
+      "generos": [
+        "Romance",
+        "Drama",
+        "Escolar"
+      ],
+      "casa_productora": "Kyoto Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20519-YdNUizVJJIWI.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20519-YdNUizVJJIWI.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20519-YdNUizVJJIWI.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20519-YdNUizVJJIWI.png?gal=2"
+      ]
+    },
+    {
+      "id": 54,
+      "nombre": "Dragon Ball Z: Resurrection 'F'",
+      "director": "Tadayoshi Yamamuro",
+      "anio_lanzamiento": 2015,
+      "duracion": 94,
+      "descripcion": "Freezer regresa y amenaza la Tierra, obligando a Goku y Vegeta a prepararse para un nuevo enfrentamiento.",
+      "generos": [
+        "Acción",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20778-HYEes09iv8fJ.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20778-HYEes09iv8fJ.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20778-HYEes09iv8fJ.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20778-HYEes09iv8fJ.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 55,
+      "nombre": "El niño y la bestia",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2015,
+      "duracion": 119,
+      "descripcion": "Un niño solitario llega a un mundo habitado por criaturas y se convierte en aprendiz de un guerrero bestial.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Acción"
+      ],
+      "casa_productora": "Studio Chizu",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20bestia",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20bestia",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20bestia&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20bestia&gal=2"
+      ]
+    },
+    {
+      "id": 56,
+      "nombre": "En este rincón del mundo",
+      "director": "Sunao Katabuchi",
+      "anio_lanzamiento": 2016,
+      "duracion": 129,
+      "descripcion": "Suzu se muda a Kure durante la Segunda Guerra Mundial y trata de construir una vida cotidiana en medio de la incertidumbre y los cambios.",
+      "generos": [
+        "Drama",
+        "Histórico",
+        "Bélico"
+      ],
+      "casa_productora": "MAPPA",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=En%20este%20rinc%C3%B3n%20del%20mundo",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=En%20este%20rinc%C3%B3n%20del%20mundo",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=En%20este%20rinc%C3%B3n%20del%20mundo&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=En%20este%20rinc%C3%B3n%20del%20mundo&gal=2"
+      ]
+    },
+    {
+      "id": 57,
+      "nombre": "La tortuga roja",
+      "director": "Michael Dudok de Wit",
+      "anio_lanzamiento": 2016,
+      "duracion": 81,
+      "descripcion": "Un náufrago intenta escapar de una isla desierta, pero una misteriosa tortuga roja cambia el curso de su vida.",
+      "generos": [
+        "Drama",
+        "Fantasía",
+        "Aventura"
+      ],
+      "casa_productora": "Coproducción de Studio Ghibli, Wild Bunch y otras compañías",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tortuga%20roja",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tortuga%20roja",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tortuga%20roja&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=La%20tortuga%20roja&gal=2"
+      ]
+    },
+    {
+      "id": 58,
+      "nombre": "Una voz silenciosa",
+      "director": "Naoko Yamada",
+      "anio_lanzamiento": 2016,
+      "duracion": 130,
+      "descripcion": "Shoya intenta reparar el daño que causó en la infancia a Shoko, una compañera sorda, y aprender a relacionarse con los demás.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Escolar"
+      ],
+      "casa_productora": "Kyoto Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954-sYRfE5jQRtSB.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954-sYRfE5jQRtSB.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954-sYRfE5jQRtSB.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20954-sYRfE5jQRtSB.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 59,
+      "nombre": "Your Name",
+      "director": "Makoto Shinkai",
+      "anio_lanzamiento": 2016,
+      "duracion": 107,
+      "descripcion": "Mitsuha y Taki descubren que intercambian cuerpos mientras intentan comprender una conexión extraordinaria que desafía el tiempo y la distancia.",
+      "generos": [
+        "Romance",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "CoMix Wave Films",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/97962-3rBcawJt63sG.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/97962-3rBcawJt63sG.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/97962-3rBcawJt63sG.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/97962-3rBcawJt63sG.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 60,
+      "nombre": "Fate/stay night: Heaven's Feel I. Presage Flower",
+      "director": "Tomonori Sudō",
+      "anio_lanzamiento": 2017,
+      "duracion": 120,
+      "descripcion": "La primera parte de la trilogía sigue a Shirou Emiya durante una nueva Guerra del Santo Grial.",
+      "generos": [
+        "Acción",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "ufotable",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20791-yPCX5GJuMH2k.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20791-yPCX5GJuMH2k.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20791-yPCX5GJuMH2k.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20791-yPCX5GJuMH2k.png?gal=2"
+      ]
+    },
+    {
+      "id": 61,
+      "nombre": "Lu Over the Wall",
+      "director": "Masaaki Yuasa",
+      "anio_lanzamiento": 2017,
+      "duracion": 112,
+      "descripcion": "Un adolescente conoce a una sirena cuya música transforma la vida de un pequeño pueblo costero.",
+      "generos": [
+        "Fantasía",
+        "Música",
+        "Aventura"
+      ],
+      "casa_productora": "Science SARU",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98249-5NF3RwYZtc7h.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98249-5NF3RwYZtc7h.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98249-5NF3RwYZtc7h.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx98249-5NF3RwYZtc7h.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 62,
+      "nombre": "The Night Is Short, Walk on Girl",
+      "director": "Masaaki Yuasa",
+      "anio_lanzamiento": 2017,
+      "duracion": 93,
+      "descripcion": "Durante una noche en Kioto, una estudiante vive encuentros inesperados mientras un compañero intenta llamar su atención.",
+      "generos": [
+        "Comedia",
+        "Romance",
+        "Fantasía"
+      ],
+      "casa_productora": "Science SARU",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97917-bHtHhWkIsdR5.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97917-bHtHhWkIsdR5.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97917-bHtHhWkIsdR5.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97917-bHtHhWkIsdR5.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 63,
+      "nombre": "Dragon Ball Super: Broly",
+      "director": "Tatsuya Nagamine",
+      "anio_lanzamiento": 2018,
+      "duracion": 100,
+      "descripcion": "Goku y Vegeta se enfrentan a Broly, un saiyajin cuyo enorme poder está relacionado con acontecimientos del pasado.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101302-7L0lcwYeFQQM.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101302-7L0lcwYeFQQM.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101302-7L0lcwYeFQQM.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx101302-7L0lcwYeFQQM.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 64,
+      "nombre": "I Want to Eat Your Pancreas",
+      "director": "Shin'ichirō Ushijima",
+      "anio_lanzamiento": 2018,
+      "duracion": 108,
+      "descripcion": "Un estudiante reservado descubre el secreto de una compañera de clase y desarrolla con ella una amistad que cambia su perspectiva de la vida.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Escolar"
+      ],
+      "casa_productora": "Studio VOLN",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99750-pNyly9d3MEgV.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99750-pNyly9d3MEgV.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99750-pNyly9d3MEgV.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99750-pNyly9d3MEgV.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 65,
+      "nombre": "Liz y el pájaro azul",
+      "director": "Naoko Yamada",
+      "anio_lanzamiento": 2018,
+      "duracion": 90,
+      "descripcion": "Dos estudiantes que tocan en la banda escolar preparan una pieza musical que refleja la cercanía y las diferencias de su amistad.",
+      "generos": [
+        "Drama",
+        "Música",
+        "Escolar"
+      ],
+      "casa_productora": "Kyoto Animation",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Liz%20y%20el%20p%C3%A1jaro%20azul",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Liz%20y%20el%20p%C3%A1jaro%20azul",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Liz%20y%20el%20p%C3%A1jaro%20azul&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Liz%20y%20el%20p%C3%A1jaro%20azul&gal=2"
+      ]
+    },
+    {
+      "id": 66,
+      "nombre": "Maquia: When the Promised Flower Blooms",
+      "director": "Mari Okada",
+      "anio_lanzamiento": 2018,
+      "duracion": 115,
+      "descripcion": "Una joven de un pueblo de seres longevos encuentra a un bebé humano y decide criarlo como su hijo.",
+      "generos": [
+        "Fantasía",
+        "Drama",
+        "Aventura"
+      ],
+      "casa_productora": "P.A.Works",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99457-OD0xtM8NlHNQ.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99457-OD0xtM8NlHNQ.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99457-OD0xtM8NlHNQ.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx99457-OD0xtM8NlHNQ.png?gal=2"
+      ]
+    },
+    {
+      "id": 67,
+      "nombre": "Mirai, mi pequeña hermana",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2018,
+      "duracion": 98,
+      "descripcion": "Kun, un niño que se adapta a la llegada de su hermana, vive encuentros extraordinarios que lo llevan a conocer distintas etapas de su familia.",
+      "generos": [
+        "Fantasía",
+        "Drama",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Chizu",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mirai%2C%20mi%20peque%C3%B1a%20hermana",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mirai%2C%20mi%20peque%C3%B1a%20hermana",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mirai%2C%20mi%20peque%C3%B1a%20hermana&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mirai%2C%20mi%20peque%C3%B1a%20hermana&gal=2"
+      ]
+    },
+    {
+      "id": 68,
+      "nombre": "Penguin Highway",
+      "director": "Hiroyasu Ishida",
+      "anio_lanzamiento": 2018,
+      "duracion": 118,
+      "descripcion": "Un niño investiga la aparición inexplicable de pingüinos en su pueblo y busca entender el fenómeno junto a una joven misteriosa.",
+      "generos": [
+        "Ciencia ficción",
+        "Aventura",
+        "Misterio"
+      ],
+      "casa_productora": "Studio Colorido",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Penguin%20Highway",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Penguin%20Highway",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Penguin%20Highway&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Penguin%20Highway&gal=2"
+      ]
+    },
+    {
+      "id": 69,
+      "nombre": "El tiempo contigo",
+      "director": "Makoto Shinkai",
+      "anio_lanzamiento": 2019,
+      "duracion": 112,
+      "descripcion": "Hodaka llega a Tokio y conoce a Hina, una joven que parece tener la capacidad de despejar el cielo con su voluntad.",
+      "generos": [
+        "Romance",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "CoMix Wave Films",
+      "imagen_url": "https://m.media-amazon.com/images/S/pv-target-images/5c61b7df3b5d61ea805e4036033d24d8f29d694531900096c3346c5124fdbe50.jpg",
+      "galeria": [
+        "https://m.media-amazon.com/images/S/pv-target-images/5c61b7df3b5d61ea805e4036033d24d8f29d694531900096c3346c5124fdbe50.jpg",
+        "https://m.media-amazon.com/images/S/pv-target-images/5c61b7df3b5d61ea805e4036033d24d8f29d694531900096c3346c5124fdbe50.jpg?gal=1",
+        "https://m.media-amazon.com/images/S/pv-target-images/5c61b7df3b5d61ea805e4036033d24d8f29d694531900096c3346c5124fdbe50.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 70,
+      "nombre": "Fate/stay night: Heaven's Feel II. Lost Butterfly",
+      "director": "Tomonori Sudō",
+      "anio_lanzamiento": 2019,
+      "duracion": 117,
+      "descripcion": "La segunda parte profundiza en los secretos de Sakura y en las consecuencias de la Guerra del Santo Grial.",
+      "generos": [
+        "Acción",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "ufotable",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Fate%2Fstay%20night%3A%20Heaven's%20Feel",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Fate%2Fstay%20night%3A%20Heaven's%20Feel",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Fate%2Fstay%20night%3A%20Heaven's%20Feel&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Fate%2Fstay%20night%3A%20Heaven's%20Feel&gal=2"
+      ]
+    },
+    {
+      "id": 71,
+      "nombre": "Her Blue Sky",
+      "director": "Tatsuyuki Nagai",
+      "anio_lanzamiento": 2019,
+      "duracion": 108,
+      "descripcion": "Una adolescente apasionada por la música conoce a una versión más joven del antiguo novio de su hermana, y secretos del pasado salen a la luz.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Música",
+        "Fantasía"
+      ],
+      "casa_productora": "CloverWorks",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Her%20Blue%20Sky",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Her%20Blue%20Sky",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Her%20Blue%20Sky&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Her%20Blue%20Sky&gal=2"
+      ]
+    },
+    {
+      "id": 72,
+      "nombre": "One Piece Stampede",
+      "director": "Takashi Otsuka",
+      "anio_lanzamiento": 2019,
+      "duracion": 101,
+      "descripcion": "Piratas de todo el mundo se reúnen en un festival que pronto se convierte en una competencia por un tesoro legendario.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Comedia"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Stampede",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Stampede",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Stampede&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=One%20Piece%20Stampede&gal=2"
+      ]
+    },
+    {
+      "id": 73,
+      "nombre": "Promare",
+      "director": "Hiroyuki Imaishi",
+      "anio_lanzamiento": 2019,
+      "duracion": 111,
+      "descripcion": "Un equipo de bomberos combate incendios provocados por personas con poderes especiales en un mundo lleno de energía y acción.",
+      "generos": [
+        "Acción",
+        "Ciencia ficción",
+        "Mecha"
+      ],
+      "casa_productora": "TRIGGER",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Promare",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Promare",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Promare&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Promare&gal=2"
+      ]
+    },
+    {
+      "id": 74,
+      "nombre": "Rascal Does Not Dream of a Dreaming Girl",
+      "director": "Sōichi Masui",
+      "anio_lanzamiento": 2019,
+      "duracion": 90,
+      "descripcion": "Sakuta se enfrenta a nuevos fenómenos sobrenaturales relacionados con Shoko y debe tomar decisiones que afectan a las personas que quiere.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Sobrenatural"
+      ],
+      "casa_productora": "CloverWorks",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104157-rk99XI56PaIC.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104157-rk99XI56PaIC.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104157-rk99XI56PaIC.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx104157-rk99XI56PaIC.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 75,
+      "nombre": "Ride Your Wave",
+      "director": "Masaaki Yuasa",
+      "anio_lanzamiento": 2019,
+      "duracion": 95,
+      "descripcion": "Una joven surfista encuentra consuelo y nuevas formas de seguir adelante después de conocer a un bombero.",
+      "generos": [
+        "Romance",
+        "Drama",
+        "Fantasía"
+      ],
+      "casa_productora": "Science SARU",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105018-XM7rFyryltjb.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105018-XM7rFyryltjb.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105018-XM7rFyryltjb.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx105018-XM7rFyryltjb.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 76,
+      "nombre": "A Whisker Away",
+      "director": "Junichi Sato y Tomotaka Shibayama",
+      "anio_lanzamiento": 2020,
+      "duracion": 104,
+      "descripcion": "Una estudiante utiliza una máscara mágica para transformarse en gato y acercarse al compañero que le gusta.",
+      "generos": [
+        "Fantasía",
+        "Romance",
+        "Drama"
+      ],
+      "casa_productora": "Studio Colorido",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114963-QWMbi5ttovSK.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114963-QWMbi5ttovSK.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114963-QWMbi5ttovSK.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx114963-QWMbi5ttovSK.png?gal=2"
+      ]
+    },
+    {
+      "id": 77,
+      "nombre": "Demon Slayer: Mugen Train",
+      "director": "Haruo Sotozaki",
+      "anio_lanzamiento": 2020,
+      "duracion": 117,
+      "descripcion": "Tanjiro y sus compañeros suben a un tren para investigar desapariciones y ayudar al Pilar de la Llama.",
+      "generos": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "casa_productora": "ufotable",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112151-1qlQwPB1RrJe.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112151-1qlQwPB1RrJe.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112151-1qlQwPB1RrJe.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx112151-1qlQwPB1RrJe.png?gal=2"
+      ]
+    },
+    {
+      "id": 78,
+      "nombre": "Earwig y la bruja",
+      "director": "Gorō Miyazaki",
+      "anio_lanzamiento": 2020,
+      "duracion": 82,
+      "descripcion": "Earwig, una niña criada en un orfanato, es adoptada por una pareja extraña y descubre que su nueva casa está llena de magia.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Comedia"
+      ],
+      "casa_productora": "Studio Ghibli, NHK y NHK Enterprises",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx119321-Gc4A3x0vNgWH.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx119321-Gc4A3x0vNgWH.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx119321-Gc4A3x0vNgWH.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx119321-Gc4A3x0vNgWH.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 79,
+      "nombre": "Fate/stay night: Heaven's Feel III. Spring Song",
+      "director": "Tomonori Sudō",
+      "anio_lanzamiento": 2020,
+      "duracion": 122,
+      "descripcion": "La trilogía concluye con el enfrentamiento final y las decisiones de Shirou para proteger a quienes ama.",
+      "generos": [
+        "Acción",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "ufotable",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21719-MSdTlkno0Z0u.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21719-MSdTlkno0Z0u.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21719-MSdTlkno0Z0u.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21719-MSdTlkno0Z0u.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 80,
+      "nombre": "Josee, the Tiger and the Fish",
+      "director": "Kōtarō Tamura",
+      "anio_lanzamiento": 2020,
+      "duracion": 98,
+      "descripcion": "Un estudiante universitario conoce a Josee, una joven que vive en un mundo limitado por sus circunstancias, y ambos comienzan a compartir sus sueños.",
+      "generos": [
+        "Romance",
+        "Drama"
+      ],
+      "casa_productora": "BONES",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113596-LKA0bYJGjLnB.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113596-LKA0bYJGjLnB.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113596-LKA0bYJGjLnB.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx113596-LKA0bYJGjLnB.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 81,
+      "nombre": "Violet Evergarden: La película",
+      "director": "Taichi Ishidate",
+      "anio_lanzamiento": 2020,
+      "duracion": 140,
+      "descripcion": "Violet continúa trabajando como escritora de cartas mientras intenta comprender sus sentimientos y encontrar a una persona importante de su pasado.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Fantasía"
+      ],
+      "casa_productora": "Kyoto Animation",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Violet%20Evergarden%3A%20La%20pel%C3%ADcula",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Violet%20Evergarden%3A%20La%20pel%C3%ADcula",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Violet%20Evergarden%3A%20La%20pel%C3%ADcula&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Violet%20Evergarden%3A%20La%20pel%C3%ADcula&gal=2"
+      ]
+    },
+    {
+      "id": 82,
+      "nombre": "Belle",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2021,
+      "duracion": 121,
+      "descripcion": "Suzu encuentra una nueva voz y una identidad como cantante en un mundo virtual llamado U, donde conoce a una figura misteriosa.",
+      "generos": [
+        "Ciencia ficción",
+        "Fantasía",
+        "Drama",
+        "Musical"
+      ],
+      "casa_productora": "Studio Chizu",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127271-juJIu4WFTM8q.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127271-juJIu4WFTM8q.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127271-juJIu4WFTM8q.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx127271-juJIu4WFTM8q.png?gal=2"
+      ]
+    },
+    {
+      "id": 83,
+      "nombre": "Evangelion: 3.0+1.0 Thrice Upon a Time",
+      "director": "Hideaki Anno",
+      "anio_lanzamiento": 2021,
+      "duracion": 155,
+      "descripcion": "La historia de Shinji y sus compañeros llega a su conclusión mientras intentan encontrar un futuro después de la catástrofe.",
+      "generos": [
+        "Ciencia ficción",
+        "Drama",
+        "Acción",
+        "Mecha"
+      ],
+      "casa_productora": "Studio Khara",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3786-Tpt9iM72dxTv.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3786-Tpt9iM72dxTv.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3786-Tpt9iM72dxTv.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx3786-Tpt9iM72dxTv.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 84,
+      "nombre": "Inu-Oh",
+      "director": "Masaaki Yuasa",
+      "anio_lanzamiento": 2021,
+      "duracion": 98,
+      "descripcion": "Un artista con una apariencia inusual y un músico ciego crean una forma revolucionaria de espectáculo en el Japón medieval.",
+      "generos": [
+        "Musical",
+        "Histórico",
+        "Fantasía"
+      ],
+      "casa_productora": "Science SARU",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109928-DWUN0zrDJfuv.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109928-DWUN0zrDJfuv.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109928-DWUN0zrDJfuv.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx109928-DWUN0zrDJfuv.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 85,
+      "nombre": "Jujutsu Kaisen 0",
+      "director": "Park Sung-hoo",
+      "anio_lanzamiento": 2021,
+      "duracion": 105,
+      "descripcion": "Yuta Okkotsu ingresa a la escuela de hechicería para aprender a controlar la maldición ligada a su amiga de la infancia.",
+      "generos": [
+        "Acción",
+        "Fantasía oscura",
+        "Sobrenatural"
+      ],
+      "casa_productora": "MAPPA",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131573-rpl82vDEDRm6.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131573-rpl82vDEDRm6.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131573-rpl82vDEDRm6.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx131573-rpl82vDEDRm6.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 86,
+      "nombre": "Bubble",
+      "director": "Tetsurō Araki",
+      "anio_lanzamiento": 2022,
+      "duracion": 100,
+      "descripcion": "En un Tokio aislado por burbujas que alteran la gravedad, un joven corredor conoce a una chica misteriosa.",
+      "generos": [
+        "Acción",
+        "Ciencia ficción",
+        "Fantasía",
+        "Romance"
+      ],
+      "casa_productora": "WIT Studio",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142455-5cBnV4rz5ISf.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142455-5cBnV4rz5ISf.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142455-5cBnV4rz5ISf.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142455-5cBnV4rz5ISf.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 87,
+      "nombre": "Dragon Ball Super: Super Hero",
+      "director": "Tetsurō Kodama",
+      "anio_lanzamiento": 2022,
+      "duracion": 99,
+      "descripcion": "La Patrulla Roja regresa con nuevos androides y Piccolo debe actuar para proteger la Tierra y ayudar a Gohan.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133898-KdQ7fWTG06n4.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133898-KdQ7fWTG06n4.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133898-KdQ7fWTG06n4.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx133898-KdQ7fWTG06n4.png?gal=2"
+      ]
+    },
+    {
+      "id": 88,
+      "nombre": "Drifting Home",
+      "director": "Hiroyasu Ishida",
+      "anio_lanzamiento": 2022,
+      "duracion": 120,
+      "descripcion": "Un grupo de niños queda a la deriva en un edificio de apartamentos rodeado por un océano misterioso.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "Studio Colorido",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139643-HzWce7XJ2w6G.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139643-HzWce7XJ2w6G.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139643-HzWce7XJ2w6G.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx139643-HzWce7XJ2w6G.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 89,
+      "nombre": "One Piece Film: Red",
+      "director": "Gorō Taniguchi",
+      "anio_lanzamiento": 2022,
+      "duracion": 115,
+      "descripcion": "Los Sombrero de Paja asisten al concierto de Uta, una cantante muy popular cuyo pasado está conectado con Shanks.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Fantasía",
+        "Musical"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141902-fTyoTk8F8qOl.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141902-fTyoTk8F8qOl.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141902-fTyoTk8F8qOl.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx141902-fTyoTk8F8qOl.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 90,
+      "nombre": "Suzume",
+      "director": "Makoto Shinkai",
+      "anio_lanzamiento": 2022,
+      "duracion": 122,
+      "descripcion": "Suzume acompaña a un joven en un viaje por Japón para cerrar misteriosas puertas que provocan desastres.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Drama"
+      ],
+      "casa_productora": "CoMix Wave Films",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142770-dDaDIRnsv5jN.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142770-dDaDIRnsv5jN.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142770-dDaDIRnsv5jN.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142770-dDaDIRnsv5jN.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 91,
+      "nombre": "The First Slam Dunk",
+      "director": "Takehiko Inoue",
+      "anio_lanzamiento": 2022,
+      "duracion": 124,
+      "descripcion": "Ryota Miyagi y el equipo de Shohoku se enfrentan a un partido decisivo mientras se revela parte de la historia personal del jugador.",
+      "generos": [
+        "Deportes",
+        "Drama"
+      ],
+      "casa_productora": "Toei Animation y Dandelion Animation Studio",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128207-SWpfVJMRfQ9X.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128207-SWpfVJMRfQ9X.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128207-SWpfVJMRfQ9X.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx128207-SWpfVJMRfQ9X.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 92,
+      "nombre": "El niño y la garza",
+      "director": "Hayao Miyazaki",
+      "anio_lanzamiento": 2023,
+      "duracion": 124,
+      "descripcion": "Mahito, un niño que atraviesa un periodo difícil, sigue a una misteriosa garza hasta una torre que lo conduce a un mundo fantástico.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama"
+      ],
+      "casa_productora": "Studio Ghibli",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20garza",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20garza",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20garza&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=El%20ni%C3%B1o%20y%20la%20garza&gal=2"
+      ]
+    },
+    {
+      "id": 93,
+      "nombre": "Maboroshi",
+      "director": "Mari Okada",
+      "anio_lanzamiento": 2023,
+      "duracion": 111,
+      "descripcion": "Tras un accidente en una fábrica, un pueblo queda atrapado en un estado extraño donde el tiempo parece haberse detenido.",
+      "generos": [
+        "Drama",
+        "Fantasía",
+        "Romance",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "MAPPA",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136149-jUxwgmQ5Rite.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136149-jUxwgmQ5Rite.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136149-jUxwgmQ5Rite.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx136149-jUxwgmQ5Rite.png?gal=2"
+      ]
+    },
+    {
+      "id": 94,
+      "nombre": "SPY x FAMILY CÓDIGO: Blanco",
+      "director": "Takashi Katagiri",
+      "anio_lanzamiento": 2023,
+      "duracion": 110,
+      "descripcion": "La familia Forger emprende un viaje que se convierte en una misión inesperada mientras intenta mantener sus identidades en secreto.",
+      "generos": [
+        "Acción",
+        "Comedia",
+        "Espionaje",
+        "Familiar"
+      ],
+      "casa_productora": "WIT Studio y CloverWorks",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=SPY%20x%20FAMILY%20C%C3%93DIGO%3A%20Blanco",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=SPY%20x%20FAMILY%20C%C3%93DIGO%3A%20Blanco",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=SPY%20x%20FAMILY%20C%C3%93DIGO%3A%20Blanco&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=SPY%20x%20FAMILY%20C%C3%93DIGO%3A%20Blanco&gal=2"
+      ]
+    },
+    {
+      "id": 95,
+      "nombre": "The Concierge",
+      "director": "Yoshimi Itazu",
+      "anio_lanzamiento": 2023,
+      "duracion": 70,
+      "descripcion": "Una nueva empleada trabaja en una tienda departamental destinada a clientes animales y aprende a atender sus necesidades extraordinarias.",
+      "generos": [
+        "Fantasía",
+        "Comedia",
+        "Drama"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164226-ijzVauNA4AsN.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164226-ijzVauNA4AsN.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164226-ijzVauNA4AsN.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx164226-ijzVauNA4AsN.png?gal=2"
+      ]
+    },
+    {
+      "id": 96,
+      "nombre": "The Imaginary",
+      "director": "Yoshiyuki Momose",
+      "anio_lanzamiento": 2023,
+      "duracion": 108,
+      "descripcion": "Un niño imaginario acompaña a una joven en un mundo fantástico donde la imaginación y la realidad se encuentran.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama"
+      ],
+      "casa_productora": "Studio Ponoc",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142494-HsEsBP0sgsa2.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142494-HsEsBP0sgsa2.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142494-HsEsBP0sgsa2.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142494-HsEsBP0sgsa2.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 97,
+      "nombre": "Look Back",
+      "director": "Kiyotaka Oshiyama",
+      "anio_lanzamiento": 2024,
+      "duracion": 58,
+      "descripcion": "Dos jóvenes apasionadas por el manga desarrollan una amistad y una relación creativa marcada por sus sueños y dificultades.",
+      "generos": [
+        "Drama",
+        "Slice of life"
+      ],
+      "casa_productora": "Studio Durian",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx174788-9LsUnn0oEppv.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx174788-9LsUnn0oEppv.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx174788-9LsUnn0oEppv.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx174788-9LsUnn0oEppv.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 98,
+      "nombre": "The Colors Within",
+      "director": "Naoko Yamada",
+      "anio_lanzamiento": 2024,
+      "duracion": 101,
+      "descripcion": "Una estudiante que percibe colores en las emociones de las personas forma una banda con dos compañeros que comparten su pasión por la música.",
+      "generos": [
+        "Drama",
+        "Música",
+        "Escolar"
+      ],
+      "casa_productora": "Science SARU",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158166-TZxLtPvXEVUQ.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158166-TZxLtPvXEVUQ.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158166-TZxLtPvXEVUQ.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx158166-TZxLtPvXEVUQ.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 99,
+      "nombre": "Chainsaw Man – La película: Arco de Reze",
+      "director": "Tatsuya Yoshihara",
+      "anio_lanzamiento": 2025,
+      "duracion": 100,
+      "descripcion": "Denji conoce a Reze, una joven que trabaja en una cafetería, y su encuentro cambia el rumbo de su vida mientras se intensifica el conflicto entre cazadores y demonios.",
+      "generos": [
+        "Acción",
+        "Fantasía oscura",
+        "Drama"
+      ],
+      "casa_productora": "MAPPA",
+      "imagen_url": "https://www.sonypictures.com.mx/sites/mexico/files/2025-12/Chainsaw-Man---TMRA_Mx_1400-X-2100-%28Vertical%29.jpg",
+      "galeria": [
+        "https://www.sonypictures.com.mx/sites/mexico/files/2025-12/Chainsaw-Man---TMRA_Mx_1400-X-2100-%28Vertical%29.jpg",
+        "https://www.sonypictures.com.mx/sites/mexico/files/2025-12/Chainsaw-Man---TMRA_Mx_1400-X-2100-%28Vertical%29.jpg?gal=1",
+        "https://www.sonypictures.com.mx/sites/mexico/files/2025-12/Chainsaw-Man---TMRA_Mx_1400-X-2100-%28Vertical%29.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 100,
+      "nombre": "Angel’s Egg",
+      "director": "Mamoru Oshii",
+      "anio_lanzamiento": 1985,
+      "duracion": 71,
+      "descripcion": "En un mundo desolado, una joven protege un misterioso huevo mientras conoce a un viajero que busca respuestas.",
+      "generos": [
+        "Fantasía",
+        "Drama",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Studio Deen",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Angel%E2%80%99s%20Egg",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Angel%E2%80%99s%20Egg",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Angel%E2%80%99s%20Egg&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Angel%E2%80%99s%20Egg&gal=2"
+      ]
+    },
+    {
+      "id": 101,
+      "nombre": "Barefoot Gen",
+      "director": "Mori Masaki",
+      "anio_lanzamiento": 1983,
+      "duracion": 83,
+      "descripcion": "Un niño intenta sobrevivir y reconstruir su vida junto a su familia en Hiroshima durante los últimos días de la Segunda Guerra Mundial.",
+      "generos": [
+        "Drama",
+        "Histórico",
+        "Guerra"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1824-YN6bpoNBh0eK.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1824-YN6bpoNBh0eK.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1824-YN6bpoNBh0eK.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1824-YN6bpoNBh0eK.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 102,
+      "nombre": "Royal Space Force: The Wings of Honnêamise",
+      "director": "Hiroyuki Yamaga",
+      "anio_lanzamiento": 1987,
+      "duracion": 121,
+      "descripcion": "En una nación ficticia, un joven integrante de un programa espacial busca convertirse en el primer astronauta de su país.",
+      "generos": [
+        "Ciencia ficción",
+        "Drama",
+        "Aventura"
+      ],
+      "casa_productora": "Gainax",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Royal%20Space%20Force%3A%20The%20Wings%20o",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Royal%20Space%20Force%3A%20The%20Wings%20o",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Royal%20Space%20Force%3A%20The%20Wings%20o&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Royal%20Space%20Force%3A%20The%20Wings%20o&gal=2"
+      ]
+    },
+    {
+      "id": 103,
+      "nombre": "Urusei Yatsura 2: Beautiful Dreamer",
+      "director": "Mamoru Oshii",
+      "anio_lanzamiento": 1984,
+      "duracion": 98,
+      "descripcion": "Ataru y sus compañeros comienzan a notar que el día previo al festival escolar se repite de manera inexplicable.",
+      "generos": [
+        "Ciencia ficción",
+        "Comedia",
+        "Fantasía"
+      ],
+      "casa_productora": "Studio Pierrot",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1921-YYKPVDPdHXbH.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1921-YYKPVDPdHXbH.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1921-YYKPVDPdHXbH.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx1921-YYKPVDPdHXbH.png?gal=2"
+      ]
+    },
+    {
+      "id": 104,
+      "nombre": "Night on the Galactic Railroad",
+      "director": "Gisaburō Sugii",
+      "anio_lanzamiento": 1985,
+      "duracion": 107,
+      "descripcion": "Un joven y su amigo emprenden un viaje en un tren que atraviesa una misteriosa galaxia.",
+      "generos": [
+        "Fantasía",
+        "Drama",
+        "Aventura"
+      ],
+      "casa_productora": "Group TAC",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Night%20on%20the%20Galactic%20Railroad",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Night%20on%20the%20Galactic%20Railroad",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Night%20on%20the%20Galactic%20Railroad&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Night%20on%20the%20Galactic%20Railroad&gal=2"
+      ]
+    },
+    {
+      "id": 105,
+      "nombre": "Macross: Do You Remember Love?",
+      "director": "Noboru Ishiguro",
+      "anio_lanzamiento": 1984,
+      "duracion": 115,
+      "descripcion": "La humanidad lucha por sobrevivir en una guerra espacial mientras un piloto y una cantante descubren el poder de la música.",
+      "generos": [
+        "Ciencia ficción",
+        "Acción",
+        "Romance"
+      ],
+      "casa_productora": "Artland / Tatsunoko Production",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Macross%3A%20Do%20You%20Remember%20Love%3F",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Macross%3A%20Do%20You%20Remember%20Love%3F",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Macross%3A%20Do%20You%20Remember%20Love%3F&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Macross%3A%20Do%20You%20Remember%20Love%3F&gal=2"
+      ]
+    },
+    {
+      "id": 106,
+      "nombre": "Patlabor: The Movie",
+      "director": "Mamoru Oshii",
+      "anio_lanzamiento": 1989,
+      "duracion": 99,
+      "descripcion": "Una unidad policial especializada investiga una serie de incidentes relacionados con robots industriales en Tokio.",
+      "generos": [
+        "Ciencia ficción",
+        "Misterio",
+        "Acción"
+      ],
+      "casa_productora": "Studio Deen",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Patlabor%3A%20The%20Movie",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Patlabor%3A%20The%20Movie",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Patlabor%3A%20The%20Movie&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Patlabor%3A%20The%20Movie&gal=2"
+      ]
+    },
+    {
+      "id": 107,
+      "nombre": "Roujin Z",
+      "director": "Hiroyuki Kitakubo",
+      "anio_lanzamiento": 1991,
+      "duracion": 80,
+      "descripcion": "Una estudiante de enfermería se preocupa por un anciano que queda al cuidado de una cama hospitalaria automatizada.",
+      "generos": [
+        "Ciencia ficción",
+        "Comedia",
+        "Drama"
+      ],
+      "casa_productora": "A.P.P.P.",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2000-BFVMqByhjMNW.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2000-BFVMqByhjMNW.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2000-BFVMqByhjMNW.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx2000-BFVMqByhjMNW.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 108,
+      "nombre": "Sailor Moon R: The Movie",
+      "director": "Kunihiko Ikuhara",
+      "anio_lanzamiento": 1993,
+      "duracion": 61,
+      "descripcion": "Usagi y sus amigas conocen a un visitante del pasado de Mamoru, cuya llegada amenaza con poner en peligro la Tierra.",
+      "generos": [
+        "Fantasía",
+        "Acción",
+        "Romance"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx531-FCc5IMkzRlrU.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx531-FCc5IMkzRlrU.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx531-FCc5IMkzRlrU.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx531-FCc5IMkzRlrU.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 109,
+      "nombre": "Dragon Ball Z: Broly – The Legendary Super Saiyan",
+      "director": "Shigeyasu Yamauchi",
+      "anio_lanzamiento": 1993,
+      "duracion": 72,
+      "descripcion": "Goku y sus aliados viajan a un nuevo planeta y se enfrentan a un saiyajin de poder extraordinario.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/901-gB41PQJWFXjp.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/901-gB41PQJWFXjp.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/901-gB41PQJWFXjp.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/901-gB41PQJWFXjp.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 110,
+      "nombre": "Street Fighter II: The Animated Movie",
+      "director": "Gisaburō Sugii",
+      "anio_lanzamiento": 1994,
+      "duracion": 101,
+      "descripcion": "Varios artistas marciales se ven envueltos en una conspiración internacional organizada por una poderosa organización.",
+      "generos": [
+        "Acción",
+        "Artes marciales",
+        "Aventura"
+      ],
+      "casa_productora": "Group TAC",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1362-Z5U3WEbo0Q6H.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1362-Z5U3WEbo0Q6H.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1362-Z5U3WEbo0Q6H.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx1362-Z5U3WEbo0Q6H.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 111,
+      "nombre": "Sailor Moon S: The Movie",
+      "director": "Hiroki Shibata",
+      "anio_lanzamiento": 1994,
+      "duracion": 60,
+      "descripcion": "Las Sailor Guardians se enfrentan a una amenaza relacionada con una entidad que busca cubrir la Tierra de hielo.",
+      "generos": [
+        "Fantasía",
+        "Acción",
+        "Aventura"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx997-53WPReZCvbaI.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx997-53WPReZCvbaI.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx997-53WPReZCvbaI.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx997-53WPReZCvbaI.png?gal=2"
+      ]
+    },
+    {
+      "id": 112,
+      "nombre": "Pokémon: The First Movie",
+      "director": "Kunihiko Yuyama",
+      "anio_lanzamiento": 1998,
+      "duracion": 75,
+      "descripcion": "Ash y sus amigos son invitados a un encuentro que revela la existencia de un Pokémon creado mediante experimentos.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "OLM",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20First%20Movie",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20First%20Movie",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20First%20Movie&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20First%20Movie&gal=2"
+      ]
+    },
+    {
+      "id": 113,
+      "nombre": "Cardcaptor Sakura: The Movie",
+      "director": "Morio Asaka",
+      "anio_lanzamiento": 1999,
+      "duracion": 81,
+      "descripcion": "Sakura viaja a Hong Kong y descubre que una antigua presencia está relacionada con un misterioso sueño.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Comedia"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx371-sdrIzrI5qXl3.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx371-sdrIzrI5qXl3.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx371-sdrIzrI5qXl3.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx371-sdrIzrI5qXl3.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 114,
+      "nombre": "Pokémon 2000: The Power of One",
+      "director": "Kunihiko Yuyama",
+      "anio_lanzamiento": 1999,
+      "duracion": 84,
+      "descripcion": "Ash intenta restaurar el equilibrio de la naturaleza cuando un coleccionista altera el orden de unas aves legendarias.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Acción"
+      ],
+      "casa_productora": "OLM",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%202000%3A%20The%20Power%20of%20One",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%202000%3A%20The%20Power%20of%20One",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%202000%3A%20The%20Power%20of%20One&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%202000%3A%20The%20Power%20of%20One&gal=2"
+      ]
+    },
+    {
+      "id": 115,
+      "nombre": "Cowboy Bebop: The Movie",
+      "director": "Shinichirō Watanabe",
+      "anio_lanzamiento": 2001,
+      "duracion": 115,
+      "descripcion": "La tripulación del Bebop persigue a un fugitivo relacionado con un peligroso ataque biológico en Marte.",
+      "generos": [
+        "Ciencia ficción",
+        "Acción",
+        "Suspenso"
+      ],
+      "casa_productora": "Bones",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5-NozHwXWdNLCz.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5-NozHwXWdNLCz.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5-NozHwXWdNLCz.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx5-NozHwXWdNLCz.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 116,
+      "nombre": "Inuyasha the Movie: Affections Touching Across Time",
+      "director": "Toshiya Shinohara",
+      "anio_lanzamiento": 2001,
+      "duracion": 100,
+      "descripcion": "Inuyasha y sus compañeros se enfrentan al hijo de un poderoso demonio que amenaza con regresar al mundo.",
+      "generos": [
+        "Fantasía",
+        "Acción",
+        "Aventura"
+      ],
+      "casa_productora": "Sunrise",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx452-8Gc0rCcsXwLj.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx452-8Gc0rCcsXwLj.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx452-8Gc0rCcsXwLj.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx452-8Gc0rCcsXwLj.png?gal=2"
+      ]
+    },
+    {
+      "id": 117,
+      "nombre": "Detective Conan: The Phantom of Baker Street",
+      "director": "Kenji Kodama",
+      "anio_lanzamiento": 2002,
+      "duracion": 107,
+      "descripcion": "Conan participa en un juego de realidad virtual que se convierte en una investigación donde los participantes corren peligro.",
+      "generos": [
+        "Misterio",
+        "Suspenso",
+        "Aventura"
+      ],
+      "casa_productora": "TMS Entertainment",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1365-FLEpMCC8Ghhk.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1365-FLEpMCC8Ghhk.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1365-FLEpMCC8Ghhk.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b1365-FLEpMCC8Ghhk.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 118,
+      "nombre": "Mind Game",
+      "director": "Masaaki Yuasa",
+      "anio_lanzamiento": 2004,
+      "duracion": 103,
+      "descripcion": "Un joven vive una experiencia extraordinaria que lo lleva a replantearse su vida y las decisiones que ha tomado.",
+      "generos": [
+        "Comedia",
+        "Drama",
+        "Fantasía"
+      ],
+      "casa_productora": "Studio 4°C",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx106558-VGmdXyY1nBiv.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx106558-VGmdXyY1nBiv.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx106558-VGmdXyY1nBiv.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/nx106558-VGmdXyY1nBiv.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 119,
+      "nombre": "Naruto the Movie: Ninja Clash in the Land of Snow",
+      "director": "Tensai Okamura",
+      "anio_lanzamiento": 2004,
+      "duracion": 82,
+      "descripcion": "Naruto y su equipo escoltan a una actriz durante el rodaje de una película en una región cubierta de nieve.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Comedia"
+      ],
+      "casa_productora": "Studio Pierrot",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx442-VJbmIVTgmne3.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx442-VJbmIVTgmne3.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx442-VJbmIVTgmne3.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx442-VJbmIVTgmne3.png?gal=2"
+      ]
+    },
+    {
+      "id": 120,
+      "nombre": "One Piece: Baron Omatsuri and the Secret Island",
+      "director": "Mamoru Hosoda",
+      "anio_lanzamiento": 2005,
+      "duracion": 91,
+      "descripcion": "Los Sombrero de Paja llegan a una isla recreativa donde una serie de pruebas pone a prueba la unión de la tripulación.",
+      "generos": [
+        "Aventura",
+        "Acción",
+        "Fantasía"
+      ],
+      "casa_productora": "Toei Animation",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx464-g4wcZPjbhY5j.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx464-g4wcZPjbhY5j.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx464-g4wcZPjbhY5j.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx464-g4wcZPjbhY5j.png?gal=2"
+      ]
+    },
+    {
+      "id": 121,
+      "nombre": "Bleach: Memories of Nobody",
+      "director": "Noriyuki Abe",
+      "anio_lanzamiento": 2006,
+      "duracion": 87,
+      "descripcion": "Ichigo y Rukia investigan la aparición de espíritus desconocidos y el misterio de un grupo llamado Blanks.",
+      "generos": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "casa_productora": "Studio Pierrot",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Bleach%3A%20Memories%20of%20Nobody",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Bleach%3A%20Memories%20of%20Nobody",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Bleach%3A%20Memories%20of%20Nobody&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Bleach%3A%20Memories%20of%20Nobody&gal=2"
+      ]
+    },
+    {
+      "id": 122,
+      "nombre": "Naruto Shippuden the Movie",
+      "director": "Hajime Kamegaki",
+      "anio_lanzamiento": 2007,
+      "duracion": 94,
+      "descripcion": "Naruto y sus compañeros deben proteger a una sacerdotisa que tiene visiones de una amenaza para el mundo.",
+      "generos": [
+        "Acción",
+        "Aventura",
+        "Fantasía"
+      ],
+      "casa_productora": "Studio Pierrot",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Naruto%20Shippuden%20the%20Movie",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Naruto%20Shippuden%20the%20Movie",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Naruto%20Shippuden%20the%20Movie&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Naruto%20Shippuden%20the%20Movie&gal=2"
+      ]
+    },
+    {
+      "id": 123,
+      "nombre": "The Garden of Sinners: Overlooking View",
+      "director": "Ei Aoki",
+      "anio_lanzamiento": 2007,
+      "duracion": 50,
+      "descripcion": "Shiki investiga una serie de sucesos extraños relacionados con personas que parecen flotar desde un edificio.",
+      "generos": [
+        "Misterio",
+        "Sobrenatural",
+        "Suspenso"
+      ],
+      "casa_productora": "ufotable",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Garden%20of%20Sinners%3A%20Overloo",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Garden%20of%20Sinners%3A%20Overloo",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Garden%20of%20Sinners%3A%20Overloo&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=The%20Garden%20of%20Sinners%3A%20Overloo&gal=2"
+      ]
+    },
+    {
+      "id": 124,
+      "nombre": "Mai Mai Miracle",
+      "director": "Sunao Katabuchi",
+      "anio_lanzamiento": 2009,
+      "duracion": 93,
+      "descripcion": "En el Japón rural de los años cincuenta, una niña imaginativa entabla amistad con una compañera recién llegada.",
+      "generos": [
+        "Drama",
+        "Familiar",
+        "Aventura"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mai%20Mai%20Miracle",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mai%20Mai%20Miracle",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mai%20Mai%20Miracle&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mai%20Mai%20Miracle&gal=2"
+      ]
+    },
+    {
+      "id": 125,
+      "nombre": "Trigun: Badlands Rumble",
+      "director": "Satoshi Nishimura",
+      "anio_lanzamiento": 2010,
+      "duracion": 90,
+      "descripcion": "Vash llega a una ciudad del desierto justo cuando un famoso ladrón planea un gran asalto.",
+      "generos": [
+        "Acción",
+        "Ciencia ficción",
+        "Comedia"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4106-CXXSDuA4PgAu.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4106-CXXSDuA4PgAu.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4106-CXXSDuA4PgAu.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx4106-CXXSDuA4PgAu.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 126,
+      "nombre": "The Princess and the Pilot",
+      "director": "Jun Shishido",
+      "anio_lanzamiento": 2011,
+      "duracion": 99,
+      "descripcion": "Un piloto recibe la misión de escoltar a una princesa a través de un territorio controlado por fuerzas enemigas.",
+      "generos": [
+        "Aventura",
+        "Romance",
+        "Drama"
+      ],
+      "casa_productora": "Madhouse",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9000-pjbZ6oEtUACO.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9000-pjbZ6oEtUACO.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9000-pjbZ6oEtUACO.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9000-pjbZ6oEtUACO.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 127,
+      "nombre": "Berserk: The Golden Age Arc I – The Egg of the King",
+      "director": "Toshiyuki Kubooka",
+      "anio_lanzamiento": 2012,
+      "duracion": 76,
+      "descripcion": "Guts conoce a Griffith y se une a la Banda del Halcón en medio de conflictos entre reinos.",
+      "generos": [
+        "Acción",
+        "Fantasía oscura",
+        "Drama"
+      ],
+      "casa_productora": "Studio 4°C",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10218-QJgUwiua9tB0.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10218-QJgUwiua9tB0.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10218-QJgUwiua9tB0.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10218-QJgUwiua9tB0.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 128,
+      "nombre": "The Anthem of the Heart",
+      "director": "Tatsuyuki Nagai",
+      "anio_lanzamiento": 2015,
+      "duracion": 119,
+      "descripcion": "Una estudiante que tiene dificultades para expresarse participa en un proyecto escolar musical que la ayuda a conectar con los demás.",
+      "generos": [
+        "Drama",
+        "Romance",
+        "Música"
+      ],
+      "casa_productora": "A-1 Pictures",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20968-0zFVsoFUYjeh.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20968-0zFVsoFUYjeh.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20968-0zFVsoFUYjeh.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20968-0zFVsoFUYjeh.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 129,
+      "nombre": "Mary and the Witch’s Flower",
+      "director": "Hiromasa Yonebayashi",
+      "anio_lanzamiento": 2017,
+      "duracion": 103,
+      "descripcion": "Una niña descubre una flor que le concede poderes mágicos y la lleva a una escuela de brujería.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Familiar"
+      ],
+      "casa_productora": "Studio Ponoc",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mary%20and%20the%20Witch%E2%80%99s%20Flower",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mary%20and%20the%20Witch%E2%80%99s%20Flower",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mary%20and%20the%20Witch%E2%80%99s%20Flower&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Mary%20and%20the%20Witch%E2%80%99s%20Flower&gal=2"
+      ]
+    },
+    {
+      "id": 130,
+      "nombre": "Fireworks",
+      "director": "Akiyuki Shinbo",
+      "anio_lanzamiento": 2017,
+      "duracion": 90,
+      "descripcion": "Un grupo de estudiantes se pregunta si los fuegos artificiales se ven redondos o planos mientras un día de verano toma un rumbo inesperado.",
+      "generos": [
+        "Romance",
+        "Drama",
+        "Fantasía"
+      ],
+      "casa_productora": "Shaft",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97908-CbfTf71GjJjg.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97908-CbfTf71GjJjg.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97908-CbfTf71GjJjg.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97908-CbfTf71GjJjg.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 131,
+      "nombre": "Children of the Sea",
+      "director": "Ayumu Watanabe",
+      "anio_lanzamiento": 2019,
+      "duracion": 111,
+      "descripcion": "Una adolescente conoce a dos chicos vinculados al océano y se ve envuelta en un fenómeno que afecta la vida marina.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama"
+      ],
+      "casa_productora": "Studio 4°C",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103221-Ol5OyQ8fbTqH.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103221-Ol5OyQ8fbTqH.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103221-Ol5OyQ8fbTqH.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx103221-Ol5OyQ8fbTqH.png?gal=2"
+      ]
+    },
+    {
+      "id": 132,
+      "nombre": "The Deer King",
+      "director": "Masashi Andō y Masayuki Miyaji",
+      "anio_lanzamiento": 2021,
+      "duracion": 113,
+      "descripcion": "Un hombre que escapa de una mina de esclavos intenta proteger a una niña mientras una enfermedad se extiende por el reino.",
+      "generos": [
+        "Fantasía",
+        "Aventura",
+        "Drama"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102891-lVsBWszCtTxd.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102891-lVsBWszCtTxd.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102891-lVsBWszCtTxd.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx102891-lVsBWszCtTxd.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 133,
+      "nombre": "The Tunnel to Summer, the Exit of Goodbyes",
+      "director": "Tomohisa Taguchi",
+      "anio_lanzamiento": 2022,
+      "duracion": 83,
+      "descripcion": "Dos estudiantes investigan un túnel que, según los rumores, puede conceder deseos a cambio de tiempo.",
+      "generos": [
+        "Romance",
+        "Ciencia ficción",
+        "Drama"
+      ],
+      "casa_productora": "CLAP",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142769-kNyyqpwC9gGV.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142769-kNyyqpwC9gGV.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142769-kNyyqpwC9gGV.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx142769-kNyyqpwC9gGV.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 134,
+      "nombre": "Lonely Castle in the Mirror",
+      "director": "Keiichi Hara",
+      "anio_lanzamiento": 2022,
+      "duracion": 116,
+      "descripcion": "Una estudiante descubre un castillo misterioso al que puede acceder a través del espejo de su habitación.",
+      "generos": [
+        "Fantasía",
+        "Drama",
+        "Misterio"
+      ],
+      "casa_productora": "A-1 Pictures",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145739-M28GhqugtiJE.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145739-M28GhqugtiJE.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145739-M28GhqugtiJE.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx145739-M28GhqugtiJE.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 135,
+      "nombre": "Blue Giant",
+      "director": "Yuzuru Tachikawa",
+      "anio_lanzamiento": 2023,
+      "duracion": 120,
+      "descripcion": "Un joven apasionado por el jazz se muda a Tokio con el sueño de convertirse en un gran saxofonista.",
+      "generos": [
+        "Drama",
+        "Música"
+      ],
+      "casa_productora": "NUT",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140499-Yr7YLk6suS0K.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140499-Yr7YLk6suS0K.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140499-Yr7YLk6suS0K.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx140499-Yr7YLk6suS0K.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 136,
+      "nombre": "Gintama: La película - Por siempre Yorozuya",
+      "director": "Yoichi Fujita",
+      "anio_lanzamiento": 2013,
+      "duracion": 110,
+      "descripcion": "Gintoki es transportado cinco años al futuro, donde descubre un Edo devastado y a sus antiguos compañeros separados. Para descubrir qué ocurrió y salvar el futuro, deberá reunir nuevamente a sus amigos.",
+      "generos": [
+        "Acción",
+        "Comedia",
+        "Ciencia ficción"
+      ],
+      "casa_productora": "Sunrise",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Gintama%3A%20La%20pel%C3%ADcula%20-%20Por%20sie",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Gintama%3A%20La%20pel%C3%ADcula%20-%20Por%20sie",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Gintama%3A%20La%20pel%C3%ADcula%20-%20Por%20sie&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Gintama%3A%20La%20pel%C3%ADcula%20-%20Por%20sie&gal=2"
+      ]
+    },
+    {
+      "id": 137,
+      "nombre": "Demon Slayer: Kimetsu no Yaiba – Infinity Castle",
+      "director": "Haruo Sotozaki",
+      "anio_lanzamiento": 2025,
+      "duracion": 155,
+      "descripcion": "Tanjiro y los integrantes del Cuerpo de Exterminio de Demonios son arrastrados al Castillo Infinito, donde comienza el enfrentamiento decisivo contra las Lunas Superiores.",
+      "generos": [
+        "Acción",
+        "Fantasía",
+        "Aventura"
+      ],
+      "casa_productora": "ufotable",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178788-zm3gtpB9TpRt.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178788-zm3gtpB9TpRt.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178788-zm3gtpB9TpRt.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx178788-zm3gtpB9TpRt.jpg?gal=2"
+      ]
+    },
+    {
+      "id": 138,
+      "nombre": "Kizumonogatari Part 1: Tekketsu",
+      "director": "Tatsuya Oishi",
+      "anio_lanzamiento": 2016,
+      "duracion": 64,
+      "descripcion": "Koyomi Araragi encuentra a una vampira gravemente herida y toma una decisión que cambiará su vida, dando inicio a una historia sobre el origen de su vínculo con Kiss-shot.",
+      "generos": [
+        "Acción",
+        "Sobrenatural",
+        "Misterio"
+      ],
+      "casa_productora": "SHAFT",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9260-cl7sczYOpTeW.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9260-cl7sczYOpTeW.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9260-cl7sczYOpTeW.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx9260-cl7sczYOpTeW.png?gal=2"
+      ]
+    },
+    {
+      "id": 139,
+      "nombre": "Pokémon: The Rise of Darkrai",
+      "director": "Kunihiko Yuyama",
+      "anio_lanzamiento": 2007,
+      "duracion": 100,
+      "descripcion": "Ash y sus amigos llegan a Pueblo Alamos, donde una serie de extraños sucesos coincide con el enfrentamiento entre Dialga y Palkia. Darkrai intenta proteger el lugar mientras todos buscan comprender la amenaza.",
+      "generos": [
+        "Aventura",
+        "Fantasía",
+        "Acción"
+      ],
+      "casa_productora": "OLM",
+      "imagen_url": "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20Rise%20of%20Darkrai",
+      "galeria": [
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20Rise%20of%20Darkrai",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20Rise%20of%20Darkrai&gal=1",
+        "https://placehold.co/500x750/432c3b/f1a9bd/png?text=Pok%C3%A9mon%3A%20The%20Rise%20of%20Darkrai&gal=2"
+      ]
+    },
+    {
+      "id": 140,
+      "nombre": "The Case of Hana & Alice",
+      "director": "Shunji Iwai",
+      "anio_lanzamiento": 2015,
+      "duracion": 100,
+      "descripcion": "Alice llega a una nueva escuela y escucha un rumor sobre la misteriosa desaparición de un estudiante. Junto con Hana, una vecina reservada, comienza a investigar lo ocurrido.",
+      "generos": [
+        "Drama",
+        "Misterio",
+        "Recuentos de vida"
+      ],
+      "casa_productora": "Rockwell Eyes / STEVE N' STEVEN",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20908-Vnhqcpfg7LES.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20908-Vnhqcpfg7LES.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20908-Vnhqcpfg7LES.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b20908-Vnhqcpfg7LES.png?gal=2"
+      ]
+    },
+    {
+      "id": 141,
+      "nombre": "The Wonderland",
+      "director": "Keiichi Hara",
+      "anio_lanzamiento": 2019,
+      "duracion": 115,
+      "descripcion": "En vísperas de su cumpleaños, Akane conoce a un alquimista que la conduce a un mundo fantástico afectado por una misteriosa sequía. Allí deberá encontrar el valor para ayudar a sus habitantes.",
+      "generos": [
+        "Aventura",
+        "Fantasía"
+      ],
+      "casa_productora": "Signal.MD",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107012-0WAuOIbIlLVh.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107012-0WAuOIbIlLVh.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107012-0WAuOIbIlLVh.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107012-0WAuOIbIlLVh.png?gal=2"
+      ]
+    },
+    {
+      "id": 142,
+      "nombre": "The Empire of Corpses",
+      "director": "Ryoutarou Makihara",
+      "anio_lanzamiento": 2015,
+      "duracion": 120,
+      "descripcion": "En una versión alternativa del siglo XIX, John Watson recibe una misión relacionada con una investigación sobre cuerpos reanimados y emprende un viaje en busca de un conocimiento perdido.",
+      "generos": [
+        "Ciencia ficción",
+        "Aventura",
+        "Suspenso"
+      ],
+      "casa_productora": "WIT Studio",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20965-tf6Qs6viTyyg.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20965-tf6Qs6viTyyg.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20965-tf6Qs6viTyyg.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx20965-tf6Qs6viTyyg.png?gal=2"
+      ]
+    },
+    {
+      "id": 143,
+      "nombre": "A Letter to Momo",
+      "director": "Hiroyuki Okiura",
+      "anio_lanzamiento": 2012,
+      "duracion": 120,
+      "descripcion": "Tras mudarse con su madre a una pequeña isla, Momo intenta adaptarse a su nueva vida mientras descubre la presencia de tres criaturas peculiares y guarda una carta inconclusa de su padre.",
+      "generos": [
+        "Drama",
+        "Fantasía",
+        "Recuentos de vida"
+      ],
+      "casa_productora": "Production I.G",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10389-NMYFKRxI1WwJ.png",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10389-NMYFKRxI1WwJ.png",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10389-NMYFKRxI1WwJ.png?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx10389-NMYFKRxI1WwJ.png?gal=2"
+      ]
+    },
+    {
+      "id": 144,
+      "nombre": "Kabaneri de la Fortaleza de Hierro: La batalla de Unato",
+      "director": "Tetsuro Araki",
+      "anio_lanzamiento": 2019,
+      "duracion": 82,
+      "descripcion": "Ikoma, Mumei y sus compañeros llegan a la región de Unato, donde se unen a una operación para recuperar el territorio de una amenaza de Kabane. Durante la misión descubrirán secretos que pondrán a prueba su confianza y su supervivencia.",
+      "generos": [
+        "Acción",
+        "Fantasía oscura",
+        "Terror",
+        "Steampunk"
+      ],
+      "casa_productora": "WIT Studio",
+      "imagen_url": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97918-6qQO87YaHde2.jpg",
+      "galeria": [
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97918-6qQO87YaHde2.jpg",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97918-6qQO87YaHde2.jpg?gal=1",
+        "https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx97918-6qQO87YaHde2.jpg?gal=2"
+      ]
+    }
+  ]
+}
