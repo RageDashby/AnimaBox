@@ -7,6 +7,8 @@ var vistaActual = "catalogo";
 var filtroColeccion = "todos"; 
 var indiceSlider = 0;
 var intervaloSlider = null;
+var posicionScrollModal = 0;
+var estilosBodyAntesModal = null;
 var tokenSesion = localStorage.getItem("animabox_token") || null;
 var usuarioActual = localStorage.getItem("animabox_usuario") || null;
 var coleccionLocal = {}; 
@@ -375,18 +377,46 @@ function reiniciarAutoplay() { clearInterval(intervaloSlider); iniciarAutoplay()
 
 // --- MODAL CONTROLS ---
 function mostrarModal() {
+  if (!obtenerElemento("#modalDetalles").open) {
+    posicionScrollModal = window.scrollY;
+    estilosBodyAntesModal = {
+      position: document.body.style.position,
+      top: document.body.style.top,
+      left: document.body.style.left,
+      right: document.body.style.right,
+      width: document.body.style.width
+    };
+    document.body.style.position = "fixed";
+    document.body.style.top = "-" + posicionScrollModal + "px";
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.width = "100%";
+  }
   document.body.classList.add("modal-abierto");
   obtenerElemento("#modalDetalles").showModal();
 }
 function cerrarModal() {
+  var modal = obtenerElemento("#modalDetalles");
+  if (modal.open) modal.close();
+}
+function restaurarScrollModal() {
   document.body.classList.remove("modal-abierto");
-  obtenerElemento("#modalDetalles").close();
+  if (estilosBodyAntesModal) {
+    document.body.style.position = estilosBodyAntesModal.position;
+    document.body.style.top = estilosBodyAntesModal.top;
+    document.body.style.left = estilosBodyAntesModal.left;
+    document.body.style.right = estilosBodyAntesModal.right;
+    document.body.style.width = estilosBodyAntesModal.width;
+    estilosBodyAntesModal = null;
+  }
+  window.scrollTo(0, posicionScrollModal);
 }
 function configurarCierreModal() {
   var btnCerrar = obtenerElemento("#cerrarModal");
   if(btnCerrar) btnCerrar.addEventListener("click", cerrarModal);
   var modal = obtenerElemento("#modalDetalles");
   if(modal) modal.addEventListener("click", function (e) { if (e.target === modal) cerrarModal(); });
+  if(modal) modal.addEventListener("close", restaurarScrollModal);
 }
 
 // --- FILTROS ---
