@@ -23,6 +23,70 @@
       "texto": "asdasfasf",
       "calificacion": 3,
       "likes": 11
+    },
+    {
+      "id": 4,
+      "peliculaId": 82,
+      "usuario": "Ashby",
+      "texto": "No me gusto",
+      "calificacion": 1,
+      "likes": 0
+    },
+    {
+      "id": 5,
+      "peliculaId": 32,
+      "usuario": "Ashby",
+      "texto": "Me gusta",
+      "calificacion": 5,
+      "likes": 0
+    },
+    {
+      "id": 6,
+      "peliculaId": 36,
+      "usuario": "Ashby",
+      "texto": "Me gusto el shinji",
+      "calificacion": 5,
+      "likes": 0
+    },
+    {
+      "id": 7,
+      "peliculaId": 60,
+      "usuario": "Ashby",
+      "texto": "afafasgags",
+      "calificacion": 2,
+      "likes": 0
+    },
+    {
+      "id": 9,
+      "peliculaId": 31,
+      "usuario": "Hilary",
+      "texto": "Hola Ashby",
+      "calificacion": 3,
+      "likes": 0
+    },
+    {
+      "id": 11,
+      "peliculaId": 25,
+      "usuario": "Ashby",
+      "texto": "Obra Maestra",
+      "calificacion": 5,
+      "likes": 0
+    },
+    {
+      "id": 12,
+      "peliculaId": 40,
+      "usuario": "Ashby",
+      "texto": "Me gusto",
+      "calificacion": 4,
+      "likes": 0
+    },
+    {
+      "id": 13,
+      "peliculaId": 31,
+      "usuario": "Ashby",
+      "texto": "Hola hilary",
+      "calificacion": 4,
+      "likes": 0
     }
   ]
 }

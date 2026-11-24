@@ -1,277 +1,216 @@
+// ============================================================
+// apip.js — Servidor AnimaBox Fase 2 (Híbrido: JSON + MySQL)
+// ============================================================
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
+const basesdatos = require("mysql");
+const jwt = require("jsonwebtoken");
 
+// 🚨 ATENCIÓN: CAMBIAR EL TIEMPO DEL TOKEN A "1h" o "1d" PARA LA ENTREGA FINAL 🚨
+const TIEMPO_TOKEN = "30s"; 
+
+const llave = "HJDJHjdkjHJSjHJJKDXKJhjdjszhukmxdhjHJKhdiJHjhHhjHJb";
 const puerto = 3000;
 
-// Rutas
 const RUTA_PELICULAS = path.join(__dirname, "Peliculas.json");
 const RUTA_COMENTARIOS = path.join(__dirname, "Comentarios.json");
 
-
 function leerJson(ruta) {
-  try {
-    return JSON.parse(fs.readFileSync(ruta, "utf8"));
-  } catch (err) {
-    console.log("Error leyendo " + ruta + ": " + err.message);
-    return null;
-  }
+  try { return JSON.parse(fs.readFileSync(ruta, "utf8")); } catch { return null; }
 }
-
 function responderJson(response, codigo, objeto) {
   response.statusCode = codigo;
   response.setHeader("Content-Type", "application/json; charset=utf-8");
   response.end(JSON.stringify(objeto));
 }
 
-// Server
-const servidor = http.createServer((request, response) => {
+const server = http.createServer((request, response) => {
+    // CORS
+    response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    response.setHeader("Access-Control-Allow-Headers", "*");
 
-  // Reglas CORS 
-  response.setHeader("Access-Control-Allow-Origin", "*");
-  response.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  response.setHeader("Access-Control-Allow-Headers", "Content-Type");
-
-  switch (request.method) { 
-
-    // GET — devuelve películas o comentarios según la ruta
-  
-    case "GET": {
-      var url = new URL(request.url, "http://localhost:" + puerto);
-
-      if (url.pathname === "/api/peliculas") {
-        var peliculas = leerJson(RUTA_PELICULAS);
-        if (peliculas === null) {
-          return responderJson(response, 500, { mensaje: "Error leyendo Peliculas.json" });
-        }
-        return responderJson(response, 200, peliculas);
-      }
-
-      if (url.pathname === "/api/comentarios") {
-        var comentarios = leerJson(RUTA_COMENTARIOS);
-        if (comentarios === null) {
-          return responderJson(response, 500, { mensaje: "Error leyendo Comentarios.json" });
-        }
-        return responderJson(response, 200, comentarios);
-      }
-
-      return responderJson(response, 404, { mensaje: "Ruta no encontrada" });
+    if (request.method === "OPTIONS") {
+        response.writeHead(204);
+        return response.end();
     }
 
-    // POST
-    case "POST": {
-      var informacion = "";
-      request.on("data", info => {
-        informacion += info;
-      });
-      request.on("end", () => {
+    const mysql = basesdatos.createConnection({
+        host: "localhost",
+        user: "root",
+        password: "",
+        database: "BD_animabox"
+    });
 
-        var body;
-        try {
-          body = JSON.parse(informacion);
-        } catch (err) {
-          return responderJson(response, 400, { mensaje: "JSON inválido en el body" });
-        }
+    const token = request.headers.authorization;
 
-        if (body.accion === "crearComentario") {
+    function verificarToken(callback) {
+        if (!token || token === "null") return callback(null, null);
+        jwt.verify(token, llave, (err, decoded) => {
+            if (err) return callback(err, null);
+            callback(null, decoded);
+        });
+    }
 
-          var comentarios = leerJson(RUTA_COMENTARIOS);
-          if (comentarios === null) {
-            comentarios = { arreglo: [] };
-          }
-
-          var nuevoId = 1;
-          if (comentarios.arreglo.length > 0) {
-            var maxId = 0;
-            for (var i = 0; i < comentarios.arreglo.length; i++) {
-              if (comentarios.arreglo[i].id > maxId) {
-                maxId = comentarios.arreglo[i].id;
-              }
+    switch (request.method) {
+        case "GET":
+            switch (request.url) {
+                case "/api/peliculas":
+                    responderJson(response, 200, leerJson(RUTA_PELICULAS));
+                    mysql.end();
+                    break;
+                case "/api/comentarios":
+                    responderJson(response, 200, leerJson(RUTA_COMENTARIOS));
+                    mysql.end();
+                    break;
+                case "/api/obtener_usuario":
+                    verificarToken((err, decoded) => {
+                        if (err || !decoded) {
+                            mysql.end();
+                            return responderJson(response, 401, { mensaje: "Token inválido o expirado" });
+                        }
+                        mysql.query("SELECT id, usuario, correo FROM usuarios WHERE usuario = ?", [decoded.username], (err, res) => {
+                            mysql.end();
+                            if (err || res.length === 0) return responderJson(response, 404, { mensaje: "Usuario no encontrado" });
+                            responderJson(response, 200, res[0]);
+                        });
+                    });
+                    break;
+                case "/api/coleccion":
+                    verificarToken((err, decoded) => {
+                        if (err || !decoded) {
+                            mysql.end();
+                            return responderJson(response, 401, { mensaje: "No autorizado" });
+                        }
+                        mysql.query("SELECT pelicula_id, en_coleccion, favorito, visto FROM coleccion WHERE usuario_id = (SELECT id FROM usuarios WHERE usuario = ?)", [decoded.username], (err, res) => {
+                            mysql.end();
+                            if (err) return responderJson(response, 500, { mensaje: "Error en BD" });
+                            responderJson(response, 200, { coleccion: res });
+                        });
+                    });
+                    break;
+                default:
+                    mysql.end();
+                    responderJson(response, 404, { mensaje: "Ruta no encontrada" });
             }
-            nuevoId = maxId + 1;
-          }
+            break;
 
-          var nuevoComentario = {
-            id: nuevoId,
-            peliculaId: Number(body.peliculaId),
-            usuario: String(body.usuario || "Invitado").trim().slice(0, 40),
-            texto: String(body.texto || "").trim().slice(0, 500),
-            calificacion: Number(body.calificacion) || 0,
-            likes: 0
-          };
-
-          comentarios.arreglo.push(nuevoComentario);
-
-          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
-            if (err) {
-              console.log(err);
-              return responderJson(response, 500, { mensaje: "Error guardando comentario" });
-            }
-            return responderJson(response, 201, {
-              mensaje: "Comentario creado",
-              comentario: nuevoComentario
+        case "POST":
+            var informacion = "";
+            request.on("data", info => { informacion += info; });
+            request.on("end", () => {
+                const body = JSON.parse(informacion);
+                switch (request.url) {
+                    case "/api/login":
+                        mysql.query("SELECT usuario FROM usuarios WHERE (usuario = ? OR correo = ?) AND contrasena = ?", [body.usuario, body.usuario, body.contrasena], (err, res) => {
+                            mysql.end();
+                            if (err || res.length === 0) return responderJson(response, 401, { mensaje: "Credenciales incorrectas" });
+                            const tokenGenerado = jwt.sign({ username: res[0].usuario }, llave, { expiresIn: TIEMPO_TOKEN });
+                            responderJson(response, 200, { mensaje: "Login exitoso", token: tokenGenerado, usuario: res[0].usuario });
+                        });
+                        break;
+                    case "/api/registro":
+                        mysql.query("INSERT INTO usuarios (usuario, correo, contrasena) VALUES (?, ?, ?)", [body.usuario, body.correo, body.contrasena], (err, res) => {
+                            mysql.end();
+                            if (err) return responderJson(response, 400, { mensaje: "El usuario o correo ya existe" });
+                            responderJson(response, 201, { mensaje: "Usuario registrado con éxito" });
+                        });
+                        break;
+                    case "/api/accion":
+                        if (body.accion === "crearComentario") {
+                            var comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
+                            var nuevoId = comentarios.arreglo.length > 0 ? Math.max(...comentarios.arreglo.map(c => c.id)) + 1 : 1;
+                            
+                            var nuevoComentario = {
+                                id: nuevoId, peliculaId: body.peliculaId, usuario: body.usuario,
+                                texto: body.texto, calificacion: body.calificacion, likes: 0
+                            };
+                            comentarios.arreglo.push(nuevoComentario);
+                            fs.writeFileSync(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2));
+                            mysql.end();
+                            return responderJson(response, 201, { mensaje: "Comentario creado", comentario: nuevoComentario });
+                        }
+                        mysql.end();
+                        responderJson(response, 400, { mensaje: "Acción no válida" });
+                        break;
+                    default:
+                        mysql.end();
+                        responderJson(response, 404, { mensaje: "Ruta no encontrada" });
+                }
             });
-          });
+            break;
 
-        } else {
-          return responderJson(response, 400, { mensaje: "Acción POST no reconocida" });
-        }
-      });
-      break;
-    }
-
-    // PUT
-    case "PUT": {
-      var informacion = "";
-      request.on("data", info => {
-        informacion += info;
-      });
-      request.on("end", () => {
-
-        var body;
-        try {
-          body = JSON.parse(informacion);
-        } catch (err) {
-          return responderJson(response, 400, { mensaje: "JSON inválido en el body" });
-        }
-
-        var comentarios = leerJson(RUTA_COMENTARIOS);
-        if (comentarios === null) {
-          comentarios = { arreglo: [] };
-        }
-
-        // PUT Editar Comentario
-        if (body.accion === "editarComentario") {
-
-          var indiceEncontrado = -1;
-          for (var i = 0; i < comentarios.arreglo.length; i++) {
-            if (comentarios.arreglo[i].id == body.id) {
-              indiceEncontrado = i;
-              break;
-            }
-          }
-
-          if (indiceEncontrado === -1) {
-            return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
-          }
-
-          comentarios.arreglo[indiceEncontrado].texto = String(body.texto || "").trim().slice(0, 500);
-          comentarios.arreglo[indiceEncontrado].calificacion = Number(body.calificacion) || 0;
-
-          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
-            if (err) {
-              console.log(err);
-              return responderJson(response, 500, { mensaje: "Error guardando comentario" });
-            }
-            return responderJson(response, 200, {
-              mensaje: "Comentario editado",
-              comentario: comentarios.arreglo[indiceEncontrado]
+        case "PUT":
+            var informacion = "";
+            request.on("data", info => { informacion += info; });
+            request.on("end", () => {
+                const body = JSON.parse(informacion);
+                verificarToken((err, decoded) => {
+                    if (err || !decoded) {
+                        mysql.end();
+                        return responderJson(response, 401, { mensaje: "No autorizado" });
+                    }
+                    
+                    if (request.url === "/api/accion" && body.accion === "guardarColeccion") {
+                        const query = `
+                            INSERT INTO coleccion (usuario_id, pelicula_id, en_coleccion, favorito, visto) 
+                            VALUES ((SELECT id FROM usuarios WHERE usuario = ?), ?, ?, ?, ?) 
+                            ON DUPLICATE KEY UPDATE en_coleccion = ?, favorito = ?, visto = ?
+                        `;
+                        const valores = [
+                            decoded.username, body.peliculaId, body.enColeccion, body.favorito, body.visto,
+                            body.enColeccion, body.favorito, body.visto
+                        ];
+                        mysql.query(query, valores, (err) => {
+                            mysql.end();
+                            if (err) return responderJson(response, 500, { mensaje: "Error al guardar en BD" });
+                            responderJson(response, 200, { mensaje: "Colección actualizada" });
+                        });
+                    } else if (request.url === "/api/accion" && body.accion === "editarComentario") {
+                         var comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
+                         for (var i = 0; i < comentarios.arreglo.length; i++) {
+                             if (comentarios.arreglo[i].id == body.id) {
+                                 comentarios.arreglo[i].texto = body.texto;
+                                 comentarios.arreglo[i].calificacion = body.calificacion;
+                                 break;
+                             }
+                         }
+                         fs.writeFileSync(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2));
+                         mysql.end();
+                         return responderJson(response, 200, { mensaje: "Comentario editado" });
+                    } else {
+                        mysql.end();
+                        responderJson(response, 400, { mensaje: "Acción PUT no válida" });
+                    }
+                });
             });
-          });
+            break;
 
-        // PUT darLike
-        } else if (body.accion === "darLike") {
-
-          var indiceEncontrado = -1;
-          for (var i = 0; i < comentarios.arreglo.length; i++) {
-            if (comentarios.arreglo[i].id == body.id) {
-              indiceEncontrado = i;
-              break;
-            }
-          }
-
-          if (indiceEncontrado === -1) {
-            return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
-          }
-
-          if (!comentarios.arreglo[indiceEncontrado].likes) {
-            comentarios.arreglo[indiceEncontrado].likes = 0;
-          }
-          comentarios.arreglo[indiceEncontrado].likes = comentarios.arreglo[indiceEncontrado].likes + 1;
-
-          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
-            if (err) {
-              console.log(err);
-              return responderJson(response, 500, { mensaje: "Error guardando like" });
-            }
-            return responderJson(response, 200, {
-              mensaje: "Like registrado",
-              likes: comentarios.arreglo[indiceEncontrado].likes
+        case "DELETE":
+            var informacion = "";
+            request.on("data", info => { informacion += info; });
+            request.on("end", () => {
+                const body = JSON.parse(informacion);
+                if (request.url === "/api/accion" && body.accion === "eliminarComentario") {
+                    var comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
+                    for (var i = 0; i < comentarios.arreglo.length; i++) {
+                        if (comentarios.arreglo[i].id == body.id) {
+                            comentarios.arreglo.splice(i, 1);
+                            break;
+                        }
+                    }
+                    fs.writeFileSync(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2));
+                    mysql.end();
+                    return responderJson(response, 200, { mensaje: "Comentario eliminado" });
+                }
+                mysql.end();
+                responderJson(response, 400, { mensaje: "Acción DELETE no válida" });
             });
-          });
-
-        } else {
-          return responderJson(response, 400, { mensaje: "Acción PUT no reconocida" });
-        }
-      });
-      break;
+            break;
     }
-
-    // DELETE: Eliminar comentario
-    case "DELETE": {
-      var informacion = "";
-      request.on("data", info => {
-        informacion += info;
-      });
-      request.on("end", () => {
-
-        var body;
-        try {
-          body = JSON.parse(informacion);
-        } catch (err) {
-          return responderJson(response, 400, { mensaje: "JSON inválido en el body" });
-        }
-
-        if (body.accion === "eliminarComentario") {
-
-          var comentarios = leerJson(RUTA_COMENTARIOS);
-          if (comentarios === null) {
-            comentarios = { arreglo: [] };
-          }
-
-          var indiceEncontrado = -1;
-          for (var i = 0; i < comentarios.arreglo.length; i++) {
-            if (comentarios.arreglo[i].id == body.id) {
-              indiceEncontrado = i;
-              break;
-            }
-          }
-
-          if (indiceEncontrado === -1) {
-            return responderJson(response, 404, { mensaje: "Comentario no encontrado" });
-          }
-
-          comentarios.arreglo.splice(indiceEncontrado, 1);
-
-          fs.writeFile(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2), err => {
-            if (err) {
-              console.log(err);
-              return responderJson(response, 500, { mensaje: "Error eliminando comentario" });
-            }
-            return responderJson(response, 200, { mensaje: "Comentario eliminado" });
-          });
-
-        } else {
-          return responderJson(response, 400, { mensaje: "Acción DELETE no reconocida" });
-        }
-      });
-      break;
-    }
-
-    case "OPTIONS": {
-      response.writeHead(204);
-      response.end();
-      break;
-    }
-
-    // Cualqueir otro metodo
-    default: {
-      responderJson(response, 405, { mensaje: "Método no permitido" });
-    }
-  }
 });
 
-servidor.listen(puerto, () => {
-  console.log("Servidor AnimaBox a la escucha en http://localhost:" + puerto);
- 
+server.listen(puerto, () => {
+    console.log("Servidor AnimaBox Fase 2 en http://localhost:" + puerto);
 });
