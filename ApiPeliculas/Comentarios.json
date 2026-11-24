@@ -4,9 +4,9 @@
       "id": 1,
       "peliculaId": 143,
       "usuario": "Ashby",
-      "texto": "asDASda",
-      "calificacion": 4,
-      "likes": 0
+      "texto": "ASdafas",
+      "calificacion": 1,
+      "likes": 3
     },
     {
       "id": 2,
@@ -15,6 +15,14 @@
       "texto": "Asdaafsa",
       "calificacion": 3,
       "likes": 0
+    },
+    {
+      "id": 3,
+      "peliculaId": 143,
+      "usuario": "Hilary",
+      "texto": "asdasfasf",
+      "calificacion": 3,
+      "likes": 11
     }
   ]
 }
