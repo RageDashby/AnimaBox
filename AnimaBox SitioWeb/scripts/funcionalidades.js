@@ -1,7 +1,3 @@
-// ============================================================
-// funcionalidades.js — Fase 1 y 2 integradas (Sin API)
-// ============================================================
-
 var CLAVE_COLECCION = "animabox_coleccion";
 var vistaActual = "catalogo";
 var filtroColeccion = "todos"; 
@@ -13,17 +9,15 @@ var tokenSesion = localStorage.getItem("animabox_token") || null;
 var usuarioActual = localStorage.getItem("animabox_usuario") || null;
 var coleccionLocal = {}; 
 
-// --- UTILIDADES BÁSICAS ---
 function obtenerElemento(selector) { return document.querySelector(selector); }
 function crearElemento(etiqueta, clase) { var el = document.createElement(etiqueta); if (clase) el.className = clase; return el; }
 
 function escaparHtml(valor) {
-  return String(valor ?? "").replace(/[&<>"']/g, function (c) {
-    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
-  });
+        return String(valor ?? "").replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
 }
 
-// --- NUEVO: ALERTA PERSONALIZADA ESTILO PÁGINA ---
 function mostrarAlerta(mensaje, tipo) {
     var alertaAnterior = document.getElementById("alertaUniversal");
     if (alertaAnterior) {
@@ -60,11 +54,9 @@ function mostrarAlerta(mensaje, tipo) {
     }, 3500);
 }
 
-// --- NUEVO: MANEJO DE EXPIRACIÓN DE TOKEN ---
 function verificarTokenExpirado() {
     if (!tokenSesion) return false;
     try {
-        // Decodificar el payload del JWT (la segunda parte del token)
         var payload = JSON.parse(atob(tokenSesion.split('.')[1]));
         var tiempoActual = Math.floor(Date.now() / 1000);
         
@@ -79,18 +71,13 @@ function verificarTokenExpirado() {
     return false;
 }
 
-// --- TOAST UNIVERSAL (Usando <dialog> para estar en la capa superior) ---
 function mostrarToast() {
-    // 1. Eliminar cualquier toast anterior para que no se dupliquen
     var toastViejo = document.getElementById("toastUniversal");
     if (toastViejo) toastViejo.remove();
 
-    // 2. Crear el elemento como un <dialog>
     var toast = document.createElement("dialog");
     toast.id = "toastUniversal";
     toast.textContent = "Para poder usar esta función inicie sesión o regístrese";
-    
-    // 3. Estilos en línea (Mismo estilo de la página, con animación)
     toast.style.cssText = `
         position: fixed;
         top: -100px;
@@ -113,28 +100,24 @@ function mostrarToast() {
     `;
 
     document.body.appendChild(toast);
-
-    // 4. Mostrarlo usando showModal() para que entre a la capa superior (Top Layer)
     toast.showModal();
 
-    // 5. Animación de entrada (deslizar hacia abajo)
     setTimeout(function() {
         toast.style.top = "20px";
     }, 50);
 
-    // 6. Animación de salida y destrucción
     setTimeout(function() {
         toast.style.top = "-100px";
         setTimeout(function() {
             if (toast) {
-                toast.close(); // Cerrar el dialog
-                toast.remove(); // Eliminar del DOM
+                toast.close(); 
+                toast.remove(); 
             }
         }, 400); 
     }, 2500);
 }
 
-// --- SESIÓN Y USUARIOS ---
+//Sesión y Usuarios 
 function actualizarUIUsuario() {
     if (verificarTokenExpirado()) return; 
 
@@ -229,7 +212,7 @@ function cerrarSesion() {
     localStorage.removeItem("animabox_usuario");
     window.location.reload();
 }
-// --- NUEVO: RELOJ QUE VIGILA LA EXPIRACIÓN EN TIEMPO REAL ---
+
 function vigilarExpiracionToken() {
     if (!tokenSesion) return;
 
@@ -247,17 +230,15 @@ function vigilarExpiracionToken() {
                 localStorage.removeItem("animabox_usuario");
                 localStorage.removeItem("animabox_coleccion");
                 
-                // Recargamos la página para que entre en vigor el modo invitado
                 setTimeout(function() {
                     window.location.reload();
-                }, 2500); // Espera 2.5 segundos para que el usuario lea el mensaje
+                }, 2500); 
             }
         } catch (e) {
-            // Si hay un error leyendo el token, no hacemos nada
         }
-    }, 1000); // Revisa cada 1 segundo (1000 ms)
+    }, 1000);
 }
-// --- COLECCIÓN (Lógica y API) ---
+// La Colección 
 function cargarColeccionDesdeBD() {
     if (!tokenSesion) return;
     fetch("http://localhost:3000/api/coleccion", {
@@ -287,18 +268,18 @@ function actualizarContadorColeccion() {
 }
 
 function marcarBoton(tarjeta, accion, activo) {
-  var btn = tarjeta.querySelector('.accion-icono[data-accion="' + accion + '"]');
-  if (!btn) return;
-  if (activo) btn.classList.add("activa");
-  else btn.classList.remove("activa");
+    var btn = tarjeta.querySelector('.accion-icono[data-accion="' + accion + '"]');
+        if (!btn) return;
+        if (activo) btn.classList.add("activa");
+        else btn.classList.remove("activa");
 
-  var icono = btn.querySelector("i");
-  var mapa = {
-    catalogo: ["fa-regular fa-bookmark", "fa-solid fa-bookmark"],
-    favorito: ["fa-regular fa-heart", "fa-solid fa-heart"],
-    visto: ["fa-regular fa-eye", "fa-solid fa-eye"]
-  };
-  icono.className = mapa[accion][activo ? 1 : 0];
+    var icono = btn.querySelector("i");
+    var mapa = {
+        catalogo: ["fa-regular fa-bookmark", "fa-solid fa-bookmark"],
+        favorito: ["fa-regular fa-heart", "fa-solid fa-heart"],
+        visto: ["fa-regular fa-eye", "fa-solid fa-eye"]
+    };
+    icono.className = mapa[accion][activo ? 1 : 0];
 }
 
 function alternarFlag(peliculaId, accion) {
@@ -321,7 +302,6 @@ function alternarFlag(peliculaId, accion) {
     }).catch(err => console.log("Error guardando en BD", err));
 }
 
-// --- HOVER Y SLIDER ---
 function configurarHoverTarjetas() {
   var posters = document.querySelectorAll(".tarjeta-poster");
   for (var i = 0; i < posters.length; i++) {
@@ -344,7 +324,6 @@ function inicializarSlider(peliculas) {
     slide.style.backgroundImage = 'url("' + p.imagen_url + '")';
     slide.innerHTML = '<div class="slider-info"><h2>' + escaparHtml(p.nombre) + "</h2><p>" + escaparHtml(p.director) + " · " + escaparHtml(p.anio_lanzamiento) + "</p></div>";
     
-    // SOLUCIÓN AL BUG DEL SLIDER (Scope de la variable)
     (function(idPelicula) {
         slide.addEventListener("click", function () { 
             abrirModal(idPelicula); 
@@ -375,7 +354,6 @@ function moverSlider(dir) { irASlide(indiceSlider + dir); reiniciarAutoplay(); }
 function iniciarAutoplay() { intervaloSlider = setInterval(function () { irASlide(indiceSlider + 1); }, 6000); }
 function reiniciarAutoplay() { clearInterval(intervaloSlider); iniciarAutoplay(); }
 
-// --- MODAL CONTROLS ---
 function mostrarModal() {
   if (!obtenerElemento("#modalDetalles").open) {
     posicionScrollModal = window.scrollY;
@@ -419,7 +397,7 @@ function configurarCierreModal() {
   if(modal) modal.addEventListener("close", restaurarScrollModal);
 }
 
-// --- FILTROS ---
+//Filtros
 function llenarSelect(selector, valores, etiqueta, desc) {
   var select = obtenerElemento(selector); if(!select) return;
   var unicos = []; var vistos = {};
@@ -443,7 +421,6 @@ function inicializarFiltros(peliculas) {
   llenarSelect("#filtroGenero", generos, "Todos los géneros", false);
 }
 
-// --- EVENTOS GLOBALES ---
 function conectarEventosGlobales() {
   if(obtenerElemento("#entradaBusqueda")) obtenerElemento("#entradaBusqueda").addEventListener("input", renderizarCatalogo);
   if(obtenerElemento("#filtroEstudio")) {

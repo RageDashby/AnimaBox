@@ -1,7 +1,3 @@
-// ============================================================
-// script.js — Fase 1 y 2 integradas (Lógica de la API y UI)
-// ============================================================
-
 var URL_API = "http://localhost:3000";
 var peliculas = [];
 var calificacionSeleccionada = 0;
@@ -246,7 +242,7 @@ async function abrirModal(peliculaId) {
     +
     '<div id="pantallaCompletaCarrusel" class="carrusel-full oculto">'+
         '<button id="cerrarCarrusel" class="cerrar-modal">'+'<i class="fa-solid fa-xmark">'+'</i>'+'</button>'+
-       '<button id="flechaCarruselIzq" class="flecha-full">'+'<i class="fa-solid fa-chevron-left">'+'</i>'+'</button>'+
+        '<button id="flechaCarruselIzq" class="flecha-full">'+'<i class="fa-solid fa-chevron-left">'+'</i>'+'</button>'+
         '<img id="imgCarruselFull" src="" alt="Imagen completa">'+
         '<button id="flechaCarruselDer" class="flecha-full">'+'<i class="fa-solid fa-chevron-right">'+'</i>'+'</button>'+
     '</div>'

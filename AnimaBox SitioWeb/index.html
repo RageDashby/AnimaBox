@@ -4,22 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AnimaBox | Catálogo de anime</title>
-    <!-- Tipografias del proyecto -->
+    <title>AnimaBox - Catálogo de anime</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome (Usado para los botones y simbolos en el proyecto) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Hoja de estilo -->
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 
 <body>
-    <!--  HEADER  -->
     <header class="encabezado">
         <a href="#" class="logo" id="logoInicio">AnimaBox</a>
         <button class="boton-nav activo" id="pestanaCatalogo" type="button">
@@ -27,46 +24,37 @@
         </button>
         
         <nav class="navegacion">
-            <!-- Barra de busqueda -->
             <div class="buscador">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" id="entradaBusqueda" placeholder="Buscar por título, director o estudio..."
                     aria-label="Buscar película">
             </div>
 
-            <!-- Botón de mi colección (Oculto por defecto, lo muestra el JS al iniciar sesión) -->
             <button class="oculto boton-nav" id="pestanaColeccion" type="button">
                 <i class="fa-solid fa-bookmark"></i> Mi colección <span id="contadorColeccion">0</span>
             </button>
 
-            <!-- Texto del usuario (Oculto por defecto) -->
             <div id="textoUsuarioPerfil" class="oculto" style="color: #7a2e3f; font-weight: bold; margin-right: 10px; display: flex; align-items: center;"></div>
-            
-            <!-- Botón de cerrar sesión (Oculto por defecto) -->
+
             <button id="btnCerrarSesion" class="oculto boton-nav" type="button" title="Cerrar Sesión">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </button>
 
-            <!-- Botones para invitados (Visibles por defecto) -->
             <button id="btnAbrirLogin" class="boton-nav" type="button">Iniciar Sesión</button> 
             <button id="btnAbrirRegistro" class="boton-nav" type="button">Registrarse</button>
         </nav>
     </header>
 
-    <!--  Slider  -->
     <section class="slider" id="slider" aria-label="Películas destacadas">
         <button class="slider-flecha" id="flechaIzquierda" aria-label="Anterior"><i
                 class="fa-solid fa-chevron-left"></i></button>
-        <div class="slider-contenido" id="sliderContenido"><!-- Slides clonados por JS --></div>
+        <div class="slider-contenido" id="sliderContenido"></div>
         <button class="slider-flecha" id="flechaDerecha" aria-label="Siguiente"><i
                 class="fa-solid fa-chevron-right"></i></button>
         <div class="slider-puntos" id="sliderPuntos"></div>
     </section>
 
-    <!-- Main principal -->
     <main class="contenedor-principal">
-
-        <!-- Tabs de la Colección (Oculto por defecto, aparece cuando el usuario entra a "Mi colección") -->
         <div id="tabsColeccion" class="tabs-coleccion oculto">
             <h2 id="tituloColeccionUsuario" style="width:100%; text-align:center; font-family:'Archivo Black'; margin-bottom: 15px;">Colección de </h2>
             <button class="tab-btn activo" data-filtro="todos">General</button>
@@ -74,7 +62,6 @@
             <button class="tab-btn" data-filtro="vistos">Ya Vistos</button>
         </div>
 
-        <!-- Filtro (por estudio, años, generos y directores). Envuelto en un div para poder ocultarlo en la colección -->
         <section id="barraFiltrosPrincipales" class="barra-filtros" aria-label="Filtros">
             <select id="filtroEstudio">
                 <option value="">Todos los estudios</option>
@@ -98,19 +85,15 @@
             <span id="contadorResultados" aria-live="polite">Cargando...</span>
         </div>
 
-        <!-- Mensajes de error porsi  -->
         <div id="mensajeError" class="mensaje error oculto"></div>
         <div id="mensajeVacio" class="mensaje oculto">No se encontraron películas con esos filtros.</div>
 
-        <!-- Section de peliculas -->
         <section id="listaPeliculas" class="grid-peliculas" aria-live="polite"></section>
     </main>
 
-    <!--  Plantilla principal  -->
     <div id="plantillaTarjeta" class="tarjeta-pelicula oculto" aria-hidden="true">
         <div class="tarjeta-poster">
             <img class="tarjeta-imagen" src="" alt="" loading="lazy">
-            <!-- Overlay hover: año, director, géneros, 3 botones -->
             <div class="tarjeta-overlay">
                 <p class="overlay-anio"></p>
                 <p class="overlay-director"></p>
@@ -131,14 +114,11 @@
         <h3 class="tarjeta-titulo"></h3>
     </div>
 
-    <!--  Modal de detalles  -->
     <dialog id="modalDetalles" class="modal-detalles">
         <button id="cerrarModal" class="cerrar-modal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
         <div id="contenidoModal"></div>
     </dialog>
 
-
-    <!-- Modal de Login / Registro -->
     <dialog id="modalAuth" class="modal-auth">
         <button id="cerrarAuth" class="cerrar-modal"><i class="fa-solid fa-xmark"></i></button>
 
@@ -161,7 +141,6 @@
         </div>
     </dialog>
 
-    <!-- Scripts al final del body para que el DOM esté listo -->
     <script src="scripts/funcionalidades.js"></script>
     <script src="scripts/script.js"></script>
 </body>

@@ -1,4 +1,4 @@
-/* Variables de plantilla */
+/* Etilo de la plantilla */
 :root {
   --fondo: #35202f;
   --panel: #432c3b;
@@ -637,7 +637,7 @@ select {
 }
 
 
-/* --- TOAST (Aviso) --- */
+/* ToasT (Aviso)*/
 #toastAviso {
   position: fixed;
   top: -100px;
@@ -662,12 +662,12 @@ select {
     backdrop-filter: none !important;
     pointer-events: none;
 }
-/* --- BLOQUEO DE SCROLL --- */
+/* Bloque de scroll */
 body.modal-abierto {
   overflow: hidden;
 }
 
-/* --- ESTRELLAS INTERACTIVAS --- */
+/* estrellas interactivas para calificar */
 .estrellas-interactivas {
   display: flex;
   gap: 5px;
@@ -681,7 +681,7 @@ body.modal-abierto {
   color: #f1c40f;
 }
 
-/* --- CARRUSEL FULLSCREEN --- */
+/* Carrusel de imagenes de las peliclas en pantalla completa */
 .carrusel-full {
   position: fixed;
   inset: 0;
@@ -727,7 +727,7 @@ body.modal-abierto {
   right: 20px;
 }
 
-/* --- MODAL AUTH --- */
+/* Modal auth */
 .modal-auth {
   background: #432c3b;
   color: white;
@@ -770,7 +770,7 @@ body.modal-abierto {
   text-decoration: none;
 }
 
-/* --- TABS COLECCIÓN --- */
+/* tabs de coleccion */
 .tabs-coleccion {
   display: flex;
   gap: 10px;
@@ -792,31 +792,26 @@ body.modal-abierto {
   color: #7a2e3f;
 }
 
-
-/* 2. Z-Index del Toast mayor al del modal */
 #toastAviso {
-    z-index: 99999 !important; /* Se asegura de estar por encima de todo */
+    z-index: 99999 !important; 
 }
 
-/* 3. Z-Index para el carrusel en pantalla completa */
 .carrusel-full {
-    z-index: 999999 !important; /* Mucho más alto que el modal de detalles */
+    z-index: 999999 !important; 
 }
 
-/* 4. Modales (Auth y Detalles) más grandes y con fondo más opaco */
 dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.85) !important; /* Fondo más oscuro */
-    backdrop-filter: blur(4px); /* Un toque de desenfoque */
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(4px); 
 }
 
 .modal-detalles {
     width: 90vw !important; 
     max-width: 1200px !important;
-    height: 80vh !important; /* Cubre gran parte de la pantalla */
+    height: 80vh !important; 
     max-height: 90vh !important;
 }
 
-/* 5. Diseño de botones de reseña acorde a la página */
 .btn-resena {
     background-color: var(--acento, #f1a9bd);
     color: var(--vino, #7a2e3f);
@@ -901,14 +896,14 @@ dialog::backdrop {
     color: var(--texto);
 }
 
-/* Tablet o laptop disminuye el grid */
+/* Tablet o laptop*/
 @media (max-width: 900px) {
   .grid-peliculas {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Celular: 1 columna */
+/* Celular */
 @media (max-width: 600px) {
   .encabezado {
     flex-wrap: wrap;
