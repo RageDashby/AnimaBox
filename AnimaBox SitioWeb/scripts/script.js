@@ -1,16 +1,17 @@
+/* Variables de conexion */
 var URL_API = "http://localhost:3000";
 var peliculas = [];
 var calificacionSeleccionada = 0;
 var imagenesCarrusel = [];
 var indiceCarrusel = 0;
-
+/* Funcion para obtener datos de la API usando el metodo GET */
 function apiGet(ruta) {
   return fetch(URL_API + ruta).then(function (recurso) {
     if (!recurso.ok) throw new Error("GET " + ruta + " → " + recurso.status);
     return recurso.json();
   });
 }
-
+/* Funcion para enviar datos a la API (POST, PUT, DELETE) mandando el token de seguridad */
 function apiEnviar(metodo, cuerpo) {
   return fetch(URL_API + "/api/accion", {
     method: metodo, headers: { "Content-Type": "application/json", "Authorization": tokenSesion || "" },
@@ -22,7 +23,7 @@ function apiEnviar(metodo, cuerpo) {
     });
   });
 }
-
+/* Funcion para inicializar todas las funciones de la pagina al cargar */
 function iniciar() {
   apiGet("/api/peliculas")
     .then(function (data) {
@@ -47,7 +48,7 @@ function iniciar() {
       if(mensaje) { mensaje.classList.remove("oculto"); mensaje.innerHTML = "<strong>No se pudo cargar el catálogo.</strong><br>" + escaparHtml(err.message); }
     });
 }
-
+/* Funcion que dibuja y muestra las tarjetas de las peliculas aplicando los filtros */
 function renderizarCatalogo() {
   var busqueda = obtenerElemento("#entradaBusqueda").value.trim().toLowerCase();
   var estudio = obtenerElemento("#filtroEstudio").value;
@@ -132,7 +133,7 @@ function renderizarCatalogo() {
   }
   configurarHoverTarjetas();
 }
-
+/* Funcion para abrir la ventana flotante (modal) con los detalles de la pelicula y comentarios */
 async function abrirModal(peliculaId) {
   var p = null;
   for (var i = 0; i < peliculas.length; i++) { if (peliculas[i].id === peliculaId) { p = peliculas[i]; break; } }
@@ -333,7 +334,7 @@ async function abrirModal(peliculaId) {
 
   mostrarModal();
 }
-
+/* Funcion para mostrar las imagenes en grande y poder pasarlas con flechas */
 function abrirCarrusel(imagenes, index) {
     imagenesCarrusel = imagenes;
     indiceCarrusel = index;
@@ -350,5 +351,5 @@ function abrirCarrusel(imagenes, index) {
         document.getElementById("imgCarruselFull").src = imagenesCarrusel[indiceCarrusel]; 
     };
 }
-
+/* Funcion que arranca todo el script al abrir la pagina */
 iniciar();

@@ -1,30 +1,32 @@
-// ============================================================
-// apip.js — Servidor AnimaBox Fase 2 (Híbrido: JSON + MySQL)
-// ============================================================
+/* Librerias necesarios*/
 const http = require("node:http");
 const fs = require("node:fs");
 const path = require("node:path");
 const basesdatos = require("mysql");
 const jwt = require("jsonwebtoken");
 
-// 🚨 ATENCIÓN: CAMBIAR EL TIEMPO DEL TOKEN A "1h" o "1d" PARA LA ENTREGA FINAL 🚨
-const TIEMPO_TOKEN = "30s"; 
+/* Tiempo de expiracion del token */
+const TIEMPO_TOKEN = "30s";
 
 const llave = "HJDJHjdkjHJSjHJJKDXKJhjdjszhukmxdhjHJKhdiJHjhHhjHJb";
 const puerto = 3000;
 
+/* Rutas absolutas*/
 const RUTA_PELICULAS = path.join(__dirname, "Peliculas.json");
 const RUTA_COMENTARIOS = path.join(__dirname, "Comentarios.json");
 
+/* Funcion para leer el jsonde forma asincorna y maneja los errores con try catch para no colgar la api */
 function leerJson(ruta) {
-  try { return JSON.parse(fs.readFileSync(ruta, "utf8")); } catch { return null; }
+    try { return JSON.parse(fs.readFileSync(ruta, "utf8")); } catch { return null; }
 }
-function responderJson(response, codigo, objeto) {
-  response.statusCode = codigo;
-  response.setHeader("Content-Type", "application/json; charset=utf-8");
-  response.end(JSON.stringify(objeto));
-}
+/* Responder json, plantilla de respuesta para evitar la repeticion de codigo */
 
+function responderJson(response, codigo, objeto) {
+    response.statusCode = codigo;
+    response.setHeader("Content-Type", "application/json; charset=utf-8");
+    response.end(JSON.stringify(objeto));
+}
+/*Servidor */
 const server = http.createServer((request, response) => {
     // CORS
     response.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,16 +37,16 @@ const server = http.createServer((request, response) => {
         response.writeHead(204);
         return response.end();
     }
-
+    /* Conexion con la base de datos */
     const mysql = basesdatos.createConnection({
         host: "localhost",
         user: "root",
         password: "",
         database: "BD_animabox"
     });
-
+    /* Obtiene el token de autorizacion */
     const token = request.headers.authorization;
-
+    /*Verifica el token */
     function verificarToken(callback) {
         if (!token || token === "null") return callback(null, null);
         jwt.verify(token, llave, (err, decoded) => {
@@ -52,19 +54,23 @@ const server = http.createServer((request, response) => {
             callback(null, decoded);
         });
     }
-
+    /*Switch principal para los metodos */
     switch (request.method) {
+        /*Consulta de informacion */
         case "GET":
             switch (request.url) {
+                /* Devuelve el catalogo leyendo el json */
                 case "/api/peliculas":
                     responderJson(response, 200, leerJson(RUTA_PELICULAS));
                     mysql.end();
                     break;
+                /* Devuelve los comentarios leyendo el json */
                 case "/api/comentarios":
                     responderJson(response, 200, leerJson(RUTA_COMENTARIOS));
                     mysql.end();
                     break;
                 case "/api/obtener_usuario":
+                    // Verifica el token. Si es valido, busca al usuario en MySQL.    
                     verificarToken((err, decoded) => {
                         if (err || !decoded) {
                             mysql.end();
@@ -77,6 +83,7 @@ const server = http.createServer((request, response) => {
                         });
                     });
                     break;
+                /*Verifica el token y devuelve las peliculas correspondientes al usuario desde MySQL */
                 case "/api/coleccion":
                     verificarToken((err, decoded) => {
                         if (err || !decoded) {
@@ -95,21 +102,24 @@ const server = http.createServer((request, response) => {
                     responderJson(response, 404, { mensaje: "Ruta no encontrada" });
             }
             break;
-
+            /*Metodo Post: Para crear o registrar informaicon */
         case "POST":
             var informacion = "";
             request.on("data", info => { informacion += info; });
             request.on("end", () => {
                 const body = JSON.parse(informacion);
                 switch (request.url) {
+                    /*Busca el usuario y la contraseña en la base de datos */
                     case "/api/login":
                         mysql.query("SELECT usuario FROM usuarios WHERE (usuario = ? OR correo = ?) AND contrasena = ?", [body.usuario, body.usuario, body.contrasena], (err, res) => {
                             mysql.end();
                             if (err || res.length === 0) return responderJson(response, 401, { mensaje: "Credenciales incorrectas" });
+
                             const tokenGenerado = jwt.sign({ username: res[0].usuario }, llave, { expiresIn: TIEMPO_TOKEN });
                             responderJson(response, 200, { mensaje: "Login exitoso", token: tokenGenerado, usuario: res[0].usuario });
                         });
                         break;
+                        /*Inserta un nuevo usuario en la base de dtaos */
                     case "/api/registro":
                         mysql.query("INSERT INTO usuarios (usuario, correo, contrasena) VALUES (?, ?, ?)", [body.usuario, body.correo, body.contrasena], (err, res) => {
                             mysql.end();
@@ -117,11 +127,12 @@ const server = http.createServer((request, response) => {
                             responderJson(response, 201, { mensaje: "Usuario registrado con éxito" });
                         });
                         break;
+                        /*Crear comentario */
                     case "/api/accion":
                         if (body.accion === "crearComentario") {
                             var comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
                             var nuevoId = comentarios.arreglo.length > 0 ? Math.max(...comentarios.arreglo.map(c => c.id)) + 1 : 1;
-                            
+
                             var nuevoComentario = {
                                 id: nuevoId, peliculaId: body.peliculaId, usuario: body.usuario,
                                 texto: body.texto, calificacion: body.calificacion, likes: 0
@@ -140,19 +151,21 @@ const server = http.createServer((request, response) => {
                 }
             });
             break;
-
+            /* PUT: Para actualziar o modificar infomracionk */
         case "PUT":
             var informacion = "";
             request.on("data", info => { informacion += info; });
             request.on("end", () => {
                 const body = JSON.parse(informacion);
+                /*Veriffica el token para asegurar que el usuario tiene permiso de actualizar */
                 verificarToken((err, decoded) => {
                     if (err || !decoded) {
                         mysql.end();
                         return responderJson(response, 401, { mensaje: "No autorizado" });
                     }
-                    
+
                     if (request.url === "/api/accion" && body.accion === "guardarColeccion") {
+                        /*Si la peli ya esta guardada, se actualiza si no la agrega */
                         const query = `
                             INSERT INTO coleccion (usuario_id, pelicula_id, en_coleccion, favorito, visto) 
                             VALUES ((SELECT id FROM usuarios WHERE usuario = ?), ?, ?, ?, ?) 
@@ -168,17 +181,18 @@ const server = http.createServer((request, response) => {
                             responderJson(response, 200, { mensaje: "Colección actualizada" });
                         });
                     } else if (request.url === "/api/accion" && body.accion === "editarComentario") {
-                         var comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
-                         for (var i = 0; i < comentarios.arreglo.length; i++) {
-                             if (comentarios.arreglo[i].id == body.id) {
-                                 comentarios.arreglo[i].texto = body.texto;
-                                 comentarios.arreglo[i].calificacion = body.calificacion;
-                                 break;
-                             }
-                         }
-                         fs.writeFileSync(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2));
-                         mysql.end();
-                         return responderJson(response, 200, { mensaje: "Comentario editado" });
+                        /*Busca el comentario en el json y lo modifica */
+                        var comentarios = leerJson(RUTA_COMENTARIOS) || { arreglo: [] };
+                        for (var i = 0; i < comentarios.arreglo.length; i++) {
+                            if (comentarios.arreglo[i].id == body.id) {
+                                comentarios.arreglo[i].texto = body.texto;
+                                comentarios.arreglo[i].calificacion = body.calificacion;
+                                break;
+                            }
+                        }
+                        fs.writeFileSync(RUTA_COMENTARIOS, JSON.stringify(comentarios, null, 2));
+                        mysql.end();
+                        return responderJson(response, 200, { mensaje: "Comentario editado" });
                     } else {
                         mysql.end();
                         responderJson(response, 400, { mensaje: "Acción PUT no válida" });
@@ -186,7 +200,7 @@ const server = http.createServer((request, response) => {
                 });
             });
             break;
-
+            /* Delete: Elimanar comentario */
         case "DELETE":
             var informacion = "";
             request.on("data", info => { informacion += info; });
@@ -210,7 +224,7 @@ const server = http.createServer((request, response) => {
             break;
     }
 });
-
+/*Servido a la escucha */
 server.listen(puerto, () => {
     console.log("Servidor AnimaBox Fase 2 en http://localhost:" + puerto);
 });

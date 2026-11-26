@@ -1,3 +1,4 @@
+/* Variables globales de control */
 var CLAVE_COLECCION = "animabox_coleccion";
 var vistaActual = "catalogo";
 var filtroColeccion = "todos"; 
@@ -5,12 +6,24 @@ var indiceSlider = 0;
 var intervaloSlider = null;
 var posicionScrollModal = 0;
 var estilosBodyAntesModal = null;
+// Variables de sesión guardadas en local storage
 var tokenSesion = localStorage.getItem("animabox_token") || null;
 var usuarioActual = localStorage.getItem("animabox_usuario") || null;
 var coleccionLocal = {}; 
 
+/* Funciones de ayuda para buscar y crear elementos en la página */
+
 function obtenerElemento(selector) { return document.querySelector(selector); }
 function crearElemento(etiqueta, clase) { var el = document.createElement(etiqueta); if (clase) el.className = clase; return el; }
+
+/* 
+  Funcion especial: escaparHtml
+  ¿Que hace? Convierte caracteres especiales como <, >, & en entidades seguras.
+  ¿Por que se usa? Para evitar ataques XSS (Cross-Site Scripting). 
+  Si un usuario escribe un comentario con etiquetas HTML (ej. <script>), 
+  esta función lo convierte en texto normal y evita que el navegador lo ejecute.
+  Se implemento porque seria sencillo inyectar codigo mediante los comentarios.
+*/
 
 function escaparHtml(valor) {
         return String(valor ?? "").replace(/[&<>"']/g, function (c) {
@@ -18,6 +31,7 @@ function escaparHtml(valor) {
     });
 }
 
+/* Funcion para ventanas emergentes tipo toast con temporizador para que desaparezca */
 function mostrarAlerta(mensaje, tipo) {
     var alertaAnterior = document.getElementById("alertaUniversal");
     if (alertaAnterior) {
@@ -53,7 +67,7 @@ function mostrarAlerta(mensaje, tipo) {
         }, 300);
     }, 3500);
 }
-
+/* Funcion para ver si el token se expiro y sacarte de la sesion */
 function verificarTokenExpirado() {
     if (!tokenSesion) return false;
     try {
@@ -70,7 +84,7 @@ function verificarTokenExpirado() {
     }
     return false;
 }
-
+/* Alertas para cuando se equivoca el usuario en el inicio de sesion */
 function mostrarToast() {
     var toastViejo = document.getElementById("toastUniversal");
     if (toastViejo) toastViejo.remove();
@@ -101,7 +115,7 @@ function mostrarToast() {
 
     document.body.appendChild(toast);
     toast.showModal();
-
+/* Animacion de bajada y subida del toast */
     setTimeout(function() {
         toast.style.top = "20px";
     }, 50);
@@ -118,6 +132,7 @@ function mostrarToast() {
 }
 
 //Sesión y Usuarios 
+/* Cambia los botones del menu segun si hay sesione activa o no */
 function actualizarUIUsuario() {
     if (verificarTokenExpirado()) return; 
 
@@ -141,7 +156,7 @@ function actualizarUIUsuario() {
         if (btnCerrar) btnCerrar.classList.add("oculto");
     }
 }
-
+/* Funcion para escuchar los clics de los formularios  */
 function configurarEventosAuth() {
     var modalAuth = document.getElementById("modalAuth");
     var seccionLogin = document.getElementById("seccionLogin");
@@ -206,13 +221,13 @@ function configurarEventosAuth() {
         });
     }
 }
-
+/* Borra los datos del usuario y reinicia la pagina */
 function cerrarSesion() {
     localStorage.removeItem("animabox_token");
     localStorage.removeItem("animabox_usuario");
     window.location.reload();
 }
-
+/* Temporizador en segundo plano para verificar si el token expiro */
 function vigilarExpiracionToken() {
     if (!tokenSesion) return;
 
@@ -221,11 +236,11 @@ function vigilarExpiracionToken() {
             var payload = JSON.parse(atob(tokenSesion.split('.')[1]));
             var tiempoActual = Math.floor(Date.now() / 1000);
             
-            // Si el token expiró
+            //Si el token expiró
             if (payload.exp < tiempoActual) {
                 mostrarAlerta("Tu sesión ha expirado. Recargando la página...", "error");
                 
-                // Limpiamos los datos
+                //Limpiamos los datos
                 localStorage.removeItem("animabox_token");
                 localStorage.removeItem("animabox_usuario");
                 localStorage.removeItem("animabox_coleccion");
@@ -238,7 +253,9 @@ function vigilarExpiracionToken() {
         }
     }, 1000);
 }
-// La Colección 
+//La coleccion 
+
+/* Trae la coleccion del usuario desde la base de datos (MySQL) usando el token */
 function cargarColeccionDesdeBD() {
     if (!tokenSesion) return;
     fetch("http://localhost:3000/api/coleccion", {
@@ -259,14 +276,14 @@ function cargarColeccionDesdeBD() {
         actualizarContadorColeccion();
     }).catch(err => console.log("Error cargando colección", err));
 }
-
+/* Cuenta cuantas peliculas hay guardadas y actualiza el numerito en el menu */
 function actualizarContadorColeccion() {
     var total = 0;
     for (var id in coleccionLocal) { if (coleccionLocal[id].enColeccion) total++; }
     var el = obtenerElemento("#contadorColeccion");
     if (el) el.textContent = total;
 }
-
+/* Pinta de color el boton (favorito, visto) dependiendo de si está activo o no */
 function marcarBoton(tarjeta, accion, activo) {
     var btn = tarjeta.querySelector('.accion-icono[data-accion="' + accion + '"]');
         if (!btn) return;
@@ -281,7 +298,9 @@ function marcarBoton(tarjeta, accion, activo) {
     };
     icono.className = mapa[accion][activo ? 1 : 0];
 }
-
+/* Alterna el estado de una pelicula (la guarda, la quita, la marca).
+    Si el usuario no ha iniciado sesion, muestra el aviso Toast
+*/
 function alternarFlag(peliculaId, accion) {
     if (!tokenSesion) { mostrarToast(); return; }
     
@@ -301,7 +320,7 @@ function alternarFlag(peliculaId, accion) {
         body: JSON.stringify({ accion: "guardarColeccion", peliculaId: peliculaId, enColeccion: coleccionLocal[id].enColeccion, favorito: coleccionLocal[id].favorito, visto: coleccionLocal[id].visto })
     }).catch(err => console.log("Error guardando en BD", err));
 }
-
+/* Hace que las tarjetas se iluminen al pasar el raton por encima */
 function configurarHoverTarjetas() {
   var posters = document.querySelectorAll(".tarjeta-poster");
   for (var i = 0; i < posters.length; i++) {
@@ -310,7 +329,7 @@ function configurarHoverTarjetas() {
     poster.addEventListener("mouseleave", function (e) { var ov = e.currentTarget.querySelector(".tarjeta-overlay"); if (ov) ov.style.opacity = "0"; });
   }
 }
-
+/* Toma 5 peliculas al azas y las pone en el carrusel de arriba */
 function inicializarSlider(peliculas) {
   var destacadas = []; var copia = peliculas.slice(); copia.sort(function () { return Math.random() - 0.5; });
   for (var i = 0; i < 5 && i < copia.length; i++) destacadas.push(copia[i]);
@@ -323,7 +342,7 @@ function inicializarSlider(peliculas) {
     var slide = crearElemento("div", "slider-slide" + (j === 0 ? " activo" : ""));
     slide.style.backgroundImage = 'url("' + p.imagen_url + '")';
     slide.innerHTML = '<div class="slider-info"><h2>' + escaparHtml(p.nombre) + "</h2><p>" + escaparHtml(p.director) + " · " + escaparHtml(p.anio_lanzamiento) + "</p></div>";
-    
+    // IIFE (Immediately Invoked Function Expression) para encerrar el ID de la película
     (function(idPelicula) {
         slide.addEventListener("click", function () { 
             abrirModal(idPelicula); 
@@ -343,7 +362,7 @@ function inicializarSlider(peliculas) {
   obtenerElemento("#flechaDerecha").onclick = function () { moverSlider(1); };
   iniciarAutoplay();
 }
-
+/*Cambia el slide activo */
 function irASlide(i) {
   var slides = document.querySelectorAll(".slider-slide"); var puntos = document.querySelectorAll(".slider-punto"); if (!slides.length) return;
   slides[indiceSlider].classList.remove("activo"); puntos[indiceSlider].classList.remove("activo");
@@ -354,6 +373,7 @@ function moverSlider(dir) { irASlide(indiceSlider + dir); reiniciarAutoplay(); }
 function iniciarAutoplay() { intervaloSlider = setInterval(function () { irASlide(indiceSlider + 1); }, 6000); }
 function reiniciarAutoplay() { clearInterval(intervaloSlider); iniciarAutoplay(); }
 
+/* Abre la ventanda modal y bloquea la pagina del fondo */
 function mostrarModal() {
   if (!obtenerElemento("#modalDetalles").open) {
     posicionScrollModal = window.scrollY;
@@ -377,6 +397,7 @@ function cerrarModal() {
   var modal = obtenerElemento("#modalDetalles");
   if (modal.open) modal.close();
 }
+/* Devuelve la pagina a la posicion exacta donde estaba cuando se abrio el modal */
 function restaurarScrollModal() {
   document.body.classList.remove("modal-abierto");
   if (estilosBodyAntesModal) {
@@ -398,6 +419,15 @@ function configurarCierreModal() {
 }
 
 //Filtros
+
+/* 
+  Funcion  llenarSelect
+  Aquí usamos los "continue". 
+  El continue sirve para saltarse la vuelta actual del bucle (ignorar ese dato) y pasar al siguiente. 
+  Lo usamos de la siguiente : si el valor es nulo o ya lo vimos antes, lo salta. 
+  Así evitamos que se repitan opciones en los filtros.
+*/
+
 function llenarSelect(selector, valores, etiqueta, desc) {
   var select = obtenerElemento(selector); if(!select) return;
   var unicos = []; var vistos = {};
@@ -408,7 +438,7 @@ function llenarSelect(selector, valores, etiqueta, desc) {
   for (var j = 0; j < unicos.length; j++) { html += '<option value="' + escaparHtml(unicos[j]) + '">' + escaparHtml(unicos[j]) + "</option>"; }
   select.innerHTML = html;
 }
-
+/* Llena los desplegables con los datos unicos del JSON de peliculas */
 function inicializarFiltros(peliculas) {
   var estudios = [], directores = [], anios = [], generos = [];
   for (var i = 0; i < peliculas.length; i++) {
@@ -420,7 +450,7 @@ function inicializarFiltros(peliculas) {
   llenarSelect("#filtroAnio", anios, "Todos los años", true);
   llenarSelect("#filtroGenero", generos, "Todos los géneros", false);
 }
-
+/* Activa los botones de busqueda, filtros y navegacion superior */
 function conectarEventosGlobales() {
   if(obtenerElemento("#entradaBusqueda")) obtenerElemento("#entradaBusqueda").addEventListener("input", renderizarCatalogo);
   if(obtenerElemento("#filtroEstudio")) {
@@ -455,7 +485,7 @@ function conectarEventosGlobales() {
         renderizarCatalogo();
       });
   }
-
+    // Controla los botones (tabs) para cambiar entre General, Favoritos o Vistos en la coleccion personal
   var tabBtns = document.querySelectorAll(".tab-btn");
   for(var t = 0; t < tabBtns.length; t++) {
       tabBtns[t].addEventListener("click", function() {
