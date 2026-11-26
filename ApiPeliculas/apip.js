@@ -6,7 +6,7 @@ const basesdatos = require("mysql");
 const jwt = require("jsonwebtoken");
 
 /* Tiempo de expiracion del token */
-const TIEMPO_TOKEN = "30s";
+const TIEMPO_TOKEN = "240s";
 
 const llave = "HJDJHjdkjHJSjHJJKDXKJhjdjszhukmxdhjHJKhdiJHjhHhjHJb";
 const puerto = 3000;
