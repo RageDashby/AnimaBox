@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2026 a las 10:22:40
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Tiempo de generación: 26-11-2026 a las 02:06:28
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -104,8 +104,9 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `correo`, `contrasena`, `fecha_registro`) VALUES
-(1, 'Ashby', 'ashby@gmai.com', '123', '2026-11-24 06:43:33'),
-(7, 'Hilary', 'Hilary@gmail.com', '321', '2026-11-24 09:20:24');
+(1, 'Ashby', 'ashby@gmail.com', '123', '2026-11-24 06:43:33'),
+(7, 'Hilary', 'Hilary@gmail.com', '321', '2026-11-24 09:20:24'),
+(8, 'Andru', 'andru@gmail.com', '963', '2026-11-26 01:02:25');
 
 --
 -- Índices para tablas volcadas
@@ -141,7 +142,7 @@ ALTER TABLE `coleccion`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
