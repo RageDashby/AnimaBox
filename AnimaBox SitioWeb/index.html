@@ -5,48 +5,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnimaBox - Catálogo de anime</title>
-    //Conexion con google para la tipografia 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&display=swap"
         rel="stylesheet">
-    //Conexion con la hoja de estilos y con el font awesome para los iconos
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="estilos/style.css">
 </head>
 
 <body>
-    <!-- Header -->>
+    <!-- Header -->
     <header class="encabezado">
-         <!-- Logo -->>
+        <!-- Logo -->
         <a href="#" class="logo" id="logoInicio">AnimaBox</a>
         <button class="boton-nav activo" id="pestanaCatalogo" type="button">
             <i class="fa-solid fa-house"></i> Inicio
         </button>
-         <!-- Barra de busqueda -->>
+        <!-- Barra de busqueda -->
         <nav class="navegacion">
             <div class="buscador">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" id="entradaBusqueda" placeholder="Buscar por título, director o estudio..."
                     aria-label="Buscar película">
             </div>
-             <!-- Coleccion del usuario  -->>
+            <!-- Coleccion del usuario  -->
             <button class="oculto boton-nav" id="pestanaColeccion" type="button">
                 <i class="fa-solid fa-bookmark"></i> Mi colección <span id="contadorColeccion">0</span>
             </button>
 
-            <div id="textoUsuarioPerfil" class="oculto" style="color: #7a2e3f; font-weight: bold; margin-right: 10px; display: flex; align-items: center;"></div>
-             <!-- Botones de manejo de sesion -->>
+            <div id="textoUsuarioPerfil" class="oculto"
+                style="color: #7a2e3f; font-weight: bold; margin-right: 10px; display: flex; align-items: center;">
+            </div>
+            <!-- Botones de manejo de sesion -->
             <button id="btnCerrarSesion" class="oculto boton-nav" type="button" title="Cerrar Sesión">
                 <i class="fa-solid fa-right-from-bracket"></i>
             </button>
 
-            <button id="btnAbrirLogin" class="boton-nav" type="button">Iniciar Sesión</button> 
+            <button id="btnAbrirLogin" class="boton-nav" type="button">Iniciar Sesión</button>
             <button id="btnAbrirRegistro" class="boton-nav" type="button">Registrarse</button>
         </nav>
     </header>
-     <!-- Slider de imagnes  -->>
+    <!-- Slider de imagnes  -->
     <section class="slider" id="slider" aria-label="Películas destacadas">
         <button class="slider-flecha" id="flechaIzquierda" aria-label="Anterior"><i
                 class="fa-solid fa-chevron-left"></i></button>
@@ -55,15 +55,17 @@
                 class="fa-solid fa-chevron-right"></i></button>
         <div class="slider-puntos" id="sliderPuntos"></div>
     </section>
-     <!-- Contenido principal -->>
+    <!-- Contenido principal -->
     <main class="contenedor-principal">
         <div id="tabsColeccion" class="tabs-coleccion oculto">
-            <h2 id="tituloColeccionUsuario" style="width:100%; text-align:center; font-family:'Archivo Black'; margin-bottom: 15px;">Colección de </h2>
+            <h2 id="tituloColeccionUsuario"
+                style="width:100%; text-align:center; font-family:'Archivo Black'; margin-bottom: 15px;">Colección de
+            </h2>
             <button class="tab-btn activo" data-filtro="todos">General</button>
             <button class="tab-btn" data-filtro="favoritos">Favoritos</button>
             <button class="tab-btn" data-filtro="vistos">Ya Vistos</button>
         </div>
-         <!-- Barra de filtros -->>
+        <!-- Barra de filtros -->
         <section id="barraFiltrosPrincipales" class="barra-filtros" aria-label="Filtros">
             <select id="filtroEstudio">
                 <option value="">Todos los estudios</option>
@@ -81,7 +83,7 @@
                 <i class="fa-solid fa-broom"></i>
             </button>
         </section>
-        
+
         <div class="encabezado-catalogo">
             <h2 id="tituloLista">Todas las películas</h2>
             <span id="contadorResultados" aria-live="polite">Cargando...</span>
@@ -92,7 +94,7 @@
 
         <section id="listaPeliculas" class="grid-peliculas" aria-live="polite"></section>
     </main>
-     <!-- Plantilla de pelicula  -->>
+    <!-- Plantilla de pelicula  -->
     <div id="plantillaTarjeta" class="tarjeta-pelicula oculto" aria-hidden="true">
         <div class="tarjeta-poster">
             <img class="tarjeta-imagen" src="" alt="" loading="lazy">
@@ -115,12 +117,12 @@
         </div>
         <h3 class="tarjeta-titulo"></h3>
     </div>
-     <!-- Modal de detalles -->>
+    <!-- Modal de detalles -->
     <dialog id="modalDetalles" class="modal-detalles">
         <button id="cerrarModal" class="cerrar-modal" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
         <div id="contenidoModal"></div>
     </dialog>
-     <!-- Modales de sesion -->>
+    <!-- Modales de sesion -->
     <dialog id="modalAuth" class="modal-auth">
         <button id="cerrarAuth" class="cerrar-modal"><i class="fa-solid fa-xmark"></i></button>
 
@@ -142,7 +144,7 @@
             <p>¿Ya tienes cuenta? <a href="#" id="irALogin">Inicia sesión</a></p>
         </div>
     </dialog>
-     <!-- Scripts -->>
+    <!-- Scripts -->
     <script src="scripts/funcionalidades.js"></script>
     <script src="scripts/script.js"></script>
 </body>
